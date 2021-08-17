@@ -2,8 +2,7 @@
 
 use App\Models\Enums\OperationType;
 use App\Traits\DeletedBy;
-use Astrotomic\Translatable\Translatable;
-use \Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
+
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -18,27 +17,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property int|null $updated_by
  * @property-read Collection|\BlogCategoryDetail[] $details
  * @property-read int|null $details_count
- * @property-read \BlogCategoryTranslation|null $translation
- * @property-read Collection|\BlogCategoryTranslation[] $translations
- * @property-read int|null $translations_count
- * @method static Builder|\BlogCategory listsTranslations($translationField)
- * @method static Builder|\BlogCategory newModelQuery()
- * @method static Builder|\BlogCategory newQuery()
- * @method static Builder|\BlogCategory notTranslatedIn($locale = null)
- * @method static Builder|\BlogCategory orWhereTranslation($translationField, $value, $locale = null)
- * @method static Builder|\BlogCategory orWhereTranslationLike($translationField, $value, $locale = null)
- * @method static Builder|\BlogCategory orderByTranslation($translationField, $sortMethod = 'asc')
- * @method static Builder|\BlogCategory query()
- * @method static Builder|\BlogCategory translated()
- * @method static Builder|\BlogCategory translatedIn($locale = null)
- * @method static Builder|\BlogCategory whereCreatedAt($value)
- * @method static Builder|\BlogCategory whereCreatedBy($value)
- * @method static Builder|\BlogCategory whereId($value)
- * @method static Builder|\BlogCategory whereTranslation($translationField, $value, $locale = null, $method = 'whereHas', $operator = '=')
- * @method static Builder|\BlogCategory whereTranslationLike($translationField, $value, $locale = null)
- * @method static Builder|\BlogCategory whereUpdatedAt($value)
- * @method static Builder|\BlogCategory whereUpdatedBy($value)
- * @method static Builder|\BlogCategory withTranslation()
+
  * @mixin \Eloquent
  * @property int|null $deleted_by
  * @property \Illuminate\Support\Carbon|null $deleted_at
@@ -48,30 +27,30 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Query\Builder|\BlogCategory withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\BlogCategory withoutTrashed()
  */
-class BlogCategory extends BaseModel implements TranslatableContract{
-    use Translatable, SoftDeletes, DeletedBy;
+class BlogCategory extends BaseModel
+{
+    use SoftDeletes, DeletedBy;
 
-    public $translatedAttributes = ['name', 'slug','title_seo', 'description_seo', 'keywords'];
+  	protected $table='blogs_categories';
+  	public $timestamps = true;
+  	protected $primaryKey = 'id';
 
-	protected $table='blogs_categories';
-	public $timestamps = true;
-	protected $primaryKey = 'id';
+  	const ROUTE_PATH = 'routes.blog_categories';
+  	const SITEMAP_PRIORITY = 0.4;
 
-	const ROUTE_PATH = 'routes.blog_categories';
-	const SITEMAP_PRIORITY = 0.4;
-
-	public function details(){
-		return $this->hasMany('BlogCategoryDetail','category_id');
-	}
+  	public function Details()
+    {
+  		return $this->hasMany('BlogCategoryDetail', 'category_id');
+  	}
 
     public static function assignSlug(string $name,int $id = 0) : string
     {
         $slug = Str::slug($name);
         $separator = '_';
-        $existsSlug = BlogCategoryTranslation::whereSlug($slug)->where('blog_category_id', '!=', $id)->exists(); // Si ya existe el mismo slug, genera otro con un número random 0-99
+        $existsSlug = BlogCategory::whereSlug($slug)->where('id', '!=', $id)->exists(); // Si ya existe el mismo slug, genera otro con un número random 0-99
         if ($existsSlug) {
             //contamos los slugs con el nombre del slug + numero
-            $assignedNum = BlogCategoryTranslation::where('slug', 'LIKE', $slug  .  $separator .'%')->where('blog_category_id', '!=', $id)->count();
+            $assignedNum = BlogCategory::where('slug', 'LIKE', $slug  .  $separator .'%')->where('id', '!=', $id)->count();
             $assignedNum++;
             return $slug . '_' . $assignedNum;
         }

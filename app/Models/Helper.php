@@ -1,6 +1,5 @@
 <?php
 
-use Astrotomic\Translatable\Locales;
 use Illuminate\Contracts\Container\BindingResolutionException;
 
 class Helper
@@ -84,22 +83,6 @@ class Helper
         return $order_col && $order ? $collection->orderBy($order_col, $order) : $collection->orderBy($default_col, $default_order);
     }
 
-    public static function getLanguages()
-    {
-        try {
-            return app()->make(Locales::class)->all();
-        } catch (BindingResolutionException $e) {
-            error_log($e->getMessage());
-        }
-    }
-
-    public static function existsLanguage($lang){
-        try {
-            return app()->make(Locales::class)->has($lang);
-        } catch (BindingResolutionException $e) {
-            error_log($e->getMessage());
-        }
-    }
 
     public static function getLanguageText($lang){
         switch ($lang){
@@ -111,12 +94,6 @@ class Helper
         }
 
         return $output;
-    }
-
-    public static function getTranslatedRoute($route)
-    {
-        $locale = app()->getLocale();
-        return '/'.$locale.'/'.Lang::get($route,[], $locale);
     }
 
 

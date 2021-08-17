@@ -1,7 +1,5 @@
 <?php
 
-use \Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
-use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Builder;
 
 
@@ -17,42 +15,13 @@ use Illuminate\Database\Eloquent\Builder;
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property int|null $created_by
  * @property int|null $updated_by
- * @property-read \ShippingMethodTranslation|null $translation
- * @property-read \Illuminate\Database\Eloquent\Collection|\ShippingMethodTranslation[] $translations
- * @property-read int|null $translations_count
- * @method static Builder|\ShippingMethod listsTranslations($translationField)
- * @method static Builder|\ShippingMethod newModelQuery()
- * @method static Builder|\ShippingMethod newQuery()
- * @method static Builder|\ShippingMethod notTranslatedIn($locale = null)
- * @method static Builder|\ShippingMethod orWhereTranslation($translationField, $value, $locale = null)
- * @method static Builder|\ShippingMethod orWhereTranslationLike($translationField, $value, $locale = null)
- * @method static Builder|\ShippingMethod orderByTranslation($translationField, $sortMethod = 'asc')
- * @method static Builder|\ShippingMethod query()
- * @method static Builder|\ShippingMethod translated()
- * @method static Builder|\ShippingMethod translatedIn($locale = null)
- * @method static Builder|\ShippingMethod whereActive($value)
- * @method static Builder|\ShippingMethod whereCost($value)
- * @method static Builder|\ShippingMethod whereCreatedAt($value)
- * @method static Builder|\ShippingMethod whereCreatedBy($value)
- * @method static Builder|\ShippingMethod whereDefault($value)
- * @method static Builder|\ShippingMethod whereId($value)
- * @method static Builder|\ShippingMethod whereMinimumFree($value)
- * @method static Builder|\ShippingMethod whereTranslation($translationField, $value, $locale = null, $method = 'whereHas', $operator = '=')
- * @method static Builder|\ShippingMethod whereTranslationLike($translationField, $value, $locale = null)
- * @method static Builder|\ShippingMethod whereUpdatedAt($value)
- * @method static Builder|\ShippingMethod whereUpdatedBy($value)
- * @method static Builder|\ShippingMethod withTranslation()
- * @mixin \Eloquent
  * @property int|null $deleted_by
  * @property string|null $deleted_at
  * @method static \Illuminate\Database\Eloquent\Builder|\ShippingMethod whereDeletedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\ShippingMethod whereDeletedBy($value)
  */
-class ShippingMethod extends BaseModel implements TranslatableContract
+class ShippingMethod extends BaseModel
 {
-    use Translatable;
-    public $translatedAttributes = ['description'];
-
     protected $table = 'shipping_methods';
     public $timestamps = true;
     protected $primaryKey = 'id';

@@ -2,8 +2,7 @@
 
 use App\Models\Enums\OperationType;
 use App\Traits\DeletedBy;
-use Astrotomic\Translatable\Translatable;
-use \Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
+
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Gloudemans\Shoppingcart\Contracts\Buyable;
@@ -36,19 +35,7 @@ use Gloudemans\Shoppingcart\Contracts\Buyable;
  * @method static Builder|Product whereUpdatedAt($value)
  * @method static Builder|Product whereUpdatedBy($value)
  * @mixin Eloquent
- * @property-read \ProductTranslation|null $translation
- * @property-read \Illuminate\Database\Eloquent\Collection|\ProductTranslation[] $translations
- * @property-read int|null $translations_count
- * @method static Builder|Product listsTranslations($translationField)
- * @method static Builder|Product notTranslatedIn($locale = null)
- * @method static Builder|Product orWhereTranslation($translationField, $value, $locale = null)
- * @method static Builder|Product orWhereTranslationLike($translationField, $value, $locale = null)
- * @method static Builder|Product orderByTranslation($translationField, $sortMethod = 'asc')
- * @method static Builder|Product translated()
- * @method static Builder|Product translatedIn($locale = null)
- * @method static Builder|Product whereTranslation($translationField, $value, $locale = null, $method = 'whereHas', $operator = '=')
- * @method static Builder|Product whereTranslationLike($translationField, $value, $locale = null)
- * @method static Builder|Product withTranslation()
+
  * @method static Builder|Product whereActive($value)
  * @method static Builder|Product wherePhotoPrincipal($value)
  * @property-read \Illuminate\Database\Eloquent\Collection|\ProductOfferDetail[] $OffersDetails
@@ -62,12 +49,9 @@ use Gloudemans\Shoppingcart\Contracts\Buyable;
  * @method static \Illuminate\Database\Query\Builder|\Product withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\Product withoutTrashed()
  */
-class Product extends BaseModel implements TranslatableContract, Buyable
+class Product extends BaseModel implements Buyable
 {
-    use Translatable, SoftDeletes, DeletedBy;
-    public $translatedAttributes = ['name', 'description', 'long_description', 'slug', 'title_seo', 'description_seo', 'keywords'];
-
-    public static $staticTranslatedAttributes =  ['name', 'description', 'long_description', 'slug', 'title_seo', 'description_seo', 'keywords'];
+    use SoftDeletes, DeletedBy;
 
     protected $table = 'products';
     public $timestamps = true;
@@ -131,10 +115,10 @@ class Product extends BaseModel implements TranslatableContract, Buyable
     {
         $slug = Str::slug($name);
         $separator = '_';
-        $existsSlug = ProductTranslation::whereSlug($slug)->where('product_id', '!=', $id)->exists(); // Si ya existe el mismo slug, genera otro con un número random 0-99
+        $existsSlug = Product::whereSlug($slug)->where('id', '!=', $id)->exists(); // Si ya existe el mismo slug, genera otro con un número random 0-99
         if ($existsSlug) {
             //contamos los slugs con el nombre del slug + numero
-            $assignedNum = ProductTranslation::where('slug', 'LIKE', $slug  .  $separator .'%')->where('product_id', '!=', $id)->count();
+            $assignedNum = Product::where('slug', 'LIKE', $slug  .  $separator .'%')->where('id', '!=', $id)->count();
             $assignedNum++;
             return $slug . '_' . $assignedNum;
         }

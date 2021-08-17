@@ -2,8 +2,6 @@
 
 use App\Models\Enums\OperationType;
 use App\Traits\DeletedBy;
-use Astrotomic\Translatable\Translatable;
-use \Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
@@ -40,22 +38,10 @@ use Illuminate\Support\Carbon;
  * @method static Builder|ProductCategory whereSlug($value)
  * @method static Builder|ProductCategory whereUpdatedAt($value)
  * @method static Builder|ProductCategory whereUpdatedBy($value)
- * @method static Builder|\Product listsTranslations($translationField)
- * @method static Builder|\Product notTranslatedIn($locale = null)
- * @method static Builder|\Product orWhereTranslation($translationField, $value, $locale = null)
- * @method static Builder|\Product orWhereTranslationLike($translationField, $value, $locale = null)
- * @method static Builder|\Product orderByTranslation($translationField, $sortMethod = 'asc')
- * @method static Builder|\Product translated()
- * @method static Builder|\Product translatedIn($locale = null)
- * @method static Builder|\Product whereTranslation($translationField, $value, $locale = null, $method = 'whereHas', $operator = '=')
- * @method static Builder|\Product whereTranslationLike($translationField, $value, $locale = null)
- * @method static Builder|\Product withTranslation()
+ 
  * @mixin Eloquent
  * @property-read Collection|\ProductCategory[] $Children
  * @property-read int|null $children_count
- * @property-read \ProductCategoryTranslation|null $translation
- * @property-read Collection|\ProductCategoryTranslation[] $translations
- * @property-read int|null $translations_count
  * @method static Builder|\ProductCategory wherePhotoPrincipal($value)
  * @property int|null $deleted_by
  * @property \Illuminate\Support\Carbon|null $deleted_at
@@ -65,10 +51,9 @@ use Illuminate\Support\Carbon;
  * @method static \Illuminate\Database\Query\Builder|\ProductCategory withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\ProductCategory withoutTrashed()
  */
-class ProductCategory extends BaseModel implements TranslatableContract
+class ProductCategory extends BaseModel
 {
-    use Translatable, SoftDeletes, DeletedBy;
-    public $translatedAttributes = ['name', 'description','slug', 'title_seo', 'description_seo', 'keywords'];
+    use SoftDeletes, DeletedBy;
 
     protected $table = 'products_categories';
     public $timestamps = true;
@@ -110,10 +95,10 @@ class ProductCategory extends BaseModel implements TranslatableContract
     {
         $slug = Str::slug($name);
         $separator = '_';
-        $existsSlug = ProductCategoryTranslation::whereSlug($slug)->where('product_category_id', '!=', $id)->exists(); // Si ya existe el mismo slug, genera otro con un número random 0-99
+        $existsSlug = ProductCategory::whereSlug($slug)->where('id', '!=', $id)->exists(); // Si ya existe el mismo slug, genera otro con un número random 0-99
         if ($existsSlug) {
             //contamos los slugs con el nombre del slug + numero
-            $assignedNum = ProductCategoryTranslation::where('slug', 'LIKE', $slug  .  $separator .'%')->where('product_category_id', '!=', $id)->count();
+            $assignedNum = ProductCategory::where('slug', 'LIKE', $slug  .  $separator .'%')->where('id', '!=', $id)->count();
             $assignedNum++;
             return $slug . '_' . $assignedNum;
         }

@@ -2,8 +2,7 @@
 
 use App\Models\Enums\OperationType;
 use App\Traits\DeletedBy;
-use Astrotomic\Translatable\Translatable;
-use \Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
+
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -34,19 +33,6 @@ use Illuminate\Support\Carbon;
  * @method static Builder|Blog whereUpdatedAt($value)
  * @method static Builder|Blog whereUpdatedBy($value)
  * @mixin Eloquent
- * @property-read BlogTranslation|null $translation
- * @property-read Collection|BlogTranslation[] $translations
- * @property-read int|null $translations_count
- * @method static Builder|\Blog listsTranslations($translationField)
- * @method static Builder|\Blog notTranslatedIn($locale = null)
- * @method static Builder|\Blog orWhereTranslation($translationField, $value, $locale = null)
- * @method static Builder|\Blog orWhereTranslationLike($translationField, $value, $locale = null)
- * @method static Builder|\Blog orderByTranslation($translationField, $sortMethod = 'asc')
- * @method static Builder|\Blog translated()
- * @method static Builder|\Blog translatedIn($locale = null)
- * @method static Builder|\Blog whereTranslation($translationField, $value, $locale = null, $method = 'whereHas', $operator = '=')
- * @method static Builder|\Blog whereTranslationLike($translationField, $value, $locale = null)
- * @method static Builder|\Blog withTranslation()
  * @property int $id
  * @property int|null $deleted_by
  * @property Carbon|null $deleted_at
@@ -56,10 +42,9 @@ use Illuminate\Support\Carbon;
  * @method static \Illuminate\Database\Query\Builder|\Blog withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\Blog withoutTrashed()
  */
-class Blog extends BaseModel implements TranslatableContract
+class Blog extends BaseModel
 {
-    use Translatable, SoftDeletes, DeletedBy;
-    public $translatedAttributes = ['title', 'description', 'content', 'slug','title_seo', 'description_seo', 'keywords'];
+    use SoftDeletes, DeletedBy;
 
     protected $table = 'blogs';
     public $timestamps = true;
@@ -86,10 +71,10 @@ class Blog extends BaseModel implements TranslatableContract
     {
         $slug = Str::slug($title);
         $separator = '_';
-        $existsSlug = BlogTranslation::whereSlug($slug)->where('blog_id', '!=', $id)->exists(); // Si ya existe el mismo slug, genera otro con un número random 0-99
+        $existsSlug = Blog::whereSlug($slug)->where('id', '!=', $id)->exists(); // Si ya existe el mismo slug, genera otro con un número random 0-99
         if ($existsSlug) {
             //contamos los slugs con el nombre del slug + numero
-            $assignedNum = BlogTranslation::where('slug', 'LIKE', $slug  .  $separator .'%')->where('blog_id', '!=', $id)->count();
+            $assignedNum = Blog::where('slug', 'LIKE', $slug  .  $separator .'%')->where('id', '!=', $id)->count();
             $assignedNum++;
             return $slug . '_' . $assignedNum;
         }
