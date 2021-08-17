@@ -1,0 +1,9 @@
+User-Agent: *
+Sitemap: https://web.com/sitemap.xml
+Disallow:
+Disallow: /admin
+Disallow: /intranet
+Disallow: /*cart
+Disallow: /set-language
+Disallow: /*order/details
+Disallow: /*order/payment
