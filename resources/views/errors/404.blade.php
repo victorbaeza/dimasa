@@ -10,7 +10,7 @@
     <div class="padding-top-1x mt-2 text-center">
       <h3>@lang('errors.pagina_no_encontrada')</h3>
       <p>@lang('errors.404_mensaje')<br><br>
-        <a href="{{route('home', app()->getLocale())}}" class="btn btn-info">@lang('errors.volver_inicio')</a><br></p>
+        <a href="/" class="btn btn-info">@lang('errors.volver_inicio')</a><br></p>
     </div>
   </div>
 

@@ -48,7 +48,7 @@ require base_path('routes/site/routes.php');
 
 
 // Rutas de cliente - AUTENTICADO
-Route::middleware(['client', 'setLocale'])->group(function (){
+Route::middleware(['client'])->group(function (){
     require base_path('routes/site/client_area/routes.php');
 });
 

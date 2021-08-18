@@ -37,13 +37,7 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
 
-        $locale = Request::segment(1);
-        if($locale && Helper::existsLanguage($locale)){
-            app()->setLocale($locale);
-            foreach(Lang::get('routes') as $key => $value){
-                Route::pattern($key, $value);
-            }
-        }
+
         parent::boot();
     }
 

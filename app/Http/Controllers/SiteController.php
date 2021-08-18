@@ -36,14 +36,14 @@ class SiteController extends Controller
     }
 
 
-    public function index()
+    public function getIndex()
     {
         return view('site.index');
     }
 
     public function listBlogs(Request $request)
     {
-        $blogs = Blog::translatedIn(app()->getLocale())->orderBy('id', 'DESC');
+        $blogs = Blog::orderBy('id', 'DESC');
 
         $blogs = $blogs->paginate(self::NUM_PAGED_RESULTS);
 
@@ -52,7 +52,7 @@ class SiteController extends Controller
 
     public function showBlog(Request $request, string $slug)
     {
-        $blog = Blog::whereTranslation('slug', $slug)->firstOrFail();
+        $blog = Blog::where('slug', $slug)->firstOrFail();
 
         $related_blogs = Blog::where('id', '!=', $blog->id)->limit(3)->get();
 
