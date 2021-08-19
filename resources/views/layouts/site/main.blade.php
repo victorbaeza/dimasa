@@ -1,73 +1,112 @@
 <!DOCTYPE html>
-<html lang="es">
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="author" content="Ibermedia">
-      <!-- Favicon Icon -->
-      <link rel="apple-touch-icon" sizes="32x32" href="/images/favicon-32x32.png">
-      <link rel="icon" type="image/png" href="/images/favicon-32x32.png">
+<html lang="en">
 
-      <title>@if(isset($title)){{$title}}@else @lang('seo.titles.main') @endif</title>
-      <meta name="description" content="@if(isset($description)){{$description}}@else @lang('seo.descriptions.main') @endif">
-      <meta name="keywords" content="@section('keywords') @show">
-      <!-- Dublin Core Schema -->
-      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
-      <meta name=DC.Language content=es>
-      <meta property="dcterms:title" content="@if(isset($title)){{$title}}@else @lang('seo.titles.main') @endif">
-      <meta property="dcterms:description" content="@if(isset($description)){{$description}}@else @lang('seo.descriptions.main') @endif">
-      <meta property="dcterms:subject" content="@section('dc_subject')  @show">
-      <meta property="dcterms:identifier" content="@section('dc_id')  @show">
-      <!-- OpenGraph Schema -->
-      <meta property=og:locale content="es">
-      <meta property=og:type content="article">
-      <meta property=og:site_name content="@section('og_sitename') Nombre  @show">
-      <meta property=og:title content="@if(isset($title)){{$title}}@else @lang('seo.titles.main') @endif">
-      <meta property=og:description content="@if(isset($description)){{$description}}@else @lang('seo.descriptions.main') @endif">
-      <meta property=og:url content="@section('og_url') {{Request::url()}} @show">
-      <meta property="og:image" content="@section('og_image') @show">
-      <!-- Twitter Cards -->
-      <meta name=twitter:card content=summary>
-      <meta name=twitter:title content="@if(isset($title)){{$title}}@else @lang('seo.titles.main') @endif">
-      <meta name=twitter:description content="@if(isset($description)){{$description}}@else @lang('seo.descriptions.main') @endif">
-      <meta name=twitter:image content="@section('tw_image')  @show">
-      <meta name=twitter:site content=@twitter>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Saneamientos Dimasa</title>
+
+  <meta name="keywords" content="HTML5 Template" />
+  <meta name="description" content="Saneamientos Dimasa">
+  <meta name="author" content="D-THEMES">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+  <script>
+    WebFontConfig = {
+      google: {
+        families: ['Poppins:300,400,500,600,700,800', 'Jost:400,600,700']
+      }
+    };
+    (function(d) {
+      var wf = d.createElement('script'),
+        s = d.scripts[0];
+      wf.src = 'js/webfont.js';
+      wf.async = true;
+      s.parentNode.insertBefore(wf, s);
+    })(document);
+  </script>
 
 
+  <link rel="stylesheet" type="text/css" href="/vendor/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="/vendor/animate/animate.min.css">
 
-      {{-- CSS STYLES --}}
-      <link rel="stylesheet" media="screen" href="/css/vendor.min.css">
-      <link id="mainStyles" rel="stylesheet" media="screen" href="/css/styles.min.css">
-      <link href="/vendor/font-awesome/css/font-awesome.css" rel="stylesheet">
-      <link rel="stylesheet" media="screen" href="/css/customizer.min.css">
-      <link rel="stylesheet" media="screen" href="/css/main.css">
-      <script src="/js/modernizr.min.js"></script>
-      <script src="https://kit.fontawesome.com/1241dd5bb4.js" crossorigin="anonymous"></script>
+  <!-- Plugins CSS File -->
+  <link rel="stylesheet" type="text/css" href="/vendor/magnific-popup/magnific-popup.min.css">
+  <link rel="stylesheet" type="text/css" href="/vendor/owl-carousel/owl.carousel.min.css">
 
-      @yield('extracss')
+  <!-- Main CSS File -->
+  <link rel="stylesheet" type="text/css" href="/css/market2.css">
 
-      @if(isset($canonical) && $canonical) <link rel="canonical" href="{{$canonical}}" /> @endif
-      @if(isset($prev)) <link rel="prev" href="{{$prev}}" /> @endif
-      @if(isset($next)) <link rel="next" href="{{$next}}" /> @endif
-
+  @yield('extracss')
 </head>
-<body>
 
-
+<body class="home market">
+  <div class="page-wrapper">
     @include('layouts.site.header')
-
-
-      {{-- MAIN DIV WRAPPER --}}
-      <div class="offcanvas-wrapper">
-
-        @include('layouts.site.notifications')
-
+    <main class="main">
+      <div class="page-content">
         @yield('content')
-
       </div>
-
+    </main>
+    <!-- End Main -->
 
     @include('layouts.site.footer')
+  </div>
+  <!-- Sticky Footer -->
+  <!-- <div class="sticky-footer sticky-content fix-bottom">
+    <a href="#" class="sticky-link active">
+      <i class="d-icon-home"></i>
+      <span>Inicio</span>
+    </a>
+    <a href="@" class="sticky-link">
+      <i class="d-icon-volume"></i>
+      <span>Empresa</span>
+    </a>
+    <a href="#" class="sticky-link">
+      <i class="d-icon-heart"></i>
+      <span>Noticias</span>
+    </a>
+    <a href="#" class="sticky-link">
+      <i class="d-icon-user"></i>
+      <span>Formación</span>
+    </a>
+    <div class="header-search hs-toggle dir-up">
+      <a href="#" class="search-toggle sticky-link">
+        <i class="d-icon-search"></i>
+        <span>Search</span>
+      </a>
+      <form action="#" class="input-wrapper">
+        <input type="text" class="form-control" name="search" autocomplete="off" placeholder="Search your keyword..." required />
+        <button class="btn btn-search" type="submit">
+          <i class="d-icon-search"></i>
+        </button>
+      </form>
+    </div>
+  </div> -->
+  <!-- Scroll Top -->
+  <a id="scroll-top" href="#top" title="Top" role="button" class="scroll-top"><i class="d-icon-arrow-up"></i></a>
 
+    @include("layouts.site.mobile-menu")
+    </div>
+  </div>
+
+  <!-- Plugins JS File -->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/jquery.plugin/jquery.plugin.min.js"></script>
+  <script src="/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+  <script src="/vendor/owl-carousel/owl.carousel.min.js"></script>
+  <script src="/vendor/isotope/isotope.pkgd.min.js"></script>
+  <script src="/vendor/photoswipe/photoswipe.min.js"></script>
+  <script src="/vendor/photoswipe/photoswipe-ui-default.min.js"></script>
+  <script src="/vendor/elevatezoom/jquery.elevatezoom.min.js"></script>
+  <script src="/vendor/jquery.countdown/jquery.countdown.min.js"></script>
+  <!-- Main JS File -->
+  <script src="/js/main.js"></script>
+
+  @yield('scripts')
 </body>
+
 </html>

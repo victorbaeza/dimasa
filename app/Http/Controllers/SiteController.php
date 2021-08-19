@@ -35,7 +35,6 @@ class SiteController extends Controller
         dd('enviado');
     }
 
-
     public function getIndex()
     {
         return view('site.index');
@@ -43,11 +42,11 @@ class SiteController extends Controller
 
     public function listBlogs(Request $request)
     {
-        $blogs = Blog::orderBy('id', 'DESC');
+        // $blogs = Blog::orderBy('id', 'DESC');
+        //
+        // $blogs = $blogs->paginate(self::NUM_PAGED_RESULTS);
 
-        $blogs = $blogs->paginate(self::NUM_PAGED_RESULTS);
-
-        return view('site.blog.list', compact('blogs'));
+        return view('site.blog.list');
     }
 
     public function showBlog(Request $request, string $slug)

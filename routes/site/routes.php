@@ -9,27 +9,31 @@ use App\Http\Controllers\SiteController;
 Route::get('/', [SiteController::class, 'getIndex'])->name('site.index');
 
 // Main pages
-Route::get('/blog', [SiteController::class, 'listBlogs'])->name('blog');
-Route::get('/blog/{slug}', [SiteController::class, 'showBlog'])->name('blog.show');
-Route::get('/contact', function(){ return view('site.contacto'); })->name('contact');
-Route::post('contact/submit', [SiteController::class, 'do_submitContact'])->name('do_contact');
+Route::get('/noticias', [SiteController::class, 'listBlogs'])->name('site.blog');
+Route::get('/noticias/{slug}', [SiteController::class, 'showBlog'])->name('site.blog.post');
+Route::get('/contacto', function(){ return view('site.contacto'); })->name('site.contact');
+Route::post('contact/submit', [SiteController::class, 'do_submitContact'])->name('site.do_contact');
 
 // Newsletter
 Route::post('/newsletter/subscribe', [SiteController::class, 'do_subscribeNewsletter'])->name('newsletter.do_subscribe');
 
 // Legal
-Route::get('/legal_notice', function(){ return view('site.legal.aviso-legal'); })->name('legal_notice');
-Route::get('/privacy/', function(){ return view('site.legal.politica-privacidad'); })->name('privacy');
-Route::get('/cookies/', function(){ return view('site.legal.politica-cookies'); })->name('cookies');
-Route::get('/about}', function(){ return view('site.about');})->name('about');
+Route::get('/aviso-legal', function(){ return view('site.legal.aviso-legal'); })->name('site.legal_notice');
+Route::get('/politica-privacidad/', function(){ return view('site.legal.politica-privacidad'); })->name('site.privacy');
+Route::get('/politica-cookies', function(){ return view('site.legal.politica-cookies'); })->name('site.cookies');
+Route::get('/empresa', function(){ return view('site.about');})->name('site.about');
 Route::get('/general_terms/', function(){ return view('site.legal.condiciones_generales');})->name('condiciones_generales');
 Route::get('/envio_y_pago/', function(){ return view('site.legal.envio_y_pago');})->name('envio_y_pago');
-Route::get('/devoluciones/', function(){ return view('site.legal.devoluciones');})->name('devoluciones');
-Route::get('/desistimiento/', function(){ return view('site.legal.desistimiento');})->name('desistimiento');
+Route::get('/devoluciones', function(){ return view('site.legal.devoluciones');})->name('devoluciones');
+Route::get('/desistimiento', function(){ return view('site.legal.desistimiento');})->name('desistimiento');
 
+//Brands
+Route::get('/marcas', function(){ return view('site.brands'); })->name('site.brands');
 
 // Store / Products
-Route::get('/products/', 'ProductController@showProductList')->name('product_list');
+Route::get('/catalogo/fontaneria', 'ProductController@getProductsCategory')->name('products.category');
+Route::get('/catalogo/fontaneria/productos', 'ProductController@showCategoryProducts')->name('products.category_products');
+Route::get('/productos/producto', 'ProductController@showProduct')->name('products.product');
 Route::prefix('products')->group(function(){
     Route::get('/{slug}/', [ProductController::class, 'show'])->name('product.show');
 });
