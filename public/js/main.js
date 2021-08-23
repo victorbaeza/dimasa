@@ -3098,6 +3098,26 @@ window.Riode = {};
 
         $('.sticky-header .header-left').append('<div style="display: none;" class="header-search hs-expanded ml-0 mr-0"><form action="#" class="input-wrapper"><input type="text" class="form-control" name="search" autocomplete="off" placeholder="Buscar..." value="" required /><button class="btn btn-search" type="submit"><i class="d-icon-search"></i></button></form></div><div style="display: none;" class="header-phone ml-auto mr-auto">&nbsp;&nbsp;¿Tienes alguna duda? Llámanos:&nbsp;<a href="tel:+34952336808" class="contact d-lg-show"><i class="d-icon-phone"></i>+34 952 33 68 08</a></div>');
 
+        setActiveNavLink();
+    }
 
+    //Set active navigation link
+    function setActiveNavLink()
+    {
+      var path = window.location.href;
+      var route = window.location.pathname;
+
+      $('.main-nav .menu li').each(function(){
+        if($(this).is(':first-child')){
+          if(route == "/")
+            $(this).addClass('active');
+        }
+
+        if($(this).find('a').attr('href') == path){
+          $(this).addClass('active');
+        }
+
+
+      });
     }
 } )();

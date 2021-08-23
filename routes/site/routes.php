@@ -11,7 +11,7 @@ Route::get('/', [SiteController::class, 'getIndex'])->name('site.index');
 // Main pages
 Route::get('/noticias', [SiteController::class, 'listBlogs'])->name('site.blog');
 Route::get('/noticias/{slug}', [SiteController::class, 'showBlog'])->name('site.blog.post');
-Route::get('/contacto', function(){ return view('site.contacto'); })->name('site.contact');
+Route::get('/contacto', [SiteController::class, 'getContact'])->name('site.contact');
 Route::post('contact/submit', [SiteController::class, 'do_submitContact'])->name('site.do_contact');
 
 // Newsletter
@@ -27,8 +27,14 @@ Route::get('/envio_y_pago/', function(){ return view('site.legal.envio_y_pago');
 Route::get('/devoluciones', function(){ return view('site.legal.devoluciones');})->name('devoluciones');
 Route::get('/desistimiento', function(){ return view('site.legal.desistimiento');})->name('desistimiento');
 
+//Courses
+Route::get('/formacion', function(){ return view('site.courses'); })->name('site.courses');
+
 //Brands
 Route::get('/marcas', function(){ return view('site.brands'); })->name('site.brands');
+
+//Downloads
+Route::get('/descargas', function(){ return view('site.downloads'); })->name('site.downloads');
 
 // Store / Products
 Route::get('/catalogo/fontaneria', 'ProductController@getProductsCategory')->name('products.category');

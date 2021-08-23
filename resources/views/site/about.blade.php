@@ -12,7 +12,7 @@
 <div class="shop-boxed-banner banner mb-8 mb-lg-7 pb-7 pt-7" style="background-image: url('/images/empresa.jpg');height: 400px;background-position: 100% 40%;">
 </div>
 
-<section class="mb-10 appear-animate fadeIn appear-animation-visible">
+<section class="mb-10 appear-animate fadeIn appear-animation-visible about-text">
             <div class="container">
               <h1 class="text-center mb-5">¿Quiénes somos?</h1>
               <p class="text-center">
@@ -211,7 +211,7 @@
     <a href="#" class="social-link social-twitter fab fa-twitter"></a>
     <a href="#" class="social-link social-linkedin fab fa-linkedin-in"></a>
     <a href="#" class="social-link social-facebook fab fa-facebook-f"></a>
-    <a href="#" class="social-link social-pinterest fab fa-pinterest-p"></a>
+    <a href="#" class="social-link social-youtube fab fa-youtube-y"></a>
   </div>
 </section>
 

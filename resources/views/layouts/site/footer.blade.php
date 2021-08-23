@@ -112,6 +112,8 @@
       </div>
       <div class="footer-right">
         <div class="social-links">
+          <a href="#" class="social-link social-instagram fab fa-twitter"></a>
+          <a href="#" class="social-link social-instagram fab fa-linkedin-in"></a>
           <a href="https://www.facebook.com/#/" class="social-link social-facebook fab fa-facebook-f"></a>
           <a href="https://www.instagram.com/#_/" class="social-link social-instagram fab fa-instagram"></a>
 

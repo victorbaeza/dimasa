@@ -9,31 +9,13 @@
           <a href="#" class="social-link social-twitter fab fa-twitter"></a>
           <a href="#" class="social-link social-linkedin fab fa-linkedin-in"></a>
           <a href="#" class="social-link social-facebook fab fa-facebook-f"></a>
-          <a href="#" class="social-link social-pinterest fab fa-pinterest-p"></a>
+          <a href="#" class="social-link social-pinterest fab fa-youtube"></a>
         </div>
-        <!-- <div class="dropdown">
-                        <a href="#currency">USD</a>
-                        <ul class="dropdown-box">
-                            <li><a href="#USD">USD</a></li>
-                            <li><a href="#EUR">EUR</a></li>
-                        </ul>
-                    </div> -->
-        <!-- End DropDown Menu -->
-        <!-- <div class="dropdown ml-5">
-                        <a href="#language">ENG</a>
-                        <ul class="dropdown-box">
-                            <li>
-                                <a href="#USD">ENG</a>
-                            </li>
-                            <li>
-                                <a href="#EUR">FRH</a>
-                            </li>
-                        </ul>
-                    </div> -->
+
         <a href="tel:+34952336808" class="contact d-lg-show"><i class="d-icon-phone"></i>+34 952 33 68 08</a>
         <!-- End DropDown Menu -->
         <span class="divider"></span>
-        <a href="/contacto" class="contact d-lg-show">Contacto</a>
+        <a href="{{ route('site.contact') }}" class="contact d-lg-show">Contacto</a>
 
         <!-- End of Login -->
       </div>
@@ -710,33 +692,30 @@
 
         <nav class="main-nav">
           <ul class="menu menu-active-underline">
-            <li class="active">
-              <a href="/">Inicio</a>
+            <li>
+              <a href="{{ route('site.index') }}">Inicio</a>
             </li>
             <li>
-              <a href="/empresa">Empresa</a>
+              <a href="{{ route('site.about') }}">Empresa</a>
             </li>
             <li>
-              <a href="/noticias">Noticias</a>
+              <a href="{{ route('site.blog') }}">Noticias</a>
             </li>
             <li>
-              <a href="#">Formación</a>
+              <a href="{{ route('site.courses') }}">Formación</a>
             </li>
             <li>
-              <a href="/marcas">Marcas</a>
+              <a href="{{ route('site.brands') }}">Marcas</a>
             </li>
             <li>
               <a href="#">Empresas instaladoras</a>
-            </li>
-            <li>
-              <a href="#">Contacto</a>
             </li>
           </ul>
         </nav>
       </div>
       <div class="header-right">
         <a href="#"><i class="d-icon-card"></i>Promociones</a>
-        <a href="#" class="ml-4 ml-xl-8"><i class="far fa-arrow-alt-circle-down"></i>Descargas</a>
+        <a href="{{ route('site.downloads') }}" class="ml-4 ml-xl-8"><i class="far fa-arrow-alt-circle-down"></i>Descargas</a>
       </div>
     </div>
   </div>

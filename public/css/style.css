@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
+.font-size-1{
+  font-size: 1rem;
+}
+
+.font-size-2{
+  font-size: 2rem;
+}
+
+.font-size-3{
+  font-size: 3rem;
+}
+
 .text-justify{
   text-align: justify;
 }
@@ -761,17 +773,19 @@ button:focus {
   opacity: 0;
   visibility: hidden;
   transition: transform .3s, visibility .3s, opacity .3s;
-  color: #222;
+  color: #fff;
+  background: #355f94;
   transform: translateY(40px);
-  border-radius: 3px;
+  border-radius: 50%;
   z-index: 1040;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
   line-height: 60px;
-  background-color: #fff
+  transition: all .3s ease-in;
 }
 
 .scroll-top:hover {
-  color: #222
+  color: #fff;
+  background: #3e75b9;
 }
 
 .scroll-top i {
@@ -779,13 +793,11 @@ button:focus {
   line-height: inherit
 }
 
-@media (min-width: 768px) {
   .scroll-top.show {
     visibility: visible;
     opacity: 1;
     transform: translateY(0)
   }
-}
 
 @keyframes fixedTop {
   from {
@@ -1222,6 +1234,10 @@ button:focus {
 
 .border-no {
   border: none !important
+}
+
+.bg-lighter{
+  background-color: #f9f9f9;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -7579,6 +7595,7 @@ input[type="radio"]:checked~label::after {
 .overlay, .overlay-visible {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   position: absolute;
   left: 0;
@@ -8191,7 +8208,6 @@ button.mfp-arrow {
   text-align: center;
   background-position: 60% center;
   background-size: cover;
-  border-radius: 1rem
 }
 
 .newsletter-popup h4 {
@@ -8251,7 +8267,6 @@ button.mfp-arrow {
 .newsletter-popup .form-control {
   border: 1px solid #222;
   background: #fff;
-  border-right: none
 }
 
 .newsletter-popup .input-wrapper-inline {
@@ -8262,7 +8277,7 @@ button.mfp-arrow {
 .newsletter-popup .input-wrapper-inline .form-control {
   padding-left: 1.2rem;
   padding-right: 1.2rem;
-  border-radius: .3rem 0 0 .3rem
+  /* border-radius: .3rem 0 0 .3rem */
 }
 
 .newsletter-popup .input-wrapper-inline .btn {
@@ -16926,6 +16941,10 @@ section .nav-item:not(:last-child) {
   color: #7f7f7f
 }
 
+.about-text h1{
+  font-size: 3.2rem;
+}
+
 .tl-content p{
   font-size: 16px;
 }
@@ -16941,4 +16960,116 @@ section .nav-item:not(:last-child) {
     margin-right: 2rem !important;
     margin-left: 2rem !important;
   }
+}
+
+.page-header{
+  height: 100px;
+}
+
+.store {
+  position: relative;
+  box-shadow: none !important;
+  border-radius: .3rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.store figure {
+  position: relative;
+}
+
+.store img {
+    width: 100%;
+    display: block;
+}
+
+.store h4 {
+    margin-bottom: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -.025em;
+    text-transform: uppercase;
+}
+
+#contact-header{
+  height: 130px;
+  background-position: 100% 40%;
+}
+
+#brands-header{
+  height: 130px;
+  background-position: 100% 70%;
+}
+
+.page-header h1{
+  font-size: 3rem;
+  text-align: center;
+  position: relative
+}
+
+.section-header p {
+  text-align: center;
+  margin: auto;
+  font-size: 15px;
+  padding-bottom: 60px;
+  color: #556877;
+  width: 50%
+}
+
+#clients {
+  padding: 60px 0
+}
+
+#clients .clients-wrap {
+  border-top: 1px solid #d6eaff;
+  border-left: 1px solid #d6eaff;
+  margin-bottom: 30px
+}
+
+#clients .clients-wrap > div {
+border-right: 1px solid #d6eaff;
+border-bottom: 1px solid #d6eaff;
+}
+
+#clients .client-logo {
+      padding: 2.8rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  overflow: hidden;
+  background: #fff;
+  height: 160px
+}
+
+#clients img {
+  transition: all 0.3s ease-in-out
+}
+
+#clients .client-logo:hover img{
+transform:scale(1.3);
+}
+
+.char-navigation{
+border-top: 1px solid #00377A;
+border-bottom: 1px solid #00377A;
+font-size: 2.5rem;
+}
+
+.char-navigation .char-navigation-element{
+margin-left: 5px;
+margin-right: 5px;
+}
+
+.char-navigation-index{
+font-size: 3rem;
 }
