@@ -10,6 +10,11 @@ use ProductOfferDetail;
 class ProductController extends Controller
 {
 
+  public function getProductsCategory()
+{
+    return view('site.products.category', compact('familia', 'products', 'total'));
+}
+
     public function showProductList(Request $request)
     {
         // $products = Product::where('active', 1)->whereNull('parent_id')->get();
