@@ -21,74 +21,90 @@ class BlogController extends Controller
        $blogs = Blog::query();
 
         $q = $request->input('q');
-        if (!empty($q)) {
-            $blogs = $blogs->whereTranslationLike('title','%' . $q . '%')->orWhereTranslationLike('description','LIKE', '%' . $q . '%');
+        if (!empty($q))
+        {
+            $blogs = $blogs->where('title', 'LIKE', '%' . $q . '%')->orWhere('description', 'LIKE', '%' . $q . '%');
         }
 
         $order_col = $request->input('order_col');
         $order = $request->input('order');
-        $blogs = Helper::orderColumn($blogs, $order_col, $order,'id', 'DESC', true);
+
+        $blogs = Helper::do_orderColumn($blogs, $order_col, $order,'id', 'DESC');
 
         $blogs = $blogs->paginate(self::NUM_PAGED_RESULTS);
+
         return view('admin.blogs.list', compact('blogs', 'q', 'order_col', 'order'));
     }
 
     public function create()
     {
-        $languages = Helper::getLanguages();
         $categories = BlogCategory::all();
-        return view('admin.blogs.create',compact('languages', 'categories'));
+
+        return view('admin.blogs.create',compact('categories'));
     }
 
     public function do_create(Request $request)
     {
-        $blog_data = $this->getBlogFormData($request);
-        $blog = Blog::create($blog_data);
+        $blog = new Blog;
+        $this->saveData($blog, $request, true);
 
-        $image = $request->file('image');
-        if ($image) $blog->image = $blog->uploadImage($image);
-
-        // Asignar Categorías al blog
-        BlogCategoryDetail::assignCategories($blog, $request->input('category'));
-        if($blog->active){
-            foreach(Helper::getLanguages() as $lang){
-                if(!empty($blog_data[$lang])){
-                    $blog->generateSitemap(OperationType::CREATE(), null, $blog_data[$lang]['slug'], $lang);
-                }
-            }
-        }
+        // $blog_data = $this->getBlogFormData($request);
+        // $blog = Blog::create($blog_data);
+        //
+        // $image = $request->file('image');
+        // if ($image) $blog->image = $blog->uploadImage($image);
+        //
+        // // Asignar Categorías al blog
+        // BlogCategoryDetail::assignCategories($blog, $request->input('category'));
+        // if($blog->active){
+        //     foreach(Helper::getLanguages() as $lang){
+        //         if(!empty($blog_data[$lang])){
+        //             $blog->generateSitemap(OperationType::CREATE(), null, $blog_data[$lang]['slug'], $lang);
+        //         }
+        //     }
+        // }
 
         return redirect()->route('admin.blog.list')->with('success', 'El blog ha sido creado correctamente!');
     }
 
+    private function saveData (Blog $blog, Request $request, $new = false)
+    {
+        $blog->title = $request->input('title');
+        $blog->description = $request->input('description');
+        $blog->content = $request->input('content');
+        if ($new)
+        {
+            $blog->slug = $blog->assignSlug($blog->title);
+        }
+        $blog->seo_keywords = $request->input('seo_keywords');
+        $blog->seo_title = $request->input('seo_title');
+        $blog->seo_description = $request->input('seo_description');
+        $blog->save();
+
+        if ($request->file('image')) $blog->uploadImage($request->file('image'));
+
+        // Borrar categorías deseleccionadas y Asignar Categorías al blog
+        if (!$new)
+        {
+            BlogCategoryDetail::deleteCategories($blog, $request->input('category'));
+        }
+        BlogCategoryDetail::assignCategories($blog, $request->input('category'));
+    }
+
     public function edit($id)
     {
-        $languages = Helper::getLanguages();
         $blog = Blog::findOrFail($id);
         $categories = BlogCategory::all();
-        return view('admin.blogs.edit', compact('blog', 'languages', 'categories'));
+
+        return view('admin.blogs.edit', compact('blog', 'categories'));
     }
 
 
     public function do_edit(Request $request)
     {
         $blog = Blog::findOrFail($request->input('id'));
-        $old_translations = $blog->getTranslationsArray();
-        $blog_data = $this->getBlogFormData($request, $blog->id);
-        $blog->fill($blog_data);
-        $blog->save();
 
-        $image = $request->file('image');
-        if ($image)
-            $blog->uploadImage($image);
-
-        self::deleteRemovedTranslations($blog, $old_translations, $request, '_title');
-
-        // Borrar categorías deseleccionadas y Asignar Categorías al blog
-        BlogCategoryDetail::deleteCategories($blog, $request->input('category'));
-        BlogCategoryDetail::assignCategories($blog, $request->input('category'));
-
-        self::updateSitemap($blog, $old_translations, $blog_data);
+        $this->saveData($blog, $request);
 
         return redirect()->action('Admin\BlogController@list')->with('success', 'El blog ha sido modificado correctamente!');
     }
@@ -138,7 +154,11 @@ class BlogController extends Controller
         $request->validate(Blog::$rules, Blog::$rulesMessages);
     }
     //endregion Blogs
-    //region Blogs categories
+
+
+    /*
+    * Categorías
+    */
     public function listBlogCategories()
     {
         $categories = BlogCategory::whereNotNull('id');
@@ -149,67 +169,65 @@ class BlogController extends Controller
 
     public function createBlogCategory()
     {
-        $languages = Helper::getLanguages();
-        return view('admin.blogs.categories.create', compact('languages'));
+        return view('admin.blogs.categories.create');
     }
 
     public function do_createBlogCategory(Request $request)
     {
-        $category_data = array();
+        // $category_data = array();
+        //
+        // foreach(Helper::getLanguages() as $language){
+        //     $name = $request->input($language.'_name');
+        //     if(!empty($name)){
+        //         $category_data[$language] = [
+        //             'name' => $name,
+        //             'slug' => BlogCategory::assignSlug($name),
+        //             'title_seo' => $request->input($language.'_title_seo'),
+        //             'description_seo' => $request->input($language.'_description_seo'),
+        //             'keywords' => Helper::keywordsToString($request->input($language.'_keywords'))
+        //         ];
+        //     }
+        // }
+        // $category = BlogCategory::create($category_data);
+        //
+        // foreach (Helper::getLanguages() as $lang){
+        //     if(!empty($category_data[$lang]))
+        //         $category->generateSitemap(OperationType::CREATE(), null, $category_data[$lang]['slug'], $lang);
+        // }
 
-        foreach(Helper::getLanguages() as $language){
-            $name = $request->input($language.'_name');
-            if(!empty($name)){
-                $category_data[$language] = [
-                    'name' => $name,
-                    'slug' => BlogCategory::assignSlug($name),
-                    'title_seo' => $request->input($language.'_title_seo'),
-                    'description_seo' => $request->input($language.'_description_seo'),
-                    'keywords' => Helper::keywordsToString($request->input($language.'_keywords'))
-                ];
-            }
-        }
-        $category = BlogCategory::create($category_data);
-
-        foreach (Helper::getLanguages() as $lang){
-            if(!empty($category_data[$lang]))
-                $category->generateSitemap(OperationType::CREATE(), null, $category_data[$lang]['slug'], $lang);
-        }
+        $category = new BlogCategory;
+        $this->saveDataCategory($category, $request, true);
 
         return redirect()->route('admin.blog.category.list')->with('success', 'La categoria ha sido creada correctamente');
     }
 
+    private function saveDataCategory (BlogCategory $category, Request $request, $new=false)
+    {
+        $category->name = $request->input('name');
+        $category->description = $request->input('description');
+        if ($new)
+        {
+            $category->slug = $category->assignSlug($category->name);
+        }
+        $category->seo_title = $request->input('seo_title');
+        $category->seo_description = $request->input('seo_description');
+        $category->seo_keywords = $request->input('seo_keywords');
+
+        $category->save();
+    }
+
     public function editBlogCategory($id)
     {
-        $languages = Helper::getLanguages();
         $category = BlogCategory::findOrFail($id);
-        return view('admin.blogs.categories.edit', compact('category', 'languages'));
+
+        return view('admin.blogs.categories.edit', compact('category'));
     }
 
     public function do_editBlogCategory(Request $request)
     {
         $category = BlogCategory::findOrFail($request->input('id'));
-        $oldTranslations = $category->getTranslationsArray();
-        $category_data = array();
-        foreach(Helper::getLanguages() as $language){
-            $name = $request->input($language.'_name');
-            if($name){
-                $category_data[$language] = [
-                    'name' => $name,
-                    'slug' => BlogCategory::assignSlug($name, $category->id),
-                    'title_seo' => $request->input($language.'_title_seo'),
-                    'description_seo' => $request->input($language.'_description_seo'),
-                    'keywords' => Helper::keywordsToString($request->input($language.'_keywords'))
-                ];
-            }
-        }
 
-        self::deleteRemovedTranslations($category, $oldTranslations, $request, '_name');
-
-        $category->fill($category_data);
-        $category->save();
-
-        self::updateSitemap($category, $oldTranslations, $category_data);
+        $this->saveDataCategory($category, $request);
 
         return redirect()->route('admin.blog.category.list')->with('success', 'La categoria ha sido modificada correctamente');
     }
@@ -224,7 +242,9 @@ class BlogController extends Controller
 
         return redirect()->route('admin.blog.category.list')->with('success', 'La categoría ha sido borrada correctamente');
     }
-    //endregion Blogs Categories
+    /*
+    *   END Categorías
+    */
 
 
 }

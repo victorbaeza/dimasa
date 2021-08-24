@@ -48,14 +48,14 @@
                         <table class="table table-striped">
                             <thead>
                             <tr>
-                                <th>Número {!! Helper::orderColumns('name',$order_col,$order) !!}</th>
+                                <th>Número {!! Helper::orderColumn('name',$order_col,$order) !!}</th>
                                 <th>Estado</th>
                                 <th>Forma de pago</th>
-                                <th>Cliente {!! Helper::orderColumns('surname',$order_col,$order) !!}</th>
+                                <th>Cliente {!! Helper::orderColumn('surname',$order_col,$order) !!}</th>
                                 <th>Email</th>
-                                <th>Fecha {!! Helper::orderColumns('email',$order_col,$order) !!}</th>
+                                <th>Fecha {!! Helper::orderColumn('email',$order_col,$order) !!}</th>
                                 <th>Observaciones</th>
-                                <th>Total {!! Helper::orderColumns('active',$order_col,$order) !!}</th>
+                                <th>Total {!! Helper::orderColumn('active',$order_col,$order) !!}</th>
                                 <th>Acciones</th>
                             </tr>
                             </thead>

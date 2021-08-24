@@ -31,10 +31,10 @@
                           <thead>
                           <tr>
                               <th></th>
-                              <th>Usuario {!! Helper::orderColumns('user',$order_col,$order) !!}</th>
-                              <th>Nombre {!! Helper::orderColumns('name',$order_col,$order) !!}</th>
-                              <th>Email {!! Helper::orderColumns('email',$order_col,$order) !!}</th>
-                              <th>Estado {!! Helper::orderColumns('active',$order_col,$order) !!}</th>
+                              <th>Usuario {!! Helper::orderColumn('user',$order_col,$order) !!}</th>
+                              <th>Nombre {!! Helper::orderColumn('name',$order_col,$order) !!}</th>
+                              <th>Email {!! Helper::orderColumn('email',$order_col,$order) !!}</th>
+                              <th>Estado {!! Helper::orderColumn('active',$order_col,$order) !!}</th>
                               <th>Acciones</th>
                           </tr>
                           </thead>

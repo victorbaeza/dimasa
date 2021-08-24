@@ -32,10 +32,10 @@
                           <thead>
                           <tr>
                               <th>Id</th>
-                              <th>URL (sin incluir raíz) {!! Helper::orderColumns('loc',$order_col,$order) !!}</th>
+                              <th>URL (sin incluir raíz) {!! Helper::orderColumn('loc',$order_col,$order) !!}</th>
                               <th>Changefreq</th>
-                              <th>Priority {!! Helper::orderColumns('priority',$order_col,$order) !!}</th>
-                              <th>LastMod {!! Helper::orderColumns('lastmod',$order_col,$order) !!}</th>
+                              <th>Priority {!! Helper::orderColumn('priority',$order_col,$order) !!}</th>
+                              <th>LastMod {!! Helper::orderColumn('lastmod',$order_col,$order) !!}</th>
                               <th>Acciones</th>
                           </tr>
                           </thead>

@@ -18,37 +18,19 @@
               <div class="ibox-tools">
               </div>
           </div>
-          @include('shared.language_selector')
+
           <div class="ibox-content">
               <div class="form-group">
-                  <label class="required"><b>@lang('Titulo')</b></label>
-                  @foreach($languages as $lang)
-                      @if($loop->first)
-                          <input type="text" name="{{$lang}}_title" placeholder="@lang('Titulo del Blog')" class="form-control js-translatable" data-lang="{{$lang}}" value="{{old($lang.'_title')}}">
-                      @else
-                          <input type="text" name="{{$lang}}_title" placeholder="@lang('Titulo del Blog')" class="form-control d-none js-translatable"  data-lang="{{$lang}}" value="{{old($lang.'_title')}}">
-                      @endif
-                  @endforeach
+                  <label class="required"><b>Titulo</b></label>
+                  <input type="text" name="title" placeholder="Título del blog" class="form-control" value="{{ old('title') }}">
               </div>
               <div class="form-group">
-                  <label><b>@lang('Descripción')</b></label>
-                  @foreach($languages as $lang)
-                      @if($loop->first)
-                          <textarea name="{{$lang}}_description" class="form-control js-translatable" rows="2" style="resize:none;"  data-lang="{{$lang}}">{{old($lang.'_description')}}</textarea>
-                      @else
-                          <textarea name="{{$lang}}_description" class="form-control d-none js-translatable" rows="2" style="resize:none;"  data-lang="{{$lang}}">{{old($lang.'_description')}}</textarea>
-                      @endif
-                  @endforeach
+                  <label><b>Descripción</b></label>
+                  <textarea name="description" class="form-control" rows="2" style="resize:none;">{{ old('description') }}</textarea>
               </div>
               <div class="form-group">
-                  <label class="required"><b>@lang('Contenido')</b></label>
-                  @foreach($languages as $lang)
-                      @if($loop->first)
-                          <textarea name="{{$lang}}_content" class="form-control content js-translatable js-rich-text" rows="10"  data-lang="{{$lang}}">{{old($lang."_content")}}</textarea>
-                      @else
-                          <textarea name="{{$lang}}_content" class="form-control content d-none js-translatable js-rich-text" rows="10"  data-lang="{{$lang}}">{{old($lang."_content")}}</textarea>
-                      @endif
-                  @endforeach
+                  <label class="required"><b>Contenido</b></label>
+                  <textarea name="content" class="form-control content js-rich-text" rows="10">{{ old("content") }}</textarea>
               </div>
           </div>
           <br>
@@ -103,10 +85,7 @@
                   <div class="col-12">
                       <div class="form-group">
                           <label class="font-bold">Keywords</label>
-                          @foreach($languages as $lang)
-                              <select name="{{$lang}}_keywords[]" class="form-control js-select2-keywords  @if(!$loop->first) d-none @endif js-translatable" data-lang="{{$lang}}" multiple>
-                              </select>
-                          @endforeach
+                          <input type="text" name="seo_keywords" class="form-control" value="{{ old('seo_keywords') }}" placeholder="keyword 1, keyword 2, keyword 3...">
                       </div>
                   </div>
               </div>
@@ -114,10 +93,7 @@
                   <div class="col-12">
                       <div class="form-group">
                           <label class="font-bold">Título SEO</label>
-                          @foreach($languages as $lang)
-                              <input type="text" name="{{$lang}}_title_seo" class="form-control @if(!$loop->first) d-none @endif js-translatable" data-lang="{{$lang}}"
-                                     value="{{old($lang.'_title_seo')}}">
-                          @endforeach
+                          <input type="text" name="seo_title" class="form-control" value="{{ old('seo_title') }}">
                       </div>
                   </div>
               </div>
@@ -125,10 +101,7 @@
                   <div class="col-12">
                       <div class="form-group">
                           <label class="font-bold">Descripción SEO</label>
-                          @foreach($languages as $lang)
-                              <textarea name="{{$lang}}_description_seo" class="form-control @if(!$loop->first) d-none @endif js-translatable"
-                                        data-lang="{{$lang}}">{{old($lang.'_description_seo')}}</textarea>
-                          @endforeach
+                              <textarea name="seo_description" class="form-control">{{ old('seo_description') }}</textarea>
                       </div>
                   </div>
               </div>
@@ -160,8 +133,8 @@
 <script>
     $(function(){
         limitImageSize();
-        toggleLanguageInputs();
-        toggleKeywordsInput();
+        // toggleLanguageInputs();
+        // toggleKeywordsInput();
         $('.js-select2').select2();
     });
 </script>

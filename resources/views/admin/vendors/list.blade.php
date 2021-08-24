@@ -36,12 +36,12 @@
                           <thead>
                           <tr>
                               <th></th>
-                              <th>Nombre {!! Helper::orderColumns('name',$order_col,$order) !!}</th>
-                              <th>Empresa {!! Helper::orderColumns('company_name',$order_col,$order) !!}</th>
-                              <th>Email {!! Helper::orderColumns('email',$order_col,$order) !!}</th>
+                              <th>Nombre {!! Helper::orderColumn('name',$order_col,$order) !!}</th>
+                              <th>Empresa {!! Helper::orderColumn('company_name',$order_col,$order) !!}</th>
+                              <th>Email {!! Helper::orderColumn('email',$order_col,$order) !!}</th>
                               <th>Teléfono</th>
-                              <th>Contacto {!! Helper::orderColumns('contact_name',$order_col,$order) !!}</th>
-                              <th>Web {!! Helper::orderColumns('website',$order_col,$order) !!}</th>
+                              <th>Contacto {!! Helper::orderColumn('contact_name',$order_col,$order) !!}</th>
+                              <th>Web {!! Helper::orderColumn('website',$order_col,$order) !!}</th>
                               <th>Acciones</th>
                           </tr>
                           </thead>

@@ -24,7 +24,7 @@ class UserController extends Controller
 
         $order_col = $request->input('order_col');
         $order = $request->input('order');
-        $users = Helper::orderColumn($users, $order_col, $order, 'id', 'ASC');
+        $users = Helper::do_orderColumn($users, $order_col, $order, 'id', 'ASC');
 
         $users = $users->paginate(self::NUM_PAGED_RESULTS);
 
@@ -47,11 +47,11 @@ class UserController extends Controller
         $this->validateData($request);
 
         $user = new User;
+        $user->type_id = $request->input('type');
         $user->user = $request->input('user');
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->password = Hash::make($pwd);
-        $user->role = intval($request->input('role'));
 
         $picture = $request->file('picture');
         if ($picture) {
@@ -76,9 +76,9 @@ class UserController extends Controller
         $user = User::find($request->input('id'));
         $this->validateData($request, $user->id);
 
+        // $user->type = $request->input('type');
         $user->name = $request->input('name');
         $user->email = $request->input('email');
-        $user->role = intval($request->input('role'));
         $pwd = $request->input('pwd');
         $pwd2 = $request->input('pwd2');
         if (!empty($pwd) && !empty($pwd2)) {  //si no introduce contraseña es que no la quiere cambiar

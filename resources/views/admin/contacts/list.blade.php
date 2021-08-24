@@ -33,12 +33,12 @@
                       <table class="table table-striped">
                           <thead>
                           <tr>
-                              <th>Nombre {!! Helper::orderColumns('name',$order_col,$order) !!}</th>
-                              <th>Email {!! Helper::orderColumns('email',$order_col,$order) !!}</th>
+                              <th>Nombre {!! Helper::orderColumn('name',$order_col,$order) !!}</th>
+                              <th>Email {!! Helper::orderColumn('email',$order_col,$order) !!}</th>
                               <th>Teléfono</th>
-                              <th>Asunto {!! Helper::orderColumns('subject',$order_col,$order) !!}</th>
+                              <th>Asunto {!! Helper::orderColumn('subject',$order_col,$order) !!}</th>
                               <th>Mensaje</th>
-                              <th>Fecha {!! Helper::orderColumns('created_at',$order_col,$order) !!}</th>
+                              <th>Fecha {!! Helper::orderColumn('created_at',$order_col,$order) !!}</th>
                           </tr>
                           </thead>
                           <tbody>

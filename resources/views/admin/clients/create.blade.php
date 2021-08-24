@@ -7,7 +7,7 @@
 {{-- Content --}}
 @section('content')
 
-      <form method="POST" action="/admin/clients/create" enctype="multipart/form-data">
+      <form method="POST" action="{{ route('admin.client.do_create') }}" enctype="multipart/form-data">
         @csrf
 
 
@@ -57,17 +57,6 @@
                           <select class="form-control" name="professional" id="professional">
                             <option value="0">No</option>
                             <option value="1">Sí</option>
-                          </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group row d-none" data-commercial-block>
-                        <label class="col-lg-4 col-sm-4 col-form-label">Comercial Asignado</label>
-                        <div class="col-lg-6">
-                          <select name="commercial_id" class="form-control">
-                              @foreach($commercials as $commercial)
-                                  <option value="{{$commercial->id}}">{{$commercial->name}}</option>
-                              @endforeach
                           </select>
                         </div>
                     </div>

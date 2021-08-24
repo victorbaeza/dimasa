@@ -29,7 +29,7 @@ class ClientController extends Controller
 
         $order_col = $request->input('order_col');
         $order = $request->input('order');
-        $clients = Helper::orderColumn($clients, $order_col, $order, 'id', 'ASC');
+        $clients = Helper::do_orderColumn($clients, $order_col, $order, 'id', 'ASC');
 
         $clients = $clients->paginate(self::NUM_PAGED_RESULTS);
 
@@ -77,19 +77,7 @@ class ClientController extends Controller
         $client->save();
 
 
-        // $client_data = $request->all();
-        // if($request->has('professional'))
-        //     $client_data['professional'] = 1;
-        // if($request->has('active'))
-        //     $client_data['active'] = 1;
-        // $this->validateData($request);
-        // $client = new Client;
-        // $client->fill($client_data);
-        // $client->password = Hash::make($pwd);
-        // $client->save();
-
         return redirect()->action('Admin\ClientController@list')->with('success', 'El cliente ha sido creado correctamente');
-
     }
 
     public function edit($id)
@@ -139,28 +127,6 @@ class ClientController extends Controller
         }
 
         return redirect()->action('Admin\ClientController@list')->with('success', 'El cliente ha sido modificado correctamente!');
-
-
-        // $client = Client::findOrFail($request->input('id'));
-        // $this->validateData($request,$request->input('id'));
-        // $client_data = $request->all();
-        // if($request->has('professional'))
-        //     $client_data['professional'] = 1;
-        // if($request->has('active'))
-        //     $client_data['active'] = 1;
-        //
-        // $client->fill($client_data);
-        // $pwd = $request->input('pwd');
-        // $pwd2 = $request->input('pwd2');
-        // if ($pwd && $pwd2) {  //si no introduce contraseña es que no la quiere cambiar
-        //     if ($pwd == $pwd2)// Si introduce contraseña nueva y Si coinciden las contraseñas
-        //         $client->password = Hash::make($pwd);
-        //     else
-        //         return redirect()->back()->with('error', 'Las contraseñas introducidas no coinciden!');
-        // }
-        //
-        // $client->save();
-        // return redirect()->route('admin.client.list')->with('success', 'El cliente ha sido editado con éxito');
     }
 
     public function activate($id)
@@ -176,6 +142,7 @@ class ClientController extends Controller
         $client = Client::findOrFail($id);
         $client->active = 0;
         $client->save();
+        
         return redirect()->back()->with('success', 'El cliente ha sido desactivado con éxito!');
     }
 

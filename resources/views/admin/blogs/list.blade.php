@@ -31,10 +31,10 @@
                           <thead>
                           <tr>
                               <th>Id</th>
-                              <th>Titulo {!! Helper::orderColumns('title',$order_col,$order) !!}</th>
-                              <th>Descripcion {!! Helper::orderColumns('description',$order_col,$order) !!}</th>
-                              <th>Fecha {!! Helper::orderColumns('created_at',$order_col,$order) !!}</th>
-                              <th>Estado {!! Helper::orderColumns('active',$order_col,$order) !!}</th>
+                              <th>Titulo {!! Helper::orderColumn('title',$order_col,$order) !!}</th>
+                              <th>Descripcion {!! Helper::orderColumn('description',$order_col,$order) !!}</th>
+                              <th>Fecha {!! Helper::orderColumn('created_at',$order_col,$order) !!}</th>
+                              <th>Estado {!! Helper::orderColumn('active',$order_col,$order) !!}</th>
                               <th>Acciones</th>
                           </tr>
                           </thead>
@@ -68,7 +68,7 @@
 
                   @if ($blogs->hasMorePages() || $blogs->lastPage())
                   <div class="row">
-                      <?php echo $blogs->appends(['q' => $q])->render(); ?>
+                      {{ $blogs->appends( Request::except('page') )->links() }}
                   </div>
                   @endif
 

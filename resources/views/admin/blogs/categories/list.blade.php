@@ -16,7 +16,7 @@
                   <div class="row">
                   </div>
                   <div class="float-right">
-                    <a href="/admin/blogs/categories/create" class="btn btn-sm btn-primary"><i class="fa fa-check-square-o"></i> Crear Nuevo</a>
+                    <a href="{{ route('admin.blog.category.create') }}" class="btn btn-sm btn-primary"><i class="fa fa-check-square-o"></i> Crear Nuevo</a>
                   </div>
                   <div class="table-responsive">
                       <table class="table table-striped">
@@ -48,7 +48,7 @@
 
                   @if ($categories->hasMorePages() || $categories->lastPage())
                   <div class="row">
-                      <?php echo $categories->render(); ?>
+                      {{ $categories->appends( Request::except('page') )->links() }}
                   </div>
                   @endif
               </div>

@@ -33,10 +33,10 @@
                         <table class="table table-striped">
                             <thead>
                             <tr>
-                                <th>Número {!! Helper::orderColumns('name',$order_col,$order) !!}</th>
-                                <th>Cliente {!! Helper::orderColumns('surname',$order_col,$order) !!}</th>
-                                <th>Fecha {!! Helper::orderColumns('email',$order_col,$order) !!}</th>
-                                <th>Total {!! Helper::orderColumns('total',$order_col,$order) !!}</th>
+                                <th>Número {!! Helper::orderColumn('name',$order_col,$order) !!}</th>
+                                <th>Cliente {!! Helper::orderColumn('surname',$order_col,$order) !!}</th>
+                                <th>Fecha {!! Helper::orderColumn('email',$order_col,$order) !!}</th>
+                                <th>Total {!! Helper::orderColumn('total',$order_col,$order) !!}</th>
                                 <th>Acciones</th>
                             </tr>
                             </thead>

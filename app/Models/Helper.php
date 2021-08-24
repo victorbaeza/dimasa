@@ -48,7 +48,7 @@ class Helper
 
 
     // Función para mostrar los botones para ordenar la columna
-    public static function orderColumns($tabla, $columna, $orden)
+    public static function orderColumn($tabla, $columna, $orden)
     {
         if ($tabla == $columna) {
             switch ($orden) {
@@ -72,15 +72,13 @@ class Helper
     }
 
     // Función para ordenar cualquier colección (ordenar una query)
-    public static function orderColumn($collection, $order_col, $order, $default_col = 'id', $default_order = 'DESC', $hasTranslations = false): \Illuminate\Database\Eloquent\Builder
+    public static function do_OrderColumn($coleccion,$order_col,$order,$default_col='id',$default_order='DESC')
     {
-        if ($hasTranslations) {
-            return $order_col && $order
-                ? $collection->orderByTranslation($order_col, $order)
-                : $collection->orderByTranslation($default_col, $default_order);
-        }
-
-        return $order_col && $order ? $collection->orderBy($order_col, $order) : $collection->orderBy($default_col, $default_order);
+      if($order_col && $order){
+        return $coleccion->orderBy($order_col,$order);
+      } else {
+        return $coleccion->orderBy($default_col,$default_order);
+      }
     }
 
 

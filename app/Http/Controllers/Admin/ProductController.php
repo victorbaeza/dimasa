@@ -27,66 +27,80 @@ class ProductController extends Controller
 
         $q = $request->input('q');
         if (!empty($q)) {
-            $products = $products->whereTranslationLike('name','%'.$q.'%');
+            $products = $products->where('products.name', 'LIKE', '%' .$q. '%')->orWhere('products.sku', 'LIKE', '%' .$q. '%');
         }
 
         $order_col = $request->input('order_col');
         $order = $request->input('order');
-        $hasTranslations =  in_array(Product::$staticTranslatedAttributes, array($order_col));
-        $products = Helper::orderColumn($products, $order_col, $order, 'id', 'ASC',$hasTranslations);
+
+        $products = Helper::do_orderColumn($products, $order_col, $order, 'id', 'ASC');
 
         $products = $products->paginate(self::NUM_PAGED_RESULTS);
+
         return view('admin.products.list', compact('products', 'q', 'order_col', 'order'));
     }
 
     public function create(){
-        $languages = Helper::getLanguages();
         $categories = ProductCategory::getChildrenCategories()->get();
-        return view('admin.products.create', compact('languages', 'categories'));
+
+        return view('admin.products.create', compact('categories'));
     }
 
-    public function do_create(Request $request){
-        $product_data = $this->getProductData($request);
-        $product = Product::create($product_data);
-
-        $this->uploadProductAttachments($request,$product,false);
-
-        foreach(Helper::getLanguages() as $lang){
-            if(!empty($product_data[$lang])){
-                $product->generateSitemap(OperationType::CREATE(), null, $product_data[$lang]['slug'], $lang);
-            }
-        }
+    public function do_create(Request $request)
+    {
+        $product = new Product;
+        $this->saveData($product, $request, true);
 
         return redirect()->route('admin.products.list')->with('success', 'El producto ha sido creado correctamente');
     }
 
-    public function edit(int $id){
-        $languages = Helper::getLanguages();
-        $categories = ProductCategory::getChildrenCategories()->get();
-        $product = Product::findOrFail($id);
-        return view('admin.products.edit', compact('languages', 'categories', 'product'));
+    private function saveData(Product $product, Request $request, $new=false)
+    {
+        $product->category_id = $request->input('category_id');
+        $product->brand_id = $request->input('brand_id');
+        $product->name = $request->input('name');
+        $product->buy_price = $request->input('buy_price');
+        $product->price_comparison = $request->input('price_comparison');
+        $product->price = $request->input('price');
+        $product->VAT = $request->input('VAT');
+        // $product->discount = $request->input('discount');
+        $product->stock = $request->input('stock');
+        $product->sku = $request->input('sku');
+        $product->ean_code = $request->input('ean_code');
+        $product->reference = $request->input('reference');
+
+        // Campos para el front
+        $product->slug = $product->assignSlug();
+        $product->seo_title = $request->input('seo_title');
+        $product->seo_description = $request->input('seo_description');
+        $product->seo_keywords = $request->input('seo_keywords');
+
+        if ($request->hasFile('image'))
+            $product->uploadImage($request->file('image'));
+
+        // if ($new)
+        // {
+        //     $product->slug = $product->assignSlug();
+        // }
+
+        $product->save();
     }
 
-    public function do_edit(Request $request, int $id){
+
+    public function edit($id)
+    {
         $product = Product::findOrFail($id);
-        $oldTranslations = $product->getTranslationsArray();
-        $productData = $this->getProductData($request, $id);
-        $product->fill($productData);
 
-        // dd($request->all());
+        return view('admin.products.edit', compact('product'));
+    }
 
-        $this->updateProductChildren($product, $request);
+    public function do_edit(Request $request)
+    {
+        $product = Product::findOrFail($request->id);
 
-        // $this->updateProductRates($product, $request);
-
-        $this->uploadProductAttachments($request,$product, false);
-
-        self::deleteRemovedTranslations($product, $oldTranslations, $request, '_name');
-
-        self::updateSitemap($product, $oldTranslations, $productData);
+        $this->saveData($product, $request);
 
         return redirect()->back()->with('success', 'El producto ha sido modificado correctamente');
-        // return redirect()->route('admin.products.list')->with('success', 'El producto ha sido modificado correctamente');
     }
 
     public function delete(Request $request, int $id){
@@ -108,41 +122,6 @@ class ProductController extends Controller
         $product_rate->delete();
 
         return redirect()->back()->with('success', 'La tarifa ha sido eliminada correctamente!');
-    }
-
-    private function getProductData(Request $request, int $id = 0){
-        $product_data = [
-            'price' => floatval($request->input('price')),
-            'ean_code' => floatval($request->input('ean_code')),
-            'category_id' => $request->input('category'),
-            'VAT' => floatval($request->input('VAT')),
-            'box_quantity' => $request->input('box_quantity'),
-            'weight' => floatval($request->input('weight')),
-            'enterprise' => intval($request->input('enterprise'))
-        ];
-
-        $this->validateProduct($request, $id === 0);
-        foreach (Helper::getLanguages() as $language){
-            $name = $request->input($language.'_name');
-            if($name){
-                $this->validateProductTranslation($request,$language);
-                $product_data[$language] = [
-                    'name' => $name,
-                    'description' => $request->input($language.'_description'),
-                    'unit_name' => $request->input($language.'_unit_name'),
-                    'long_description' => $request->input($language.'_long_description'),
-                    'data_sheet_text' => $request->input($language.'_data_sheet_text'),
-                    'tests_text' => $request->input($language.'_tests_text'),
-                    'certification_text' => $request->input($language.'_certification_text'),
-                    'slug' => Product::assignSlug($name, $id),
-                    'title_seo' => $request->input($language.'_title_seo'),
-                    'description_seo' => $request->input($language.'_description_seo'),
-                    'keywords' => Helper::keywordsToString($request->input($language.'_keywords'))
-                ];
-            }
-        }
-
-        return $product_data;
     }
 
 
@@ -270,75 +249,73 @@ class ProductController extends Controller
         $request->validate($isCreate ? Product::$rulesCreate : Product::$rulesEdit, Product::$rulesMessages);
     }
 
-    //endregion Product
+    /*
+    * END Productos
+    /
 
-    //region Product Category
-    public function listCategories(Request $request){
+    /*
+    * Categorías
+    */
+    public function listCategories(Request $request)
+    {
         $categories = ProductCategory::query();
         $q = $request->input('q');
-        if (!empty($q)) {
-            $categories = $categories->whereTranslationLike('name','%'.$q.'%');
-        }
+
+        if ($q) $categories = $categories->where('name', 'LIKE', '%' .$q. '%')->orWhere('description', 'LIKE', '%' .$q. '%');
 
         $order_col = $request->input('order_col');
         $order = $request->input('order');
-        $categories = Helper::orderColumn($categories, $order_col, $order, 'id', 'ASC',true);
-        $categories = $categories->paginate(self::NUM_PAGED_RESULTS);
+        $categories = Helper::do_orderColumn($categories, $order_col, $order, 'id', 'DESC');
+
+        $categories = $categories->paginate(Helper::NUM_PAGED_RESULTS);
+
         return view('admin.products.categories.list', compact('categories', 'q', 'order_col', 'order'));
-
     }
 
-    public function createCategory(){
-        $languages = Helper::getLanguages();
-        $parent_categories = ProductCategory::getParentCategories()->get();
-        return view('admin.products.categories.create', compact('languages', 'parent_categories'));
+    public function createCategory()
+    {
+        return view('admin.products.categories.create');
     }
 
-    public function do_createCategory(Request $request){
-        $this->validateCategory($request);
-        $category_data = $this->getCategoryData($request);
-        $category = ProductCategory::create($category_data);
+    public function do_createCategory(Request $request)
+    {
+        $category = new ProductCategory;
+        $this->saveDataCategory($category, $request, true);
 
-        if($request->hasFile('photo_principal')){
-            $category->uploadImagePrincipal($request->file('photo_principal'),false);
-            $category->save();
-        }
-
-        foreach(Helper::getLanguages() as $lang){
-            if(!empty($category_data[$lang])){
-                $category->generateSitemap(OperationType::CREATE(), null, $category_data[$lang]['slug'], $lang);
-            }
-        }
-
-
-        return redirect()->route('admin.products.categories.list')->with('success', 'La categoría ha sido creada correctamente');
+        return redirect()->action('ProductsController@listCategories')->with('success', 'La categoría de producto ha sido creado correctamente');
     }
 
-    public function editCategory(int $id){
-        $languages = Helper::getLanguages();
-        $category = ProductCategory::findOrFail($id);
-        $parent_categories = ProductCategory::getParentCategories()->where('id', '!=', $id)->get();
+    private function saveDataCategory(ProductCategory $category, Request $request, $new=false)
+    {
 
-        return view('admin.products.categories.edit',compact('languages','category','parent_categories'));
-    }
+        $category->name = $request->input('name');
+        $category->description = $request->input('description');
+        $category->parent_id = $request->input('parent_id');
 
-    public function do_editCategory(Request $request, int $id){
-        $category = ProductCategory::findOrFail($id);
-        $oldTranslations = $category->getTranslationsArray();
-        $category_data = $this->getCategoryData($request, $id);
-        $category->fill($category_data);
-
-        if($request->hasFile('photo_principal')){
-            $category->uploadImagePrincipal($request->file('photo_principal'),true);
-        }
+        // Campos del front
+        $category->slug = $category->assignSlug($category->name);
+        $category->seo_title = $request->input('seo_title');
+        $category->seo_description = $request->input('seo_description');
+        $category->seo_keywords = $request->input('seo_keywords');
 
         $category->save();
 
-        self::deleteRemovedTranslations($category, $oldTranslations, $request, '_name');
+    }
 
-        self::updateSitemap($category, $oldTranslations, $category_data);
+    public function editCategory($id)
+    {
+        $category = ProductCategory::findOrFail($id);
 
-        return redirect()->route('admin.products.categories.list')->with('success', 'La categoría ha sido modificada correctamente');
+        return view('admin.products.categories.edit', compact('category'));
+    }
+
+    public function do_editCategory(Request $request)
+    {
+        $category = ProductCategory::findOrFail($request->id);
+
+        $this->saveDataCategory($category, $request);
+
+        return redirect()->back()->with('success', 'La categoría de producto ha sido modificado correctamente');
     }
 
     public function deleteCategory(Request $request, int $id){
@@ -352,32 +329,6 @@ class ProductController extends Controller
         return redirect()->route('admin.products.categories.list')->with('success', 'La categoría ha sido borrada correctamente');
     }
 
-
-    private function getCategoryData(Request $request, int $id = 0) : array{
-        $category_data = [
-            'parent_id' => $request->input('parent_id')
-        ];
-        foreach (Helper::getLanguages() as $language){
-            $name = $request->input($language.'_name');
-            if($name){
-                $this->validateCategoryTranslation($request,$language);
-                $category_data[$language] = [
-                    'name' => $name,
-                    'description' => $request->input($language.'_description'),
-                    'slug' => ProductCategory::assignSlug($name, $id),
-                    'title_seo' => $request->input($language.'_title_seo'),
-                    'description_seo' => $request->input($language.'_description_seo'),
-                    'keywords' => Helper::keywordsToString($request->input($language.'_keywords'))
-                ];
-            }
-        }
-
-        return $category_data;
-    }
-
-    private function validateCategoryTranslation(Request $request,string $language){
-        $request->validate(ProductCategory::rulesByLanguage($language), ProductCategory::rulesMessagesByLanguage($language));
-    }
 
     private function validateCategory(Request $request)
     {
@@ -398,7 +349,7 @@ class ProductController extends Controller
 
         $order_col = $request->input('order_col');
         $order = $request->input('order');
-        $brands = Helper::do_OrderColumn($brands, $order_col, $order, 'id', 'DESC');
+        $brands = Helper::do_do_orderColumn($brands, $order_col, $order, 'id', 'DESC');
 
         $brands = $brands->paginate(Helper::NUM_PAGED_RESULTS);
 
@@ -460,16 +411,16 @@ class ProductController extends Controller
         $offers = ProductOffer::query();
         $order_col = $request->input('order_col');
         $order = $request->input('order');
-        $offers = Helper::orderColumn($offers,$order_col,$order);
+        $offers = Helper::do_orderColumn($offers,$order_col,$order);
         $offers = $offers->paginate(self::NUM_PAGED_RESULTS);
 
         return view('admin.products.offers.list', compact('offers', 'order_col', 'order'));
     }
 
     public function createOffer(){
-        $languages = Helper::getLanguages();
         $categories = ProductCategory::getParentCategories()->get();
-        return view('admin.products.offers.create', compact('languages', 'categories'));
+
+        return view('admin.products.offers.create', compact('categories'));
     }
 
     public function do_createOffer(Request $request){

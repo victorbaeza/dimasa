@@ -33,7 +33,7 @@ class VendorController extends Controller
 
         $order_col = $request->input('order_col');
         $order = $request->input('order');
-        $vendors = Helper::orderColumn($vendors, $order_col, $order, 'id', 'DESC');
+        $vendors = Helper::do_orderColumn($vendors, $order_col, $order, 'id', 'DESC');
 
         $vendors = $vendors->paginate(self::NUM_PAGED_RESULTS);
 
@@ -102,7 +102,7 @@ class VendorController extends Controller
 
         $order_col = $request->input('order_col');
         $order = $request->input('order');
-        $payment_forms = Helper::orderColumn($payment_forms, $order_col, $order, 'id', 'DESC');
+        $payment_forms = Helper::do_orderColumn($payment_forms, $order_col, $order, 'id', 'DESC');
 
         $payment_forms = $payment_forms->paginate(Helper::NUM_PAGED_RESULTS);
 
