@@ -50,7 +50,7 @@
 @stop
 {{-- Content --}}
 @section('content')
-<div class="shop-boxed-banner banner pb-7 pt-7" style="background-image: url('/images/descargas.jpg');height: 300px;background-position: 100% 60%;">
+<div class="shop-boxed-banner banner pb-7 pt-7" style="background-image: url('/images/descargas.jpg');height: 250px;background-position: 100% 60%;">
 </div>
 
 <section id="search-section" class="mb-10">

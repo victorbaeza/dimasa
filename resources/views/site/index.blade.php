@@ -521,42 +521,42 @@
           <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1381px;">
             <div class="owl-item active" style="width: 197.143px;">
               <figure class="pl-5 pr-5 pb-5 pt-5">
-                <img src="images/brand1.png" alt="Brand" width="197" height="93">
+                <img src="images/brands/brand1.png" alt="Brand" width="197" height="93">
               </figure>
             </div>
             <div class="owl-item active" style="width: 197.143px;">
               <figure class="pl-5 pr-5 pt-5 pb-5">
-                <img src="images/brand2.png" alt="Brand" width="213" height="100">
+                <img src="images/brands/brand2.png" alt="Brand" width="213" height="100">
               </figure>
             </div>
             <div class="owl-item active" style="width: 197.143px;">
               <figure class="pl-5 pr-5 pt-5 pb-5">
-                <img src="images/brand3.png" alt="Brand" width="213" height="100">
+                <img src="images/brands/brand3.png" alt="Brand" width="213" height="100">
               </figure>
             </div>
             <div class="owl-item active" style="width: 197.143px;">
               <figure class="pl-5 pr-5 pt-5 pb-5">
-                <img src="images/brand4.png" alt="Brand" width="213" height="100">
+                <img src="images/brands/brand4.png" alt="Brand" width="213" height="100">
               </figure>
             </div>
             <div class="owl-item active" style="width: 197.143px;">
               <figure class="pl-5 pr-5 pt-5 pb-5">
-                <img src="images/brand5.png" alt="Brand" width="213" height="100">
+                <img src="images/brands/brand5.png" alt="Brand" width="213" height="100">
               </figure>
             </div>
             <div class="owl-item active" style="width: 197.143px;">
               <figure class="pl-5 pr-5 pt-5 pb-5">
-                <img src="images/brand6.png" alt="Brand" width="213" height="100">
+                <img src="images/brands/brand6.png" alt="Brand" width="213" height="100">
               </figure>
             </div>
             <div class="owl-item active" style="width: 197.143px;">
               <figure class="pl-5 pr-5 pt-5 pb-5">
-                <img src="images/brand7.png" alt="Brand" width="213" height="100">
+                <img src="images/brands/brand7.png" alt="Brand" width="213" height="100">
               </figure>
             </div>
             <div class="owl-item active" style="width: 197.143px;">
               <figure class="pl-5 pr-5 pt-5 pb-5">
-                <img src="images/brand8.png" alt="Brand" width="213" height="100">
+                <img src="images/brands/brand8.png" alt="Brand" width="213" height="100">
               </figure>
             </div>
           </div>

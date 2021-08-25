@@ -10575,8 +10575,7 @@ aside+div .product-single .product-details {
 
 .nav-tabs {
   display: flex;
-  flex-wrap: wrap;
-  border-bottom: 1px solid #ebebeb
+  flex-wrap: wrap;  
 }
 
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-item .nav-link.active, .nav-tabs .nav-item:hover .nav-link {
@@ -16310,15 +16309,21 @@ section .nav-item .nav-link {
   margin-bottom: 1rem;
   font-size: 1.3rem;
   text-transform: uppercase;
-  border: 1px solid #ccc;
   border-radius: .3rem;
   color: #222;
   letter-spacing: -.025em
 }
 
+section .nav-item .nav-link:not(.nav-link-product){
+    border: 1px solid #ccc;
+}
+
 section .nav-item .nav-link:hover, section .nav-item .nav-link.active {
   color: #00377A !important;
-  border-color: #00377A
+}
+
+section .nav-item .nav-link:not(.nav-link-product):hover, section .nav-item .nav-link.active:not(.nav-link-product) {
+    border-color: #00377A
 }
 
 section .nav-item:not(:last-child) {
@@ -16998,7 +17003,7 @@ section .nav-item:not(:last-child) {
 
 #brands-header{
   height: 130px;
-  background-position: 100% 70%;
+  background-position: 100% 68%;
 }
 
 .page-header h1{
@@ -17021,14 +17026,7 @@ section .nav-item:not(:last-child) {
 }
 
 #clients .clients-wrap {
-  border-top: 1px solid #d6eaff;
-  border-left: 1px solid #d6eaff;
   margin-bottom: 30px
-}
-
-#clients .clients-wrap > div {
-border-right: 1px solid #d6eaff;
-border-bottom: 1px solid #d6eaff;
 }
 
 #clients .client-logo {

@@ -5,11 +5,13 @@
 @stop
 {{-- Content --}}
 @section('content')
-  <section id="clients" class="section-bg pt-0">
-    <div class="page-header pl-4 pr-4 mb-5" id="brands-header" alt="Marcas de Dimasa - Foto de Negocios creado por pressfoto - www.freepik.es" style="background-image: url(images/marcas.jpg)">
-      <div class="container">
-        <h1 class="page-title lh-1 text-left">Marcas con las que trabajamos</h1>
-      </div>
+  <section id="clients" class="section-bg pt-0">      
+      <div class="shop-boxed-banner banner mb-8 mb-lg-7 pb-7 pt-7" id="brands-header" title="Marcas de Dimasa - Foto de Negocios creado por pressfoto - www.freepik.es" style="background-image: url('/images/marcas.jpg'); background-color: #ECEDEF;">
+        <div class="banner-content container">
+          <!-- <h2 class="banner-subtitle font-weight-semi-bold ls-m text-uppercase text-secondary mb-3">
+            NUESTRAS ÚLTIMAS</h2> -->
+          <h1 class="banner-title font-weight-bold text-primary ls-m mb-0">MARCAS CON LAS QUE TRABAJAMOS</h1>
+        </div>
       </div>
       <div class="container">
         <div class="row">
@@ -79,25 +81,25 @@
             <hr>
             <div class="row no-gutters clients-wrap clearfix wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
                 <div class="col-lg-2 col-md-4 col-xs-6">
-                    <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="https://www.genebre.es/templates/public/default/img/logo.jpg" class="img-fluid" alt=""> </div></a>
+                    <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="images/brands/brand1.png" class="img-fluid" alt=""> </div></a>
                 </div>
                 <div class="col-lg-2 col-md-4 col-xs-6">
-                    <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="https://www.mediclinics.es/img/mdccom-logo-1539083892.jpg" class="img-fluid" alt=""> </div></a>
+                    <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="images/brands/brand2.png" class="img-fluid" alt=""> </div></a>
                 </div>
                 <div class="col-lg-2 col-md-4 col-xs-6">
-                    <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="https://www.cvtechvac.com/wp-content/uploads/2020/07/logo-cvtech.png" class="img-fluid" alt=""> </div></a>
+                    <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="images/brands/brand3.png" class="img-fluid" alt=""> </div></a>
                 </div>
                 <div class="col-lg-2 col-md-4 col-xs-6">
-                    <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="http://www.domingorepresentative.com/wp-content/uploads/2019/04/DR-Logo-3rd-Apr.png" class="img-fluid" alt=""> </div></a>
+                    <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="images/brands/brand4.png" class="img-fluid" alt=""> </div></a>
                 </div>
                 <div class="col-lg-2 col-md-4 col-xs-6">
-                    <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="https://www.productosqp.com/pub/media/theme_options/default/logo_productos_qp.png" class="img-fluid" alt=""> </div></a>
+                    <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="images/brands/brand5.png" class="img-fluid" alt=""> </div></a>
                 </div>
                 <div class="col-lg-2 col-md-4 col-xs-6">
-                    <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="https://termat.es/assets/img/logo/termat.png" class="img-fluid" alt=""> </div></a>
+                    <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="images/brands/brand6.png" class="img-fluid" alt=""> </div></a>
                 </div>
                 <div class="col-lg-2 col-md-4 col-xs-6">
-                    <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="https://korman.com.es/assets/img/logo/korman.png" class="img-fluid" alt=""> </div></a>
+                    <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="images/brands/brand7.png" class="img-fluid" alt=""> </div></a>
                 </div>
             </div>
           </div>

@@ -16,7 +16,7 @@
             <div class="container">
               <h1 class="text-center mb-5">¿Quiénes somos?</h1>
               <p class="text-center">
-                  En Dimasa contamos con una  experiencia en la distribución y comercialización de productos del sector de la construcción, aportando soluciones a nuestros clientes. Hoy día, Dimasa es uno de los referentes en la distribución y comercialización de material de instalación de la provincia de Mólaga, ofreciendo soluciones personalizadas a nuestros clientes: los profesionales. Tras 22 años en el sector, hemos madurado y profesionalizado nuestra empresa, puliendo cada detalle para facilitar y mejorar la experiencia de compra de nuestros clientes.
+                  En Dimasa contamos con una  experiencia en la distribución y comercialización de productos del sector de la construcción, aportando soluciones a nuestros clientes. Hoy día, Dimasa es uno de los referentes en la distribución y comercialización de material de instalación de la provincia de Málaga, ofreciendo soluciones personalizadas a nuestros clientes: los profesionales. Tras 22 años en el sector, hemos madurado y profesionalizado nuestra empresa, puliendo cada detalle para facilitar y mejorar la experiencia de compra de nuestros clientes.
               </p>
             </div>
         </section>
@@ -29,14 +29,14 @@
 
           <div class="tl-item">
 
-            <div class="tl-bg" style="background-image: url(https://placeimg.com/801/801/nature)"></div>
+            <div class="tl-bg" style="background-image: url(images/about/empresa_1996.jpg)"></div>
 
             <div class="tl-year">
               <p class="f2 heading--sanSerif">1996</p>
             </div>
 
             <div class="tl-content">
-              <p>Dimasa se crea en Máaga en 1996, su fundador Juan José Martín, fue durante varios años delegado de la importante firma de saneamientos TERRAIN SDP. En esta fecha Terrain decide dejar la delegación propia y confiar la distribución en exclusiva para Máaga y provincia a Saneamientos Dimasa.</p>
+              <p>Dimasa se crea en Málaga en 1996, su fundador Juan José Martín, fue durante varios años delegado de la importante firma de saneamientos TERRAIN SDP. En esta fecha Terrain decide dejar la delegación propia y confiar la distribución en exclusiva para Málaga y provincia a Saneamientos Dimasa.</p>
             </div>
 
           </div>

@@ -11,7 +11,7 @@
         NUESTRAS ÚLTIMAS</h2> -->
       <h1 class="banner-title font-weight-bold text-primary ls-m mb-0">NOTICIAS</h1>
     </div>
-            </div>
+  </div>
   <div class="container">
 
                 <div class="row gutter-lg">

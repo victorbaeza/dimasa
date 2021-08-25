@@ -96,7 +96,7 @@
           <div class="row cols-xl-5 cols-lg-6 cols-md-4 cols-sm-3 cols-2">
 
               <div class="category category-absolute category-classic mb-5">
-                  <a href="subcategoria.html">
+                  <a href="{{ route('products.category_products') }}">
                       <figure class="category-media">
                           <img src="/images/categoria1.png" alt="Cateogry" width="280" height="280">
                       </figure>
@@ -107,7 +107,7 @@
                   </a>
               </div>
               <div class="category category-absolute category-classic mb-5">
-                  <a href="subcategoria.html">
+                  <a href="{{ route('products.category_products') }}">
                       <figure class="category-media">
                           <img src="/images/categoria2.png" alt="Cateogry" width="280" height="280">
                       </figure>
@@ -118,7 +118,7 @@
                   </a>
               </div>
               <div class="category category-absolute category-classic mb-5">
-                  <a href="subcategoria.html">
+                  <a href="{{ route('products.category_products') }}">
                       <figure class="category-media">
                           <img src="/images/categoria3.png" alt="Cateogry" width="280" height="280">
                       </figure>
@@ -129,7 +129,7 @@
                   </a>
               </div>
               <div class="category category-absolute category-classic mb-5">
-                  <a href="subcategoria.html">
+                  <a href="{{ route('products.category_products') }}">
                       <figure class="category-media">
                           <img src="/images/categoria4.png" alt="Cateogry" width="280" height="280">
                       </figure>
@@ -140,7 +140,7 @@
                   </a>
               </div>
               <div class="category category-absolute category-classic mb-5">
-                  <a href="subcategoria.html">
+                  <a href="{{ route('products.category_products') }}">
                       <figure class="category-media">
                           <img src="/images/categoria5.png" alt="Cateogry" width="280" height="280">
                       </figure>
@@ -151,7 +151,7 @@
                   </a>
               </div>
               <div class="category category-absolute category-classic mb-5">
-                  <a href="subcategoria.html">
+                  <a href="{{ route('products.category_products') }}">
                       <figure class="category-media">
                           <img src="/images/categoria6.png" alt="Cateogry" width="280" height="280">
                       </figure>

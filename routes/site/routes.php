@@ -38,11 +38,11 @@ Route::get('/descargas', function(){ return view('site.downloads'); })->name('si
 
 // Store / Products
 Route::get('/catalogo/fontaneria', 'ProductController@getProductsCategory')->name('products.category');
-Route::get('/catalogo/fontaneria/productos', 'ProductController@showCategoryProducts')->name('products.category_products');
-Route::get('/productos/producto', 'ProductController@showProduct')->name('products.product');
-Route::prefix('products')->group(function(){
-    Route::get('/{slug}/', [ProductController::class, 'show'])->name('product.show');
-});
+Route::get('/catalogo/fontaneria/productos', 'ProductController@showProductList')->name('products.category_products');
+Route::get('/productos/producto', 'ProductController@show')->name('products.product');
+// Route::prefix('products')->group(function(){
+//     Route::get('/{slug}/', [ProductController::class, 'show'])->name('product.show');
+// });
 
 //Cart
 Route::prefix('cart')->group(function(){
