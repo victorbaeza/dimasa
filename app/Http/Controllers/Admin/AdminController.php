@@ -148,7 +148,7 @@ class AdminController extends Controller
 
         $order_col = $request->input('order_col');
         $order = $request->input('order');
-        $contacts = Helper::orderColumn($contacts, $order_col, $order, 'id', 'DESC');
+        $contacts = Helper::do_orderColumn($contacts, $order_col, $order, 'id', 'DESC');
 
         $contacts = $contacts->paginate(self::NUM_PAGED_RESULTS);
 

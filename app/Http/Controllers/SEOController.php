@@ -43,7 +43,7 @@ class SEOController extends Controller{
 
     $order_col = $request->input('order_col');
     $order = $request->input('order');
-    $sitemaps = Helper::orderColumn($sitemaps,$order_col,$order,'lastmod','DESC');
+    $sitemaps = Helper::do_orderColumn($sitemaps,$order_col,$order,'lastmod','DESC');
 
     $sitemaps = $sitemaps->paginate(self::NUM_PAGED_RESULTS);
 

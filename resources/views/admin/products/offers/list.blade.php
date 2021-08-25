@@ -20,10 +20,10 @@
                         <table class="table table-striped">
                             <thead>
                             <tr>
-                                <th>ID {!! Helper::orderColumns('id',$order_col,$order) !!}</th>
-                                <th>Fecha Inicio {!! Helper::orderColumns('start_date',$order_col,$order) !!}</th>
-                                <th>Fecha Fin {!! Helper::orderColumns('end_date',$order_col,$order) !!}</th>
-                                <th>Descuento {!! Helper::orderColumns('discount',$order_col,$order) !!}</th>
+                                <th>ID {!! Helper::orderColumn('id',$order_col,$order) !!}</th>
+                                <th>Fecha Inicio {!! Helper::orderColumn('start_date',$order_col,$order) !!}</th>
+                                <th>Fecha Fin {!! Helper::orderColumn('end_date',$order_col,$order) !!}</th>
+                                <th>Descuento {!! Helper::orderColumn('discount',$order_col,$order) !!}</th>
                                 <th>Acciones</th>
                             </tr>
                             </thead>

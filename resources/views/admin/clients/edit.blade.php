@@ -62,17 +62,6 @@
                         </div>
                     </div>
 
-                    <div class="form-group row @if(!$client->professional) d-none @endif" data-commercial-block>
-                        <label class="col-lg-4 col-sm-4 col-form-label">Comercial Asignado</label>
-                        <div class="col-lg-6">
-                          <select name="commercial_id" class="form-control">
-                              @foreach($commercials as $commercial)
-                                  <option value="{{$commercial->id}}" @if($client->commercial_id==$commercial->id) selected @endif>{{$commercial->name}}</option>
-                              @endforeach
-                          </select>
-                        </div>
-                    </div>
-
                     <hr>
 
                     <button  type="button" data-toggle="collapse" data-target="#passwordZone" class="btn btn-primary">Modificar contraseña</button>

@@ -43,7 +43,7 @@ class OrderController extends Controller
 
         $order_col = $request->input('order_col');
         $order = $request->input('order');
-        $orders = Helper::orderColumn($orders, $order_col, $order, 'id', 'DESC');
+        $orders = Helper::do_orderColumn($orders, $order_col, $order, 'id', 'DESC');
 
         $orders = $orders->paginate(self::NUM_PAGED_RESULTS);
 
@@ -115,47 +115,68 @@ class OrderController extends Controller
         $q = $request->input('q');
 
         if (!empty($q))
-            $shipments = $shipments->whereTranslationLike('description','%' . $q . '%');
+            $shipments = $shipments->where('description', 'LIKE', '%' . $q . '%');
 
         $order_col = $request->input('order_col');
         $order = $request->input('order');
-        $shipments = Helper::orderColumn($shipments, $order_col, $order,'id', 'DESC', true);
+
+        $shipments = Helper::do_orderColumn($shipments, $order_col, $order,'id', 'DESC');
 
         $shipments = $shipments->paginate(self::NUM_PAGED_RESULTS);
+
         return view('admin.orders.shipment.list', compact('shipments', 'q', 'order_col', 'order'));
     }
 
-    public function createShipment(){
-        $languages = Helper::getLanguages();
-        return view('admin.orders.shipment.create', compact('languages'));
+    public function createShipment()
+    {
+        return view('admin.orders.shipment.create');
     }
 
-    public function do_createShipment(Request $request){
-        $shipmentData = $this->getShipmentData($request);
-        if($shipmentData['default']){
-            ShippingMethod::deletePreviousDefault();
-        }
-        $shipment = new ShippingMethod();
-        $shipment::create($shipmentData);
+    public function do_createShipment(Request $request)
+    {
+        // $shipmentData = $this->getShipmentData($request);
+        // if($shipmentData['default']){
+        //     ShippingMethod::deletePreviousDefault();
+        // }
+        // $shipment = new ShippingMethod();
+        // $shipment::create($shipmentData);
+
+        $shipment = new ShippingMethod;
+
+        $this->saveDataShippingMethod($shipment, $request, true);
 
         return redirect()->route('admin.shipment.list')->with('success', 'El método de envío ha sido creado correctamente');
     }
 
-    public function editShipment(int $id){
-        $shipment = ShippingMethod::findOrFail($id);
-        $languages = Helper::getLanguages();
+    private function saveDataShippingMethod (ShippingMethod $shipment, Request $request, $new=false)
+    {
+        $default = $shipment->default;
 
-        return view('admin.orders.shipment.edit', compact('shipment', 'languages'));
-    }
+        $shipment->description = $request->input('description');
+        $shipment->cost = $request->input('cost');
+        $shipment->minimum_free = $request->input('minimum_free');
+        $shipment->default = intval($request->input('default'));
+        $shipment->active = intval($request->input('active'));
+        $shipment->save();
 
-    public function do_editShipment(Request $request, int $id){
-        $shipment = ShippingMethod::findOrFail($id);
-        $shipmentData = $this->getShipmentData($request);
-        if(!$shipment->default && $shipmentData['default']){
+        if (!$default && $shipment->default)
+        {
             ShippingMethod::deletePreviousDefault();
         }
-        $shipment->fill($shipmentData);
-        $shipment->save();
+    }
+
+    public function editShipment(int $id)
+    {
+        $shipment = ShippingMethod::findOrFail($id);
+
+        return view('admin.orders.shipment.edit', compact('shipment'));
+    }
+
+    public function do_editShipment(Request $request, int $id)
+    {
+        $shipment = ShippingMethod::findOrFail($id);
+
+        $this->saveDataShippingMethod($shipment, $request);
 
         return redirect()->route('admin.shipment.list')->with('success', 'El método de envío ha sido actualizado correctamente');
     }
@@ -216,7 +237,7 @@ class OrderController extends Controller
 
         $order_col = $request->input('order_col');
         $order = $request->input('order');
-        $coupons = Helper::orderColumn($coupons, $order_col, $order);
+        $coupons = Helper::do_orderColumn($coupons, $order_col, $order);
 
         $coupons = $coupons->paginate(self::NUM_PAGED_RESULTS);
         return view('admin.orders.coupons.list', compact('coupons', 'q', 'order_col', 'order'));

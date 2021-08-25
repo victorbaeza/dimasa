@@ -57,7 +57,7 @@ class Blog extends BaseModel
     const SITEMAP_PRIORITY = 0.4; // Prioridad por defecto para las entradas de blogs
 
     //region Relationships
-    public function details()
+    public function Details()
     {
         return $this->hasMany(BlogCategoryDetail::class, 'blog_id');
     }
@@ -84,6 +84,7 @@ class Blog extends BaseModel
 // Función para subir imagen del blog
     public function uploadImage($image)
     {
+        // $name_ok = str_replace(' ', '', $image->getClientOriginalName());
         $filename = $this->id . '_' . $image->getClientOriginalName();
         $image->storeAs($this::IMAGE_PATH, $filename);
         $this->image = $filename;

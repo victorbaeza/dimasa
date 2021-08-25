@@ -18,13 +18,13 @@
                         <table class="table table-striped">
                             <thead>
                             <tr>
-                                <th>ID {!! Helper::orderColumns('id',$order_col,$order) !!}</th>
-                                <th>Código {!! Helper::orderColumns('code', $order_col, $order) !!}</th>
-                                <th>Fecha Inicio {!! Helper::orderColumns('start_date',$order_col,$order) !!}</th>
-                                <th>Fecha Fin {!! Helper::orderColumns('end_date',$order_col,$order) !!}</th>
-                                <th>Descuento {!! Helper::orderColumns('discount',$order_col,$order) !!}</th>
-                                <th>Gasto mínimo {!! Helper::orderColumns('minimum_price', $order_col, $order) !!}</th>
-                                <th>Límite de usos {!! Helper::orderColumns('use_limit', $order_col, $order) !!}</th>
+                                <th>ID {!! Helper::orderColumn('id',$order_col,$order) !!}</th>
+                                <th>Código {!! Helper::orderColumn('code', $order_col, $order) !!}</th>
+                                <th>Fecha Inicio {!! Helper::orderColumn('start_date',$order_col,$order) !!}</th>
+                                <th>Fecha Fin {!! Helper::orderColumn('end_date',$order_col,$order) !!}</th>
+                                <th>Descuento {!! Helper::orderColumn('discount',$order_col,$order) !!}</th>
+                                <th>Gasto mínimo {!! Helper::orderColumn('minimum_price', $order_col, $order) !!}</th>
+                                <th>Límite de usos {!! Helper::orderColumn('use_limit', $order_col, $order) !!}</th>
                                 <th>Acciones</th>
                             </tr>
                             </thead>

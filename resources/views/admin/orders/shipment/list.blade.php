@@ -36,12 +36,12 @@
                         <table class="table table-striped">
                             <thead>
                             <tr>
-                                <th>ID {!! Helper::orderColumns('id',$order_col,$order) !!}</th>
-                                <th>Descripción {!! Helper::orderColumns('description',$order_col,$order) !!}</th>
-                                <th>Coste {!! Helper::orderColumns('cost',$order_col,$order) !!}</th>
-                                <th>Mínimo Gratuito {!! Helper::orderColumns('minimum_free',$order_col,$order) !!}</th>
-                                <th>Por defecto {!! Helper::orderColumns('default',$order_col,$order) !!}</th>
-                                <th>Activo {!! Helper::orderColumns('active',$order_col,$order) !!}</th>
+                                <th>ID {!! Helper::orderColumn('id',$order_col,$order) !!}</th>
+                                <th>Descripción {!! Helper::orderColumn('description',$order_col,$order) !!}</th>
+                                <th>Coste {!! Helper::orderColumn('cost',$order_col,$order) !!}</th>
+                                <th>Mínimo Gratuito {!! Helper::orderColumn('minimum_free',$order_col,$order) !!}</th>
+                                <th>Por defecto {!! Helper::orderColumn('default',$order_col,$order) !!}</th>
+                                <th>Activo {!! Helper::orderColumn('active',$order_col,$order) !!}</th>
                                 <th>Acciones</th>
                             </tr>
                             </thead>

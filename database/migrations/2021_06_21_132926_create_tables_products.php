@@ -25,9 +25,9 @@ class CreateTablesProducts extends Migration
           $table->decimal('incremento_pvp', 19, 2)->nullable();
 
           $table->string('slug');
-          $table->string('keywords')->nullable();
-          $table->string('title_seo')->nullable();
-          $table->text('description_seo')->nullable();
+          $table->string('seo_keywords')->nullable();
+          $table->string('seo_title')->nullable();
+          $table->text('seo_description')->nullable();
 
           $table->boolean('active')->default(1);
           $table->integer('parent_id')->unsigned()->nullable();
@@ -101,9 +101,9 @@ class CreateTablesProducts extends Migration
             $table->string('reference')->nullable();
 
             $table->string('slug');
-            $table->string('keywords')->nullable();
-            $table->string('title_seo')->nullable();
-            $table->text('description_seo')->nullable();
+            $table->string('seo_keywords')->nullable();
+            $table->string('seo_title')->nullable();
+            $table->text('seo_description')->nullable();
 
             $table->integer('parent_id')->unsigned()->nullable();
 

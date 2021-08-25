@@ -15,7 +15,7 @@
                 <div class="ibox-content">
                     <div class="row">
                         <div class="col-sm-3">
-                            <form method="GET" action="/admin/clients" id="searchForm">
+                            <form method="GET" action="{{ route('admin.client.list') }}" id="searchForm">
                                 <input type="hidden" name="order_col" value="{{$order_col}}" id="order_col" />
                                 <input type="hidden" name="order" value="{{$order}}" id="order" />
                                 <div class="input-group">
@@ -33,10 +33,10 @@
                         <table class="table table-striped">
                             <thead>
                             <tr>
-                                <th>Nombre {!! Helper::orderColumns('name',$order_col,$order) !!}</th>
-                                <th>Apellidos {!! Helper::orderColumns('surname',$order_col,$order) !!}</th>
-                                <th>Email {!! Helper::orderColumns('email',$order_col,$order) !!}</th>
-                                <th>Estado {!! Helper::orderColumns('active',$order_col,$order) !!}</th>
+                                <th>Nombre {!! Helper::orderColumn('name',$order_col,$order) !!}</th>
+                                <th>Apellidos {!! Helper::orderColumn('surname',$order_col,$order) !!}</th>
+                                <th>Email {!! Helper::orderColumn('email',$order_col,$order) !!}</th>
+                                <th>Estado {!! Helper::orderColumn('active',$order_col,$order) !!}</th>
                                 <th>Acciones</th>
                             </tr>
                             </thead>
@@ -72,7 +72,7 @@
 
                     @if ($clients->hasMorePages() || $clients->lastPage())
                         <div class="row">
-                            <?php echo $clients->appends(['q' => $q])->render(); ?>
+                            {{ $clients->appends( Request::except('page') )->links() }}
                         </div>
                     @endif
 

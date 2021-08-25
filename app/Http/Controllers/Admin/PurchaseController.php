@@ -39,7 +39,7 @@ class PurchaseController extends Controller
 
         $order_col = $request->input('order_col');
         $order = $request->input('order');
-        $purchases = Helper::orderColumn($purchases, $order_col, $order, 'id', 'DESC');
+        $purchases = Helper::do_orderColumn($purchases, $order_col, $order, 'id', 'DESC');
 
         $purchases = $purchases->select('purchases.*');
         $purchases = $purchases->paginate(Helper::NUM_PAGED_RESULTS);

@@ -31,7 +31,7 @@ class InvoiceController extends Controller
 
         $order_col = $request->input('order_col');
         $order = $request->input('order');
-        $invoices = Helper::orderColumn($invoices, $order_col, $order, 'id', 'ASC');
+        $invoices = Helper::do_orderColumn($invoices, $order_col, $order, 'id', 'ASC');
 
         $invoices = $invoices->paginate(self::NUM_PAGED_RESULTS);
 

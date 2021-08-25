@@ -27,9 +27,9 @@
                 <div class="form-group row">
                     <label class="col-lg-4 col-form-label required">Tipo de Usuario</label>
                     <div class="col-lg-6">
-                        <select class="w-75" id="role" name="role" required>
-                            @foreach(UserRole::values() as $role)
-                                <option value="{{$role}}">{{UserRole::getText($role)}}</option>
+                        <select class="w-75" id="role" name="type" required>
+                            @foreach(UserType::all() as $type)
+                                <option value="{{$type->id}}">{{ $type->name }}</option>
                             @endforeach
                         </select>
                     </div>

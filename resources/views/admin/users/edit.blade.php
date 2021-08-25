@@ -30,10 +30,8 @@
             <div class="form-group row">
                 <label class="col-lg-4 col-form-label required">Tipo de Usuario</label>
                 <div class="col-lg-6">
-                    <select class="w-75" id="role" name="role" required>
-                        @foreach(UserRole::values() as $role)
-                            <option value="{{$role}}" @if($user->role == $role->getValue()) selected @endif>{{UserRole::getText($role)}}</option>
-                        @endforeach
+                    <select class="w-75" id="role" name="type" disabled>
+                      <option>{{ $user->Type->name }}</option>
                     </select>
                 </div>
             </div>

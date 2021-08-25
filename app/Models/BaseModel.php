@@ -36,19 +36,19 @@ class BaseModel extends Eloquent{
 			$model->updated_by= $user->id;
 		});
 
-		static::deleting(function($model)
-		{
-				if (!(\App::runningInConsole())) {
-						$user = Auth::user();
-
-						$deleted = new Deleted;
-						$deleted->old_id = $model->id;
-						$deleted->table = $model->getTable();
-						$deleted->content = $model->toJson(JSON_PRETTY_PRINT);
-						$deleted->deleted_by = $user->id;
-						$deleted->save();
-				}
-		});
+		// static::deleting(function($model)
+		// {
+		// 		if (!(\App::runningInConsole())) {
+		// 				$user = Auth::user();
+		//
+		// 				$deleted = new Deleted;
+		// 				$deleted->old_id = $model->id;
+		// 				$deleted->table = $model->getTable();
+		// 				$deleted->content = $model->toJson(JSON_PRETTY_PRINT);
+		// 				$deleted->deleted_by = $user->id;
+		// 				$deleted->save();
+		// 		}
+		// });
 
 	}
 
