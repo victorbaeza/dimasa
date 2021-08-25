@@ -592,7 +592,7 @@
         <div class="owl-stage-outer">
           <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1200px;">
             <div class="owl-item active" style="width: 580px; margin-right: 20px;">
-              <div class="post post-list overlay-dark">
+              <div class="post post-list">
                 <figure class="post-media">
                   <a href="post-single.html">
                     <img src="images/noticia1.png" width="280" height="200" alt="post">
@@ -611,7 +611,7 @@
               </div>
             </div>
             <div class="owl-item active" style="width: 580px; margin-right: 20px;">
-              <div class="post post-list overlay-dark">
+              <div class="post post-list">
                 <figure class="post-media">
                   <a href="post-single.html">
                     <img src="images/noticia2.png" width="280" height="200" alt="post">
@@ -630,7 +630,7 @@
               </div>
             </div>
             <div class="owl-item active" style="width: 580px; margin-right: 20px;">
-              <div class="post post-list overlay-dark">
+              <div class="post post-list">
                 <figure class="post-media">
                   <a href="post-single.html">
                     <img src="images/noticia3.png" width="280" height="200" alt="post">
