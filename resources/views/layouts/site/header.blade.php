@@ -708,7 +708,7 @@
               <a href="{{ route('site.brands') }}">Marcas</a>
             </li>
             <li>
-              <a href="#">Empresas instaladoras</a>
+              <a href="{{ route('site.partners') }}">Empresas instaladoras</a>
             </li>
           </ul>
         </nav>

@@ -3099,6 +3099,24 @@ window.Riode = {};
         $('.sticky-header .header-left').append('<div style="display: none;" class="header-search hs-expanded ml-0 mr-0"><form action="#" class="input-wrapper"><input type="text" class="form-control" name="search" autocomplete="off" placeholder="Buscar..." value="" required /><button class="btn btn-search" type="submit"><i class="d-icon-search"></i></button></form></div><div style="display: none;" class="header-phone ml-auto mr-auto">&nbsp;&nbsp;¿Tienes alguna duda? Llámanos:&nbsp;<a href="tel:+34952336808" class="contact d-lg-show"><i class="d-icon-phone"></i>+34 952 33 68 08</a></div>');
 
         setActiveNavLink();
+        setScrollEvent();
+    }
+
+    function setScrollEvent()
+    {
+      $(document).on('click', '.animated-scroll', function(e){
+        e.preventDefault();
+
+        var target_id = $(this).attr('href');
+        var options = Riode.parseOptions( $(this).attr('data-scroll-options') );
+
+        $("body,html").delay( options.delay ).animate(
+        {
+          scrollTop: $(target_id).offset().top - options.offset
+        },
+        options.speed //speed
+      );
+      })
     }
 
     //Set active navigation link

@@ -36,6 +36,9 @@ Route::get('/marcas', function(){ return view('site.brands'); })->name('site.bra
 //Downloads
 Route::get('/descargas', function(){ return view('site.downloads'); })->name('site.downloads');
 
+//Partners
+Route::get('/empresas-instaladoras', function(){ return view('site.partners'); })->name('site.partners');
+
 // Store / Products
 Route::get('/catalogo/fontaneria', 'ProductController@getProductsCategory')->name('products.category');
 Route::get('/catalogo/fontaneria/productos', 'ProductController@showProductList')->name('products.category_products');
