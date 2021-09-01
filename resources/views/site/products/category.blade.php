@@ -93,74 +93,52 @@
                   <h1 class="banner-title font-weight-bold text-primary ls-m mb-6">FONTANERÍA</h1>
               </div>
           </div>
-          <div class="row cols-xl-5 cols-lg-6 cols-md-4 cols-sm-3 cols-2">
+          <div class="row cols-lg-4 cols-md-3 cols-sm-2 cols-1">
 
-              <div class="category category-absolute category-classic mb-5">
-                  <a href="{{ route('products.category_products') }}">
-                      <figure class="category-media">
-                          <img src="/images/categoria1.png" alt="Cateogry" width="280" height="280">
-                      </figure>
-                      <!-- <div class="category-content">
-                          <h4 class="category-name">PVC</h4>
-                          <span class="category-count">1 Productos</span>
-                        </div> -->
-                  </a>
+            <div class="category category-absolute category-classic mb-5">
+              <a href="{{ route('products.category_products') }}">
+                  <figure class="category-media">
+                      <img src="/images/categoria1.jpg" alt="Cateogry" />
+                  </figure>
+                  <div class="category-content">
+                      <h4 class="category-name">PVC</h4>
+                      <span class="category-count">20 productos</span>
+                  </div>
+                </a>
               </div>
               <div class="category category-absolute category-classic mb-5">
-                  <a href="{{ route('products.category_products') }}">
-                      <figure class="category-media">
-                          <img src="/images/categoria2.png" alt="Cateogry" width="280" height="280">
-                      </figure>
-                      <!-- <div class="category-content">
-                          <h4 class="category-name">Polibutileno</h4>
-                          <span class="category-count">1 Productos</span>
-                        </div> -->
+                <a href="{{ route('products.category_products') }}">
+                    <figure class="category-media">
+                        <img src="/images/categoria2.jpg" alt="Cateogry" />
+                    </figure>
+                    <div class="category-content">
+                        <h4 class="category-name">Polibutileno</h4>
+                        <span class="category-count">20 productos</span>
+                    </div>
                   </a>
-              </div>
-              <div class="category category-absolute category-classic mb-5">
+                </div>
+                <div class="category category-absolute category-classic mb-5">
                   <a href="{{ route('products.category_products') }}">
                       <figure class="category-media">
-                          <img src="/images/categoria3.png" alt="Cateogry" width="280" height="280">
+                          <img src="/images/categoria3.jpg" alt="Cateogry" />
                       </figure>
-                      <!-- <div class="category-content">
+                      <div class="category-content">
                           <h4 class="category-name">Polipropileno</h4>
-                          <span class="category-count">1 Productos</span>
-                        </div> -->
-                  </a>
-              </div>
-              <div class="category category-absolute category-classic mb-5">
-                  <a href="{{ route('products.category_products') }}">
-                      <figure class="category-media">
-                          <img src="/images/categoria4.png" alt="Cateogry" width="280" height="280">
-                      </figure>
-                      <!-- <div class="category-content">
-                          <h4 class="category-name">Reticulado</h4>
-                          <span class="category-count">0 Productos</span>
-                        </div> -->
-                  </a>
-              </div>
-              <div class="category category-absolute category-classic mb-5">
-                  <a href="{{ route('products.category_products') }}">
-                      <figure class="category-media">
-                          <img src="/images/categoria5.png" alt="Cateogry" width="280" height="280">
-                      </figure>
-                      <!-- <div class="category-content">
-                          <h4 class="category-name">Multicapa</h4>
-                          <span class="category-count">0 Productos</span>
-                        </div> -->
-                  </a>
-              </div>
-              <div class="category category-absolute category-classic mb-5">
-                  <a href="{{ route('products.category_products') }}">
-                      <figure class="category-media">
-                          <img src="/images/categoria6.png" alt="Cateogry" width="280" height="280">
-                      </figure>
-                      <!-- <div class="category-content">
-                          <h4 class="category-name">Polietileno</h4>
-                          <span class="category-count">7 Productos</span>
-                        </div> -->
-                  </a>
-              </div>
+                          <span class="category-count">46 productos</span>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="category category-absolute category-classic mb-5">
+                    <a href="{{ route('products.category_products') }}">
+                        <figure class="category-media">
+                            <img src="/images/categoria4.jpg" alt="Cateogry" />
+                        </figure>
+                        <div class="category-content">
+                            <h4 class="category-name">Polietileno</h4>
+                            <span class="category-count">33 productos</span>
+                        </div>
+                      </a>
+                    </div>
           </div>
           <div class="mt-5">
               <p style="text-align: justify;font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris molestie facilisis nisl a gravida. Suspendisse potenti. In eu pellentesque nibh, nec lobortis nunc. <b>Proin efficitur

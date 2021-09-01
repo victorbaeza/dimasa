@@ -1147,30 +1147,40 @@ window.Riode = {};
     Riode.initPopups = function () {
 
         Riode.$body
-            // Register Login Popup
-            .on( 'click', 'a.login, .login-link', function ( e ) {
-                e.preventDefault();
-                Riode.popup( {
-                    items: {
-                        src: $( e.currentTarget ).attr( 'href' )
-                    }
-                }, 'login' );
+        // Register Login Popup
+      .on( 'click', '.login-link', function ( e ) {
+
+              e.preventDefault();
+              Riode.popup( {
+                  items: {
+                      src: '#login-modal'
+                  },
+                  type: 'inline',
+                  tLoading: '',
+                  mainClass: 'mfp-login mfp-flip-popup',
+                  // callbacks: {
+                  //     beforeClose: function () {
+                  //         // if "do not show" is checked
+                  //         $( '#hide-newsletter-popup' )[ 0 ].checked && Riode.setCookie( 'hideNewsletterPopup', true, 7 );
+                  //     }
+                  // },
+              } );
+              $('#login-modal').find( '[href="#signin"]' ).click();
 
             } )
 
             // Register "Register" Popup
             .on( 'click', '.register-link', function ( e ) {
-                e.preventDefault();
-                Riode.popup( {
-                    items: {
-                        src: $( e.currentTarget ).attr( 'href' )
-                    },
-                    callbacks: {
-                        ajaxContentAdded: function () {
-                            this.wrap.find( '[href="#register"]' ).click();
-                        }
-                    }
-                }, 'login' );
+              e.preventDefault();
+              Riode.popup( {
+                  items: {
+                      src: '#login-modal'
+                  },
+                  type: 'inline',
+                  tLoading: '',
+                  mainClass: 'mfp-login mfp-flip-popup',
+              } );
+              $('#login-modal').find( '[href="#register"]' ).click();
             } )
 
             // Register "Play Video" Popup
@@ -1662,7 +1672,7 @@ window.Riode = {};
                     document.body.classList.contains( 'home' )
                 ) {
                     Riode.Minipopup.open( {
-                        message: 'Successfully Added',
+                        message: 'Producto añadido',
                         productClass: ' product-cart',
                         name: name,
                         nameLink: $product.find( '.product-name > a' ).attr( 'href' ),
@@ -1670,7 +1680,7 @@ window.Riode = {};
                         imageLink: $product.find( '.product-name > a' ).attr( 'href' ),
                         price: $product.find( '.product-variation-price' ).length > 0 ? $product.find( '.product-variation-price' ).children( 'span' ).html() : $product.find('.product-price .price').html(),
                         count: $product.find( '.quantity' ).val(),
-                        actionTemplate: '<div class="action-group d-flex mt-3"><a href="cart.html" class="btn btn-sm btn-outline btn-primary btn-rounded mr-2">View Cart</a><a href="checkout.html" class="btn btn-sm btn-primary btn-rounded">Check Out</a></div>'
+                        actionTemplate: '<div class="action-group d-flex mt-3"><a href="cart.html" class="btn btn-sm btn-outline btn-primary btn-rounded mr-2">VER CARRITO</a><a href="checkout.html" class="btn btn-sm btn-primary btn-rounded">PEDIR</a></div>'
                     } );
                 }
             } );
@@ -1706,7 +1716,7 @@ window.Riode = {};
             $slider.on( 'initialized.owl.carousel', function ( e ) {
 
                 // if not quickview, make full image toggle
-                self.isQuickview || $slider.append( '<a href="#" class="product-image-full"><i class="d-icon-zoom"></i></a>' );
+                // self.isQuickview || $slider.append( '<a href="#" class="product-image-full"><i class="d-icon-zoom"></i></a>' );
 
                 // init thumbnails
                 thumbsInit( self );
@@ -3067,7 +3077,7 @@ window.Riode = {};
         Riode.countTo( '.count-to' );                                           // Initialize countTo
         Riode.countdown( '.product-countdown, .countdown' );                    // Initialize countdown
         Riode.Menu.init();                                                      // Initialize menus
-        Riode.initZoom();                                                       // Initialize zoom
+        // Riode.initZoom();                                                       // Initialize zoom
         Riode.initNavFilter( '.nav-filters .nav-filter' );                      // Initialize navigation filters for blog, products
         Riode.initPopups();                                                     // Initialize popups: login, register, play video, newsletter popup
         // Riode.initPurchasedMinipopup();                                         // Initialize minipopup for purchased event

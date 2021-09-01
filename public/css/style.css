@@ -1394,6 +1394,24 @@ blockquote {
   bottom: 5px;
   background-color: #dae1e5
 }
+@media (max-width: 997px) {
+.secure-payment{
+  justify-content: center !important;
+}
+.footer-middle {
+    padding: 2.8rem 0 2.8rem;
+}
+.logo-footer{
+  display: flex !important;
+  justify-content: center;
+}
+.footer-center{
+  justify-content: center;
+}
+.footer .widget{
+  text-align: center;
+}
+}
 
 @media (max-width: 767px) {
   .list-type-number {
@@ -5638,10 +5656,15 @@ ul.blog-filters .nav-filter {
   font-size: 1rem
 }
 
+.category .category-media{
+  height: 100%;
+}
+
 .category img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   margin-left: auto;
   margin-right: auto;
   /* border-radius: .3rem */
@@ -5905,8 +5928,8 @@ ul.blog-filters .nav-filter {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(38, 38, 38, 0.9);
-  height: 25%;
+  background-color: #00377aeb;
+  height: 30%;
   color: #fff;
   border-radius: 0;
   margin-right: 10px;
@@ -8561,6 +8584,19 @@ button.mfp-arrow {
   transition: box-shadow .3s
 }
 
+.product-image-gap .product-media{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  width: 100%;
+  height: auto;
+  max-height: 240px;
+  transition: all .5s;
+}
+
 .product-media img {
   display: block;
   width: 100%;
@@ -8587,6 +8623,12 @@ button.mfp-arrow {
 .product-wrap .product-media img{
   height: 220px;
   object-fit: contain;
+}
+
+@media (min-width: 512px){
+.product-image-gap .product-media {
+    min-height: 240px;
+}
 }
 
 .product-label-group {
@@ -8795,9 +8837,12 @@ button.mfp-arrow {
   letter-spacing: -.01em;
   color: #222;
   padding-right: 20px;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis
+}
+
+.product-image-gap .product-name{
+  height: 50px;
 }
 
 .product-name a:hover {
@@ -8818,14 +8863,21 @@ button.mfp-arrow {
   color: #222
 }
 
+.product-image-gap .product-price{
+  font-size: 1.9rem;
+}
+
 .product-price .old-price {
-  color: #aaa
+  color: #aaa;
+  font-size: 1.6rem;
 }
 
 .product-price .new-price {
   margin-right: 1rem;
-  text-decoration: none
+  text-decoration: none;
 }
+
+
 
 .ratings-container {
   display: flex;
@@ -13602,7 +13654,7 @@ aside+div .product-single .product-details {
 
 .category-menu .submenu .megamenu {
   min-width: 68.5rem;
-  padding: 0 0 0 .9rem
+  padding: 0 0 2rem .9rem
 }
 
 .category-menu .submenu .megamenu>li {
@@ -13841,10 +13893,6 @@ aside+div .product-single .product-details {
 
   .newsletter-info {
     margin-bottom: 2rem
-  }
-
-  .footer-middle {
-    padding: 4.8rem 0 4.8rem
   }
 
   .footer-middle .widget-body {
@@ -17174,4 +17222,186 @@ font-size: 3rem;
 
 .partner{
   box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
+}
+
+/* TABLES */
+
+.variation-table {
+  color: #222;
+  overflow: visible;
+}
+
+.variation-table .variation-number a{
+  color: #00377A;
+  text-decoration: underline;
+}
+
+.variation-table .variation-number a:hover{
+  color: #C43032;
+}
+
+.variation-table th {
+  padding: 0 0 .7rem 0;
+  font-size: 1.6rem;
+  font-weight: 600
+}
+
+.variation-table td {
+  padding-bottom: 0.6rem;
+  line-height: 2.2
+}
+
+.variation-table .order-total td {
+  border-bottom: none;
+  padding: 1.2rem 0 0
+}
+
+.variation-table .shipping-row label {
+  margin-bottom: 1.5rem
+}
+
+.variation-table .shipping-row-last {
+  border-bottom: 1px solid #e1e1e1
+}
+
+.variation-table .shipping-row-last label {
+  margin-bottom: 2.1rem;
+  color: #666
+}
+
+.variation-table .summary-subtotal {
+  border-top: 1px solid #e1e1e1
+}
+
+.variation-table .summary-subtotal td:first-child {
+  padding: .4rem 0 .3rem
+}
+
+.variation-table .summary-subtotal-price {
+  padding-top: 1rem
+}
+
+.variation-table tbody>tr:nth-child(2) td {
+  padding-bottom: 1.6rem
+}
+
+.variation-table thead th{
+  padding: 1.5rem;
+  background-color: #f4f4f4;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.variation-table thead th, .variation-table td, .variation-table th{
+  border: 1px solid #e5e5e5;
+}
+
+.variation-table td{
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.variation-table-mobile{
+  display:none;
+}
+@media (max-width: 600px) {
+  .variation-table{
+    display:none;
+  }
+  .variation-table-mobile{
+    display:block;
+  }
+}
+
+/* @media (max-width: 479px) {
+  .variation-table tbody .product-name, .variation-table tbody .product-total {
+    padding-bottom: 2rem;
+    line-height: 1.2
+  }
+
+  .variation-table tbody>tr:nth-child(2) td {
+    padding-bottom: 2rem
+  }
+} */
+
+/* Accordions */
+.accordion {
+    overflow: hidden;
+}
+
+.accordion-border .card {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e1e1e1;
+}
+
+.card-header {
+    text-transform: capitalize;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1;
+    color: #222;
+}
+.card-body {
+    padding: 1.3rem .5rem;
+}
+.accordion-boxed .card-header a, .accordion-boxed .card-body {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.card-header a:hover {
+    color: #26c;
+}
+.card-header a {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 1.8rem .5rem;
+}
+.accordion-boxed .card-header a::after {
+    right: 2.3rem;
+}
+.accordion-plus .collapse::after {
+    content: '\f28f';
+}
+.card-header a::after {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: .5rem;
+    font-family: "riode";
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    color: #222;
+}
+
+.accordion-plus .expand::after {
+    content: '\f2c3';
+}
+
+.accordion .collapsed, .accordion .expanding {
+    display: none;
+}
+.accordion-gutter-md .card:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.variation-table-mobile .card-header{
+  /* background: #8d9fb6; */
+  background: #e5e5e59e;
+  font-size: 1.5rem;
+}
+
+.variation-table-mobile .card-header:hover{
+  color: #222 !important;
+}
+
+.variation-table-mobile .card-header a:hover{
+  color: #222 !important;
+}
+
+.variation-table-mobile .variation-price{
+  font-size: 1.8rem;
+  color: #C43032;
 }

@@ -81,16 +81,13 @@
                 </div>
               </div>
             </nav>
-            <div class="row cols-xl-5 cols-md-4 cols-2">
+            {{-- <div class="row cols-xl-5 cols-md-4 cols-2">
                     <div class="product-wrap h-100 mb-0">
                       <div class="product product-border text-center h-100">
                         <figure class="product-media">
                           <a href="{{ route('products.product') }}">
                             <img src="/images/product1.jpg" alt="product" width="260" height="293">
                           </a>
-                          <div class="product-action-vertical">
-                            <a href="#" class="btn-product-icon btn-cart" data-toggle="modal" data-target="#addCartModal" title="Add to cart"><i class="d-icon-bag"></i></a>
-                          </div>
                         </figure>
                         <div class="product-details">
                           <h3 class="product-name">
@@ -117,9 +114,6 @@
                           <a href="{{ route('products.product') }}">
                             <img src="/images/product2.jpg" alt="product" width="260" height="293">
                           </a>
-                          <div class="product-action-vertical">
-                            <a href="#" class="btn-product-icon btn-cart" data-toggle="modal" data-target="#addCartModal" title="Add to cart"><i class="d-icon-bag"></i></a>
-                          </div>
                         </figure>
                         <div class="product-details">
                           <h3 class="product-name">
@@ -146,9 +140,6 @@
                           <a href="{{ route('products.product') }}">
                             <img src="/images/product3.jpg" alt="product" width="260" height="293">
                           </a>
-                          <div class="product-action-vertical">
-                            <a href="#" class="btn-product-icon btn-cart" data-toggle="modal" data-target="#addCartModal" title="Add to cart"><i class="d-icon-bag"></i></a>
-                          </div>
                         </figure>
                         <div class="product-details">
                           <h3 class="product-name">
@@ -175,9 +166,6 @@
                           <a href="{{ route('products.product') }}">
                             <img src="/images/product4.jpg" alt="product" width="260" height="293">
                           </a>
-                          <div class="product-action-vertical">
-                            <a href="#" class="btn-product-icon btn-cart" data-toggle="modal" data-target="#addCartModal" title="Add to cart"><i class="d-icon-bag"></i></a>
-                          </div>
                         </figure>
                         <div class="product-details">
                           <h3 class="product-name">
@@ -204,9 +192,6 @@
                           <a href="{{ route('products.product') }}">
                             <img src="/images/product6.jpg" alt="product" width="260" height="293">
                           </a>
-                          <div class="product-action-vertical">
-                            <a href="#" class="btn-product-icon btn-cart" data-toggle="modal" data-target="#addCartModal" title="Add to cart"><i class="d-icon-bag"></i></a>
-                          </div>
                         </figure>
                         <div class="product-details">
                           <h3 class="product-name">
@@ -233,9 +218,6 @@
                           <a href="{{ route('products.product') }}">
                             <img src="/images/product7.jpg" alt="product" width="260" height="293">
                           </a>
-                          <div class="product-action-vertical">
-                            <a href="#" class="btn-product-icon btn-cart" data-toggle="modal" data-target="#addCartModal" title="Add to cart"><i class="d-icon-bag"></i></a>
-                          </div>
                         </figure>
                         <div class="product-details">
                           <h3 class="product-name">
@@ -262,9 +244,6 @@
                           <a href="{{ route('products.product') }}">
                             <img src="/images/product1.jpg" alt="product" width="260" height="293">
                           </a>
-                          <div class="product-action-vertical">
-                            <a href="#" class="btn-product-icon btn-cart" data-toggle="modal" data-target="#addCartModal" title="Add to cart"><i class="d-icon-bag"></i></a>
-                          </div>
                         </figure>
                         <div class="product-details">
                           <h3 class="product-name">
@@ -284,7 +263,108 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> --}}
+
+                  <div class="row product-wrapper equal-height">
+                            <div class="col-md-3 col-6">
+                                <div class="product product-image-gap">
+                                  <a href="{{route('products.product')}}">
+                                    <figure class="product-media">
+                                            <img src="/images/product1.jpg" alt="product" width="280" height="315">
+                                    </figure>
+                                    <div class="product-details">
+                                        <h3 class="product-name">
+                                            CODO H-H EVAC. SERIE B TERRAIN
+                                        </h3>
+                                        <div class="product-price">
+                                            <ins class="new-price">199,00 €</ins><del class="old-price">210,00 €</del>
+                                        </div>
+                                        <div class="ratings-container">
+                                            <div class="ratings-full">
+                                                <span class="ratings" style="width:100%"></span>
+                                                <span class="tooltiptext tooltip-top"></span>
+                                            </div>
+                                            <span class="rating-reviews">( 6 valoraciones )</span>
+                                        </div>
+                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="product product-image-gap">
+                                  <a href="{{route('products.product')}}">
+                                    <figure class="product-media">
+                                            <img src="/images/product2.jpg" alt="product" width="280"
+                                                height="315">
+                                    </figure>
+                                    <div class="product-details">
+                                        <h3 class="product-name">MANGUITO TIPO SAMBRA
+                                        </h3>
+                                        <div class="product-price">
+                                            <span class="price">35,00 €</span>
+                                        </div>
+                                        <div class="ratings-container">
+                                            <div class="ratings-full">
+                                                <span class="ratings" style="width:100%"></span>
+                                                <span class="tooltiptext tooltip-top"></span>
+                                            </div>
+                                              <span class="rating-reviews">( 6 valoraciones )</span>
+                                        </div>
+                                    </div>
+                                  </a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="product product-image-gap">
+                                  <a href="{{route('products.product')}}">
+                                    <figure class="product-media">
+                                            <img src="/images/product3.jpg" alt="product" width="280"
+                                                height="315">
+
+                                    </figure>
+                                    <div class="product-details">
+                                        <h3 class="product-name">B.I.E. 25mm-20m VERSAL RAL3000
+                                        </h3>
+                                        <div class="product-price">
+                                            <span class="price">590,00 €</span>
+                                        </div>
+                                        <div class="ratings-container">
+                                            <div class="ratings-full">
+                                                <span class="ratings" style="width:100%"></span>
+                                                <span class="tooltiptext tooltip-top"></span>
+                                            </div>
+                                              <span class="rating-reviews">( 6 valoraciones )</span>
+                                        </div>
+                                    </div>
+                                  </a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="product product-image-gap">
+                                  <a href="{{route('products.product')}}" class="rating-reviews">
+                                    <figure class="product-media">
+                                            <img src="/images/product4.jpg" alt="product" width="280"
+                                                height="315">
+
+                                    </figure>
+                                    <div class="product-details">
+                                        <h3 class="product-name">CODO H-H EVAC. SERIE B TERRAIN
+                                        </h3>
+                                        <div class="product-price">
+                                            <ins class="new-price">198,00 €</ins><del class="old-price">270,00 €</del>
+                                        </div>
+                                        <div class="ratings-container">
+                                            <div class="ratings-full">
+                                                <span class="ratings" style="width:100%"></span>
+                                                <span class="tooltiptext tooltip-top"></span>
+                                            </div>
+                                              <span class="rating-reviews">( 6 valoraciones )</span>
+                                        </div>
+                                    </div>
+                                  </a>
+                                </div>
+                            </div>
+                        </div>
                 </div>
             </div>
             <nav class="toolbox toolbox-pagination mt-6">

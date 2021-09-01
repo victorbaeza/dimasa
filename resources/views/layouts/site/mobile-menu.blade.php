@@ -52,9 +52,24 @@
           <li>
             <a href="#">Contacto</a>
           </li>
+          <li>
+            <a href="tel:963302967" class="mt-1 mr-4"><div><span class="pl-1"><i class="fa fa-phone" style="font-size: 1.5rem;"></i> +34 963 30 29 67</span></div></a>
+          </li>
+          <li>
+            <div class="d-flex align-items-center mt-4">
+              <a href="#" class="social-link pt-0 pr-0 pb-0 pl-0 social-twitter fab fa-twitter"></a>
+              <a href="#" class="social-link pt-0 pr-0 pb-0 pl-0 social-linkedin fab fa-linkedin-in"></a>
+              <a href="#" class="social-link pt-0 pr-0 pb-0 pl-0 social-facebook fab fa-facebook-f"></a>
+              <a href="#" class="social-link pt-0 pr-0 pb-0 pl-0 social-pinterest fab fa-youtube"></a>
+            </div>
+          </li>
         </ul>
       </div>
       <div class="tab-pane" id="tab-21">
+          <a href="#" class="btn btn-secondary pt-1 pb-1 pr-2 pl-2 d-flex align-items-center justify-content-center mt-2">
+              <i class="fa fa-file-pdf mr-2" style="line-height: inherit;"></i>
+              <span>Descargar catálogo</span>
+          </a>
         <ul>
           <li>
             <a href="categoria.html">

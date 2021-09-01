@@ -35,7 +35,7 @@
           </a>
           <!-- End FooterLogo -->
         </div>
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-3 col-md-4">
           <div class="widget widget-info">
             <h4 class="widget-title">Contacto</h4>
             <ul class="widget-body">
@@ -52,7 +52,7 @@
           </div>
           <!-- End Widget -->
         </div>
-        <div class="col-lg-2 col-md-6">
+        <div class="col-lg-2 col-md-4">
           <div class="widget widget-legal ml-lg-4">
             <h4 class="widget-title">Zona legal</h4>
             <ul class="widget-body">
@@ -72,7 +72,7 @@
           </div>
           <!-- End Widget -->
         </div>
-        <div class="col-lg-3 col-md-12">
+        <div class="col-lg-3 col-md-4">
           <div class="widget posts">
             <h4 class="widget-title">Últimas noticias</h4>
             <ul class="widget-body">

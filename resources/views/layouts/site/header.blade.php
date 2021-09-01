@@ -44,6 +44,9 @@
         <!-- End Header Search -->
       </div>
       <div class="header-right">
+        <div class="mr-5 d-flex d-lg-none align-items-center">
+          <a class="login-link mr-0" href="#login-modal" data-toggle="login-modal"><i class="d-icon-user"></i></a>
+        </div>
         <div class="icon-box icon-box-side">
           <a href="#">
             <div class="icon-box-icon mr-0 mr-lg-2">
@@ -95,18 +98,18 @@
             <div class="products scrollable">
               <div class="product product-cart">
                 <figure class="product-media">
-                  <a href="product.html">
-                    <img src="images/product1.jpg" alt="product" width="80" height="88" />
+                  <a href="{{ route('products.product') }}">
+                    <img src="/images/product1.jpg" alt="product" width="80" height="88" />
                   </a>
                   <button class="btn btn-link btn-close">
                     <i class="fas fa-times"></i><span class="sr-only">Close</span>
                   </button>
                 </figure>
                 <div class="product-detail">
-                  <a href="producto.html" class="product-name">MULTI-SPLIT INVERTER MOD. TERMAT R32</a>
+                  <a href="{{ route('products.product') }}" class="product-name">MULTI-SPLIT INVERTER MOD. TERMAT R32</a>
                   <div class="price-box">
                     <span class="product-quantity">1</span>
-                    <span class="product-price">$1.038,33€</span>
+                    <span class="product-price">1.038,33 €</span>
                   </div>
                 </div>
               </div>

@@ -40,15 +40,14 @@
                     </nav>
                     <div class="row gutter-lg">
                         <div class="col-12">
-                            <div class="product product-single row mb-5">
-                                <div class="col-md-6">
+                            <div class="product product-single row">
+                                <div class="col-md-5">
                                     <div class="product-gallery pg-vertical">
                                         <div
                                             class="product-single-carousel owl-carousel owl-theme owl-nav-inner row cols-1">
                                             <figure class="product-image">
                                                 <img src="/images/product3.jpg"
-                                                    data-zoom-image="/images/product3.jpg"
-                                                    alt="" width="800" height="900">
+                                                    alt="">
                                             </figure>
                                         </div>
                                         <div class="product-thumbs-wrap">
@@ -65,7 +64,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-7">
                                     <div class="product-details pt-3">
                                         <h1 class="product-name">MULTI-SPLIT INVERTER MOD. TERMAT R32</h1>
                                         <div class="product-meta">
@@ -130,6 +129,61 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="variation-table-mobile mb-10">
+                              <h4>Modelos</h4>
+                              <div class="accordion accordion-border accordion-boxed accordion-plus accordion-gutter-md">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a href="#collapse2-1" class="expand pr-5"><div>MULTI-SPLIT INVERTER MOD. TERMAT R32<br><br><span class="variation-price">198,00 €</span></div></a>
+                                        </div>
+                                        <div id="collapse2-1" class="collapsed">
+                                            <div class="card-body">
+                                                <p class="mb-0"><b>Referencia: </b># TM2MS1899CAN3R32</p>
+                                                <p class="mb-0"><b>Características: </b>18 K</p>
+                                                <p class="mb-0"><b>PVR: </b>198,00 €</p>
+                                                <p class="mb-0 text-center"><a href="{{ route('products.product') }}" class="btn btn-outline btn-primary pt-2 pl-3 pr-3 pb-2 mt-1">VER MODELO</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                      <div class="card-header">
+                                          <a href="#collapse2-2" class="expand pr-5"><div>MULTI-SPLIT INVERTER MOD. TERMAT R33<br><br><span class="variation-price">398,00 €</span></div></a>
+                                      </div>
+                                      <div id="collapse2-2" class="collapsed">
+                                        <div class="card-body">
+                                            <p class="mb-0"><b>Referencia: </b># TM2MS1899CAN3R32</p>
+                                            <p class="mb-0"><b>Características: </b>18 K</p>
+                                            <p class="mb-0"><b>PVR: </b>398,00 €</p>
+                                            <p class="mb-0 text-center"><a href="{{ route('products.product') }}" class="btn btn-outline btn-primary pt-2 pl-3 pr-3 pb-2 mt-1">VER MODELO</a></p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <table class="variation-table mb-10">
+                                    <thead>
+                                        <tr>
+                                            <th class="pl-2">Referencia</th>
+                                            <th>Modelo</th>
+                                            <th>Características</th>
+                                            <th>PVR</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="variation-number font-weight-bold"><a href="#"># TM2MS1899CAN3R32</a></td>
+                                            <td class="variation-date"><time>MULTI-SPLIT INVERTER MOD. TERMAT R32</time></td>
+                                            <td class="variation-status"><span>18 K</span></td>
+                                            <td class="variation-total"><span>198,00 €</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="variation-number font-weight-bold"><a href="#"># TM2MS18912CAN3R32</a></td>
+                                            <td class="variation-date"><time>MULTI-SPLIT INVERTER MOD. TERMAT R32</time></td>
+                                            <td class="variation-status"><span>18 K</span></td>
+                                            <td class="variation-total"><span>398,00 €</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
 
                             <div class="tab tab-nav-simple product-tabs">
                                 <ul class="nav nav-tabs justify-content-center" role="tablist">
