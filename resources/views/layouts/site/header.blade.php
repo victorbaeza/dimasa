@@ -717,7 +717,7 @@
         </nav>
       </div>
       <div class="header-right">
-        <a href="#"><i class="d-icon-card"></i>Promociones</a>
+        <a href="/catalogo/fontaneria/productos"><i class="d-icon-card"></i>Promociones</a>
         <a href="{{ route('site.downloads') }}" class="ml-4 ml-xl-8"><i class="far fa-arrow-alt-circle-down"></i>Descargas</a>
       </div>
     </div>

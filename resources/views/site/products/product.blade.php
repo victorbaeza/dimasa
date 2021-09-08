@@ -379,7 +379,7 @@
                                                               'items': 4
                                                           },
                                                           '1200': {
-                                                              'items': 6
+                                                              'items': 5
                                                           }
                                                       }
                                                   }">
@@ -388,7 +388,7 @@
 
 
 
-                                  <div class="owl-stage-outer">
+                                  {{-- <div class="owl-stage-outer">
                                     <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0.5s ease 0s; width: 1307px;">
                                       <div class="owl-item active" style="width: 241.397px; margin-right: 20px;">
                                         <div class="product-wrap h-100 mb-0">
@@ -625,7 +625,127 @@
                                   </div>
                                   <div class="owl-nav"><button type="button" role="presentation" class="owl-prev disabled"><i class="d-icon-angle-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="d-icon-angle-right"></i></button>
                                   </div>
-                                  <div class="owl-dots disabled"></div>
+                                  <div class="owl-dots disabled"></div> --}}
+
+
+                                      <div class="product product-image-gap">
+                                        <a href="{{route('products.product')}}">
+                                          <figure class="product-media">
+                                                  <img src="/images/product1.jpg" alt="product" width="280" height="315">
+                                          </figure>
+                                          <div class="product-details">
+                                              <h3 class="product-name">
+                                                  CODO H-H EVAC. SERIE B TERRAIN
+                                              </h3>
+                                              <div class="product-price">
+                                                  <ins class="new-price">199,00 €</ins><del class="old-price">210,00 €</del>
+                                              </div>
+                                              <div class="ratings-container">
+                                                  <div class="ratings-full">
+                                                      <span class="ratings" style="width:100%"></span>
+                                                      <span class="tooltiptext tooltip-top"></span>
+                                                  </div>
+                                                  <span class="rating-reviews">( 6 valoraciones )</span>
+                                              </div>
+                                          </div>
+                                          </a>
+                                      </div>
+
+                                      <div class="product product-image-gap">
+                                        <a href="{{route('products.product')}}">
+                                          <figure class="product-media">
+                                                  <img src="/images/product2.jpg" alt="product" width="280"
+                                                      height="315">
+                                          </figure>
+                                          <div class="product-details">
+                                              <h3 class="product-name">MANGUITO TIPO SAMBRA
+                                              </h3>
+                                              <div class="product-price">
+                                                  <span class="price">35,00 €</span>
+                                              </div>
+                                              <div class="ratings-container">
+                                                  <div class="ratings-full">
+                                                      <span class="ratings" style="width:100%"></span>
+                                                      <span class="tooltiptext tooltip-top"></span>
+                                                  </div>
+                                                    <span class="rating-reviews">( 6 valoraciones )</span>
+                                              </div>
+                                          </div>
+                                        </a>
+                                      </div>
+
+                                      <div class="product product-image-gap">
+                                        <a href="{{route('products.product')}}">
+                                          <figure class="product-media">
+                                                  <img src="/images/product3.jpg" alt="product" width="280"
+                                                      height="315">
+
+                                          </figure>
+                                          <div class="product-details">
+                                              <h3 class="product-name">B.I.E. 25mm-20m VERSAL RAL3000
+                                              </h3>
+                                              <div class="product-price">
+                                                  <span class="price">590,00 €</span>
+                                              </div>
+                                              <div class="ratings-container">
+                                                  <div class="ratings-full">
+                                                      <span class="ratings" style="width:100%"></span>
+                                                      <span class="tooltiptext tooltip-top"></span>
+                                                  </div>
+                                                    <span class="rating-reviews">( 6 valoraciones )</span>
+                                              </div>
+                                          </div>
+                                        </a>
+                                      </div>
+
+
+                                      <div class="product product-image-gap">
+                                        <a href="{{route('products.product')}}" class="rating-reviews">
+                                          <figure class="product-media">
+                                                  <img src="/images/product4.jpg" alt="product" width="280"
+                                                      height="315">
+
+                                          </figure>
+                                          <div class="product-details">
+                                              <h3 class="product-name">CODO H-H EVAC. SERIE B TERRAIN
+                                              </h3>
+                                              <div class="product-price">
+                                                  <ins class="new-price">198,00 €</ins><del class="old-price">270,00 €</del>
+                                              </div>
+                                              <div class="ratings-container">
+                                                  <div class="ratings-full">
+                                                      <span class="ratings" style="width:100%"></span>
+                                                      <span class="tooltiptext tooltip-top"></span>
+                                                  </div>
+                                                    <span class="rating-reviews">( 6 valoraciones )</span>
+                                              </div>
+                                          </div>
+                                        </a>
+                                      </div>
+
+                                      <div class="product product-image-gap">
+                                        <a href="{{route('products.product')}}">
+                                          <figure class="product-media">
+                                                  <img src="/images/product1.jpg" alt="product" width="280" height="315">
+                                          </figure>
+                                          <div class="product-details">
+                                              <h3 class="product-name">
+                                                  CODO H-H EVAC. SERIE B TERRAIN
+                                              </h3>
+                                              <div class="product-price">
+                                                  <ins class="new-price">199,00 €</ins><del class="old-price">210,00 €</del>
+                                              </div>
+                                              <div class="ratings-container">
+                                                  <div class="ratings-full">
+                                                      <span class="ratings" style="width:100%"></span>
+                                                      <span class="tooltiptext tooltip-top"></span>
+                                                  </div>
+                                                  <span class="rating-reviews">( 6 valoraciones )</span>
+                                              </div>
+                                          </div>
+                                          </a>
+                                      </div>
+
                                 </div>
                             </section>
                         </div>
