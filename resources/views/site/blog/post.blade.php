@@ -7,7 +7,7 @@
                 <article class="post-single">
                     <figure class="post-media">
                         <a href="#">
-                            <img src="//images/noticia1.png" width="880" height="450" alt="post" />
+                            <img src="/images/noticia1.png" width="880" height="450" alt="post" />
                         </a>
                     </figure>
                     <div class="post-details">
