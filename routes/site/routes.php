@@ -10,7 +10,7 @@ Route::get('/', [SiteController::class, 'getIndex'])->name('site.index');
 
 // Main pages
 Route::get('/noticias', [SiteController::class, 'listBlogs'])->name('site.blog');
-Route::get('/noticias/{slug}', [SiteController::class, 'showBlog'])->name('site.blog.post');
+Route::get('/noticias/post', [SiteController::class, 'showBlog'])->name('site.blog.post');
 Route::get('/contacto', [SiteController::class, 'getContact'])->name('site.contact');
 Route::post('contact/submit', [SiteController::class, 'do_submitContact'])->name('site.do_contact');
 
