@@ -29,28 +29,28 @@
       <div class="tab-pane active" id="tab-11">
         <ul>
           <li>
-            <a href="#">Inicio</a>
+            <a href="/">Inicio</a>
           </li>
           <li>
-            <a href="#">Empresa</a>
+            <a href="/empresa">Empresa</a>
           </li>
           <li>
-            <a href="noticias.html">Noticias</a>
+            <a href="/noticias">Noticias</a>
           </li>
           <li>
-            <a href="#">Formación</a>
+            <a href="/formacion">Formación</a>
           </li>
           <li>
             <a href="#">Promociones</a>
           </li>
           <li>
-            <a href="#">Descargas</a>
+            <a href="/descargas">Descargas</a>
           </li>
           <li>
-            <a href="#">Marcas</a>
+            <a href="/marcas">Marcas</a>
           </li>
           <li>
-            <a href="#">Contacto</a>
+            <a href="/contacto">Contacto</a>
           </li>
           <li>
             <a href="tel:963302967" class="mt-1 mr-4"><div><span class="pl-1"><i class="fa fa-phone" style="font-size: 1.5rem;"></i> +34 963 30 29 67</span></div></a>
@@ -72,241 +72,241 @@
           </a>
         <ul>
           <li>
-            <a href="categoria.html">
+            <a href="/catalogo/fontaneria">
               <img width="22" src="/images/icons/azules/1.png" class="mr-1" />Fontanería
             </a>
             <ul>
               <li>
-                <a href="categoria.html">Lorem ipsum</a>
+                <a href="/catalogo/fontaneria">Lorem ipsum</a>
                 <ul>
-                  <li><a href="categoria.html">Et dolore</a></li>
-                  <li><a href="categoria.html">Sit amet</a></li>
-                  <li><a href="categoria.html">Laptops</a></li>
+                  <li><a href="/catalogo/fontaneria">Et dolore</a></li>
+                  <li><a href="/catalogo/fontaneria">Sit amet</a></li>
+                  <li><a href="/catalogo/fontaneria">Laptops</a></li>
                 </ul>
               </li>
             </ul>
           </li>
           <li>
-            <a href="categoria.html">
+            <a href="/catalogo/fontaneria">
               <img width="22" src="/images/icons/azules/2.png" class="mr-1" />ACS / Calefacción
             </a>
             <ul>
               <li>
-                <a href="categoria.html">Lorem ipsum</a>
+                <a href="/catalogo/fontaneria">Lorem ipsum</a>
                 <ul>
-                  <li><a href="categoria.html">Et dolore</a></li>
-                  <li><a href="categoria.html">Sit amet</a></li>
-                  <li><a href="categoria.html">Laptops</a></li>
+                  <li><a href="/catalogo/fontaneria">Et dolore</a></li>
+                  <li><a href="/catalogo/fontaneria">Sit amet</a></li>
+                  <li><a href="/catalogo/fontaneria">Laptops</a></li>
                 </ul>
               </li>
             </ul>
           </li>
           <li>
-            <a href="categoria.html">
+            <a href="/catalogo/fontaneria">
               <img width="22" src="/images/icons/azules/3.png" class="mr-1" />Aire acondicionado
             </a>
             <ul>
               <li>
-                <a href="categoria.html">Lorem ipsum</a>
+                <a href="/catalogo/fontaneria">Lorem ipsum</a>
                 <ul>
-                  <li><a href="categoria.html">Et dolore</a></li>
-                  <li><a href="categoria.html">Sit amet</a></li>
-                  <li><a href="categoria.html">Laptops</a></li>
+                  <li><a href="/catalogo/fontaneria">Et dolore</a></li>
+                  <li><a href="/catalogo/fontaneria">Sit amet</a></li>
+                  <li><a href="/catalogo/fontaneria">Laptops</a></li>
                 </ul>
               </li>
             </ul>
           </li>
           <li>
-            <a href="categoria.html">
+            <a href="/catalogo/fontaneria">
               <img width="22" src="/images/icons/azules/4.png" class="mr-1" />Energía renovable
             </a>
             <ul>
               <li>
-                <a href="categoria.html">Lorem ipsum</a>
+                <a href="/catalogo/fontaneria">Lorem ipsum</a>
                 <ul>
-                  <li><a href="categoria.html">Et dolore</a></li>
-                  <li><a href="categoria.html">Sit amet</a></li>
-                  <li><a href="categoria.html">Laptops</a></li>
+                  <li><a href="/catalogo/fontaneria">Et dolore</a></li>
+                  <li><a href="/catalogo/fontaneria">Sit amet</a></li>
+                  <li><a href="/catalogo/fontaneria">Laptops</a></li>
                 </ul>
               </li>
             </ul>
           </li>
           <li>
-            <a href="categoria.html">
+            <a href="/catalogo/fontaneria">
               <img width="22" src="/images/icons/azules/5.png" class="mr-1" />Tubería y Valvulería
             </a>
             <ul>
               <li>
-                <a href="categoria.html">Lorem ipsum</a>
+                <a href="/catalogo/fontaneria">Lorem ipsum</a>
                 <ul>
-                  <li><a href="categoria.html">Et dolore</a></li>
-                  <li><a href="categoria.html">Sit amet</a></li>
-                  <li><a href="categoria.html">Laptops</a></li>
+                  <li><a href="/catalogo/fontaneria">Et dolore</a></li>
+                  <li><a href="/catalogo/fontaneria">Sit amet</a></li>
+                  <li><a href="/catalogo/fontaneria">Laptops</a></li>
                 </ul>
               </li>
             </ul>
           </li>
           <li>
-            <a href="categoria.html">
+            <a href="/catalogo/fontaneria">
               <img width="22" src="/images/icons/azules/6.png" class="mr-1" />Contraincendios
             </a>
             <ul>
               <li>
-                <a href="categoria.html">Lorem ipsum</a>
+                <a href="/catalogo/fontaneria">Lorem ipsum</a>
                 <ul>
-                  <li><a href="categoria.html">Et dolore</a></li>
-                  <li><a href="categoria.html">Sit amet</a></li>
-                  <li><a href="categoria.html">Laptops</a></li>
+                  <li><a href="/catalogo/fontaneria">Et dolore</a></li>
+                  <li><a href="/catalogo/fontaneria">Sit amet</a></li>
+                  <li><a href="/catalogo/fontaneria">Laptops</a></li>
                 </ul>
               </li>
             </ul>
           </li>
           <li>
-            <a href="categoria.html">
+            <a href="/catalogo/fontaneria">
               <img width="22" src="/images/icons/azules/7.png" class="mr-1" />Bombeo
             </a>
             <ul>
               <li>
-                <a href="categoria.html">Lorem ipsum</a>
+                <a href="/catalogo/fontaneria">Lorem ipsum</a>
                 <ul>
-                  <li><a href="categoria.html">Et dolore</a></li>
-                  <li><a href="categoria.html">Sit amet</a></li>
-                  <li><a href="categoria.html">Laptops</a></li>
+                  <li><a href="/catalogo/fontaneria">Et dolore</a></li>
+                  <li><a href="/catalogo/fontaneria">Sit amet</a></li>
+                  <li><a href="/catalogo/fontaneria">Laptops</a></li>
                 </ul>
               </li>
             </ul>
           </li>
           <li>
-            <a href="categoria.html">
+            <a href="/catalogo/fontaneria">
               <img width="22" src="/images/icons/azules/8.png" class="mr-1" />Saneamientos
             </a>
             <ul>
               <li>
-                <a href="categoria.html">Lorem ipsum</a>
+                <a href="/catalogo/fontaneria">Lorem ipsum</a>
                 <ul>
-                  <li><a href="categoria.html">Et dolore</a></li>
-                  <li><a href="categoria.html">Sit amet</a></li>
-                  <li><a href="categoria.html">Laptops</a></li>
+                  <li><a href="/catalogo/fontaneria">Et dolore</a></li>
+                  <li><a href="/catalogo/fontaneria">Sit amet</a></li>
+                  <li><a href="/catalogo/fontaneria">Laptops</a></li>
                 </ul>
               </li>
             </ul>
           </li>
           <li>
-            <a href="categoria.html">
+            <a href="/catalogo/fontaneria">
               <img width="22" src="/images/icons/azules/9.png" class="mr-1" />Sanitarios Y Griferías
             </a>
             <ul>
               <li>
-                <a href="categoria.html">Lorem ipsum</a>
+                <a href="/catalogo/fontaneria">Lorem ipsum</a>
                 <ul>
-                  <li><a href="categoria.html">Et dolore</a></li>
-                  <li><a href="categoria.html">Sit amet</a></li>
-                  <li><a href="categoria.html">Laptops</a></li>
+                  <li><a href="/catalogo/fontaneria">Et dolore</a></li>
+                  <li><a href="/catalogo/fontaneria">Sit amet</a></li>
+                  <li><a href="/catalogo/fontaneria">Laptops</a></li>
                 </ul>
               </li>
             </ul>
           </li>
           <li>
-            <a href="categoria.html">
+            <a href="/catalogo/fontaneria">
               <img width="22" src="/images/icons/azules/10.png" class="mr-1" />Ventilación
             </a>
             <ul>
               <li>
-                <a href="categoria.html">Lorem ipsum</a>
+                <a href="/catalogo/fontaneria">Lorem ipsum</a>
                 <ul>
-                  <li><a href="categoria.html">Et dolore</a></li>
-                  <li><a href="categoria.html">Sit amet</a></li>
-                  <li><a href="categoria.html">Laptops</a></li>
+                  <li><a href="/catalogo/fontaneria">Et dolore</a></li>
+                  <li><a href="/catalogo/fontaneria">Sit amet</a></li>
+                  <li><a href="/catalogo/fontaneria">Laptops</a></li>
                 </ul>
               </li>
             </ul>
           </li>
           <li>
-            <a href="categoria.html">
+            <a href="/catalogo/fontaneria">
               <img width="22" src="/images/icons/azules/11.png" class="mr-1" />Piscinas
             </a>
             <ul>
               <li>
-                <a href="categoria.html">Lorem ipsum</a>
+                <a href="/catalogo/fontaneria">Lorem ipsum</a>
                 <ul>
-                  <li><a href="categoria.html">Et dolore</a></li>
-                  <li><a href="categoria.html">Sit amet</a></li>
-                  <li><a href="categoria.html">Laptops</a></li>
+                  <li><a href="/catalogo/fontaneria">Et dolore</a></li>
+                  <li><a href="/catalogo/fontaneria">Sit amet</a></li>
+                  <li><a href="/catalogo/fontaneria">Laptops</a></li>
                 </ul>
               </li>
             </ul>
           </li>
           <li>
-            <a href="categoria.html">
+            <a href="/catalogo/fontaneria">
               <img width="22" src="/images/icons/azules/12.png" class="mr-1" />Tratamiento de agua
             </a>
             <ul>
               <li>
-                <a href="categoria.html">Lorem ipsum</a>
+                <a href="/catalogo/fontaneria">Lorem ipsum</a>
                 <ul>
-                  <li><a href="categoria.html">Et dolore</a></li>
-                  <li><a href="categoria.html">Sit amet</a></li>
-                  <li><a href="categoria.html">Laptops</a></li>
+                  <li><a href="/catalogo/fontaneria">Et dolore</a></li>
+                  <li><a href="/catalogo/fontaneria">Sit amet</a></li>
+                  <li><a href="/catalogo/fontaneria">Laptops</a></li>
                 </ul>
               </li>
             </ul>
           </li>
           <li>
-            <a href="categoria.html">
+            <a href="/catalogo/fontaneria">
               <img width="22" src="/images/icons/azules/13.png" class="mr-1" />Riego
             </a>
             <ul>
               <li>
-                <a href="categoria.html">Lorem ipsum</a>
+                <a href="/catalogo/fontaneria">Lorem ipsum</a>
                 <ul>
-                  <li><a href="categoria.html">Et dolore</a></li>
-                  <li><a href="categoria.html">Sit amet</a></li>
-                  <li><a href="categoria.html">Laptops</a></li>
+                  <li><a href="/catalogo/fontaneria">Et dolore</a></li>
+                  <li><a href="/catalogo/fontaneria">Sit amet</a></li>
+                  <li><a href="/catalogo/fontaneria">Laptops</a></li>
                 </ul>
               </li>
             </ul>
           </li>
           <li>
-            <a href="categoria.html">
+            <a href="/catalogo/fontaneria">
               <img width="22" src="/images/icons/azules/14.png" class="mr-1" />Herramientas
             </a>
             <ul>
               <li>
-                <a href="categoria.html">Lorem ipsum</a>
+                <a href="/catalogo/fontaneria">Lorem ipsum</a>
                 <ul>
-                  <li><a href="categoria.html">Et dolore</a></li>
-                  <li><a href="categoria.html">Sit amet</a></li>
-                  <li><a href="categoria.html">Laptops</a></li>
+                  <li><a href="/catalogo/fontaneria">Et dolore</a></li>
+                  <li><a href="/catalogo/fontaneria">Sit amet</a></li>
+                  <li><a href="/catalogo/fontaneria">Laptops</a></li>
                 </ul>
               </li>
             </ul>
           </li>
           <li>
-            <a href="categoria.html">
+            <a href="/catalogo/fontaneria">
               <img width="22" src="/images/icons/azules/15.png" class="mr-1" />Aspiración Centralizada
             </a>
             <ul>
               <li>
-                <a href="categoria.html">Lorem ipsum</a>
+                <a href="/catalogo/fontaneria">Lorem ipsum</a>
                 <ul>
-                  <li><a href="categoria.html">Et dolore</a></li>
-                  <li><a href="categoria.html">Sit amet</a></li>
-                  <li><a href="categoria.html">Laptops</a></li>
+                  <li><a href="/catalogo/fontaneria">Et dolore</a></li>
+                  <li><a href="/catalogo/fontaneria">Sit amet</a></li>
+                  <li><a href="/catalogo/fontaneria">Laptops</a></li>
                 </ul>
               </li>
             </ul>
           </li>
           <li>
-            <a href="categoria.html">
+            <a href="/catalogo/fontaneria">
               <img width="22" src="/images/icons/azules/16.png" class="mr-1" />Ropa de trabajo
             </a>
             <ul>
               <li>
-                <a href="categoria.html">Lorem ipsum</a>
+                <a href="/catalogo/fontaneria">Lorem ipsum</a>
                 <ul>
-                  <li><a href="categoria.html">Et dolore</a></li>
-                  <li><a href="categoria.html">Sit amet</a></li>
-                  <li><a href="categoria.html">Laptops</a></li>
+                  <li><a href="/catalogo/fontaneria">Et dolore</a></li>
+                  <li><a href="/catalogo/fontaneria">Sit amet</a></li>
+                  <li><a href="/catalogo/fontaneria">Laptops</a></li>
                 </ul>
               </li>
             </ul>

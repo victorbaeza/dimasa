@@ -8226,7 +8226,7 @@ button.mfp-arrow {
   font-size: 1.2rem
 }
 
-.login-popup .lost-link:hover {
+.login-popup .lost-link a:hover {
   color: #00377A
 }
 
@@ -10969,10 +10969,26 @@ aside+div .product-single .product-details {
   border: 0
 }
 
-.tab-nav-solid .nav-item.show .nav-link, .tab-nav-solid .nav-item .nav-link.active, .tab-nav-solid .nav-item:hover .nav-link {
+.tab-nav-solid .nav-item.show .nav-link, .tab-nav-solid .nav-item .nav-link.active {
   color: #fff;
   background-color: #00377A;
   border-color: #00377A
+}
+
+.tab-register.tab-nav-solid .nav-item.show .nav-link, .tab-register.tab-nav-solid .nav-item .nav-link.active, .tab-register.tab-nav-solid .nav-item:hover .nav-link {
+    color: #333;
+    background-color: #eaeaea;
+    border-color: #eaeaea;
+}
+
+.tab-register.tab-nav-solid .nav-item:hover .nav-link {
+    color: #333;
+    background-color: #f6f6f6;
+    border-color: #f6f6f6;
+}
+
+.tab-register .nav-item .nav-link{
+  font-weight: 400;
 }
 
 @media (max-width: 767px) {
