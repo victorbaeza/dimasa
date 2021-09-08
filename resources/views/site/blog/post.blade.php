@@ -61,11 +61,11 @@
                       <div class="post post-sm overlay-dark">
                         <a href="">
                           <figure class="post-media">
-                                  <img src="/images/noticia1.png" width="380" height="200" alt="{{$related_post->title}}" />
+                                  <img src="/images/noticia1.png" width="380" height="200" alt="" />
                           </figure>
                           <div class="post-details">
-                              <h4 class="post-title">{{$related_post->title}}</h4>
-                              <p class="post-content text-justify">{{$related_post->description}}</p>
+                              <h4 class="post-title">Ejemplo</h4>
+                              <p class="post-content text-justify">Descripción</p>
                           </div>
                           </a>
                       </div>
