@@ -211,7 +211,7 @@
     <a href="#" class="social-link social-twitter fab fa-twitter"></a>
     <a href="#" class="social-link social-linkedin fab fa-linkedin-in"></a>
     <a href="#" class="social-link social-facebook fab fa-facebook-f"></a>
-    <a href="#" class="social-link social-youtube fab fa-youtube-y"></a>
+    <a href="#" class="social-link social-pinterest fab fa-youtube"></a>
   </div>
 </section>
 
