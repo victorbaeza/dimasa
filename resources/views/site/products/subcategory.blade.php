@@ -7,13 +7,21 @@
 @section('content')
 <section class="mt-4">
   <div class="container">
-
+      <nav class="breadcrumb-nav">
+        <div>
+          <ul class="breadcrumb">
+            <li><a href="/"><i class="d-icon-home"></i></a></li>
+            <li><a href="{{route('products.category')}}">Fontanería</a></li>
+            <li>Accesorios PVC para fontanería</li>
+          </ul>
+        </div>
+      </nav>
         <div class="row gutter-lg main-content-wrap">
           <aside
             class="col-lg-3 sidebar sidebar-fixed sidebar-toggle-remain shop-sidebar sticky-sidebar-wrapper">
             <div class="sidebar-overlay"></div>
             <a class="sidebar-close" href="#"><i class="d-icon-times"></i></a>
-            <div class="sidebar-content">
+            <div class="sidebar-content mt-5">
               <div class="sticky-sidebar" data-sticky-options="{'top': 10}">
                 <!-- <div class="filter-actions mb-4">
                   <a href="#" class="filter-clean">Clean All</a>
@@ -51,7 +59,7 @@
           </aside>
           <div class="col-lg-9 main-content">
 
-            <nav class="toolbox sticky-toolbox sticky-content fix-top pt-0">
+            <nav class="toolbox sticky-toolbox sticky-content fix-top pt-1 pl-1 pr-1">
               <div class="toolbox-left">
                 <h1 class="title shop-title mb-0">Accesorios PVC para fontanería</h1>
               </div>

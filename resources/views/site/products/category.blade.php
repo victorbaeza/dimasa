@@ -2,13 +2,14 @@
 
 {{-- css --}}
 @section('extracss')
+  <link href="{{asset('css/select2.min.css')}}" rel="stylesheet" />
 @stop
 {{-- Content --}}
 @section('content')
 <section class="mt-4">
     <div class="container">
       <div class="row">
-        <div class="col-lg-3 d-lg-show" id="menu-lat">
+        <div class="col-lg-3 d-lg-show" id="menu-lat" style="max-width: 20%">
           <div class="widget widget-collapsible border-no">
 										<ul class="widget-body filter-items search-ul">
 											<li class="with-ul">
@@ -16,7 +17,7 @@
                           <img width="22" src="/images/icons/azules/1.png" class="mr-1" />Fontanería
                           <i class="fas fa-chevron-down"></i>
                         </a>
-												<ul style="display: none;">
+												<ul>
 													<li><a href="#">Lorem ipsum</a></li>
 												</ul>
 											</li>
@@ -77,7 +78,7 @@
 										</ul>
 									</div>
         </div>
-        <div class="col-lg-9">
+        <div class="col-lg-9 col-12" id="category-column">
           <nav class="breadcrumb-nav">
             <div>
               <ul class="breadcrumb">
@@ -105,6 +106,29 @@
                       <span class="category-count">20 productos</span>
                   </div>
                 </a>
+
+                <select class="form-control category-selector">
+                  <option >- Elige una categoría -</option>
+                  <option data-href="{{route('products.category_products')}}">Tubería insonoro</option>
+                  <option data-href="{{route('products.category_products')}}">Tubería insonoro plus</option>
+                </select>
+                {{-- <div class="accordion accordion-boxed accordion-plus accordion-gutter-md category-selector" style="position:absolute;z-index: 999;width: 100%;">
+                    <div class="card">
+                        <div class="card-header">
+                            <a href="#collapse3-1" class="expand" style="width: 100%;">First Header</a>
+                        </div>
+                        <div id="collapse3-1" class="collapsed">
+                            <div class="card-body">
+                              <div class="category-selection" data-href="{{route('products.category_products')}}">
+                                <div class="d-flex align-items-center">
+                                  <img src="/images/product1.jpg" class="mr-1" style="width: 40px;height: 40px !important;margin-left: 0;margin-right: 0;object-fit: contain;" /><span>Tubería insonoro</span>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
+
               </div>
               <div class="category category-absolute category-classic mb-5">
                 <a href="{{ route('products.category_products') }}">
@@ -116,6 +140,11 @@
                         <span class="category-count">20 productos</span>
                     </div>
                   </a>
+                  <select class="form-control category-selector">
+                    <option>- Elige una categoría -</option>
+                    <option data-href="{{route('products.category_products')}}">Tubería PB</option>
+                    <option data-href="{{route('products.category_products')}}">Accesorios PB</option>
+                  </select>
                 </div>
                 <div class="category category-absolute category-classic mb-5">
                   <a href="{{ route('products.category_products') }}">
@@ -127,6 +156,11 @@
                           <span class="category-count">46 productos</span>
                       </div>
                     </a>
+                    <select class="form-control category-selector">
+                      <option>- Elige una categoría -</option>
+                      <option data-href="{{route('products.category_products')}}">Tubería PB</option>
+                      <option data-href="{{route('products.category_products')}}">Accesorios PB</option>
+                    </select>
                   </div>
                   <div class="category category-absolute category-classic mb-5">
                     <a href="{{ route('products.category_products') }}">
@@ -138,9 +172,15 @@
                             <span class="category-count">33 productos</span>
                         </div>
                       </a>
+                      <select class="form-control category-selector">
+                        <option>- Elige un producto -</option>
+                        <option data-href="{{route('products.product')}}"><img src="/images/producto1.png" width="20" />TUBO PE40 BD 4 ATM.</option>
+                        <option data-href="{{route('products.product')}}">TUBO PE40 BD 6 ATM.</option>
+                      </select>
+
                     </div>
           </div>
-          <div class="mt-5">
+          <div class="mt-10">
               <p style="text-align: justify;font-size: 12px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris molestie facilisis nisl a gravida. Suspendisse potenti. In eu pellentesque nibh, nec lobortis nunc. <b>Proin efficitur
                       lobortis lacus</b>, vel dapibus ex faucibus sed. Nullam blandit pharetra leo vitae suscipit. Pellentesque eu mollis turpis. Duis ornare congue turpis, vel malesuada arcu malesuada et. Curabitur luctus maximus augue, vel sagittis
                   lorem euismod ut. Donec vel ligula a massa dignissim mattis id eget tellus. Maecenas aliquet non quam eu finibus. <b>Sed ornare</b> bibendum est. Nullam at sagittis nibh. Aenean sodales odio convallis vulputate blandit. Curabitur
@@ -158,8 +198,10 @@
 @stop
 {{-- Scripts --}}
 @section('scripts')
+<script src="{{asset('js/select2.min.js')}}"></script>
 <script>
 $(document).ready(function(){
+  $('.category-selector').select2();
   var segments = window.location.pathname.split('/');
   if(segments.length == 3 && segments[1] == 'catalogo'){
     var menu = $('.category-dropdown .dropdown-box');
@@ -175,6 +217,19 @@ $(document).ready(function(){
     // });
   }
 
+  setCategorySelectorEvent();
+
 });
+
+function setCategorySelectorEvent()
+{
+  var selectors = $('.category-selector');
+
+  selectors.on('change', function(){
+    var href = $(this).find('option:selected').data('href');
+    if(href != undefined)
+    window.location.href = href;
+  });
+}
 </script>
 @stop

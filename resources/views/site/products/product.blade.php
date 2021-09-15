@@ -7,15 +7,15 @@
 @section('content')
 <section class="mt-4">
   <div class="container">
-                    <nav class="breadcrumb-nav product-navigation">
-                        <ul class="breadcrumb pt-0 pb-0 mb-0">
+                    <nav class="breadcrumb-nav">
+                        <ul class="breadcrumb pt-0 pb-0 mb-5">
                             <li><a href="market2.html"><i class="d-icon-home"></i></a></li>
                             <li><a href="#">Fontanería</a></li>
-                            <li><a href="#">PVC</li>
-                            <li  class="active">MULTI-SPLIT INVERTER MOD. TERMAT R32</li>
+                            <li><a href="#">PVC</a></li>
+                            <li  class="active">CALENTADOR DE GAS ESTANCO SIME MINI 12 BF ErP</li>
                         </ul>
 
-                        <ul class="product-nav mb-0">
+                        {{-- <ul class="product-nav mb-0">
                             <li class="product-nav-prev">
                                 <a href="#">
                                     <i class="d-icon-arrow-left"></i> Anterior
@@ -36,7 +36,7 @@
                                     </span>
                                 </a>
                             </li>
-                        </ul>
+                        </ul> --}}
                     </nav>
                     <div class="row gutter-lg">
                         <div class="col-12">
@@ -46,14 +46,14 @@
                                         <div
                                             class="product-single-carousel owl-carousel owl-theme owl-nav-inner row cols-1">
                                             <figure class="product-image">
-                                                <img src="/images/product3.jpg"
+                                                <img src="/images/producto-ficha.png"
                                                     alt="">
                                             </figure>
                                         </div>
                                         <div class="product-thumbs-wrap">
                                             <div class="product-thumbs">
                                                 <div class="product-thumb active">
-                                                    <img src="/images/product3.jpg"
+                                                    <img src="/images/producto-ficha.png"
                                                         alt="product thumbnail" width="118" height="135">
                                                 </div>
                                             </div>
@@ -65,12 +65,11 @@
                                     </div>
                                 </div>
                                 <div class="col-md-7">
-                                    <div class="product-details pt-3">
-                                        <h1 class="product-name">MULTI-SPLIT INVERTER MOD. TERMAT R32</h1>
+                                    <div class="product-details">
+                                        <h1 class="product-name">CALENTADOR DE GAS ESTANCO SIME MINI 12 BF ErP</h1>
                                         <div class="product-meta">
                                             MARCA: <span class="product-brand">Lorem ipsum</span>
                                         </div>
-                                        <div class="product-price">198,00 €</div>
                                         <div class="ratings-container">
                                             <div class="ratings-full">
                                                 <span class="ratings" style="width:80%"></span>
@@ -79,9 +78,9 @@
                                             <a href="#product-tab-reviews" class="link-to-tab rating-reviews">( 1
                                                 Valoraciones )</a>
                                         </div>
-                                        <p class="product-short-desc">
-                                            Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue.
-                                            Morbi purus liberpuro ate vol faucibus adipiscing.</p>
+                                        <div class="product-price">198,00 €</div>
+                                        <p class="product-short-desc mb-2">
+                                            Sólo para instalación en exterior, NO intemperie. Encendido automático a baterías. Bajo NOx. <a href="#product-tab-description">Ver más</a></p>
                                         <!-- <div class="product-form product-size">
                                             <label>Size:</label>
                                             <div class="product-form-group">
@@ -97,9 +96,15 @@
                                         <div class="product-variation-price">
                                             <span>$239.00</span>
                                         </div> -->
-
-                                        <hr class="product-divider">
-
+                                        <hr class="product-divider mb-1">
+                                        <div class="product-form product-variations product-color d-flex flex-column mb-3">
+                                          <span>Selecciona el tipo de producto:</span>
+                        									<div class="select-box">
+                        										<select name="color" class="form-control">
+                        											<option value="white">CALENTADOR DE GAS ESTANCO SIME MINI 12 BF ErP</option>
+                        										</select>
+                        									</div>
+                        								</div>
                                         <div class="product-form product-qty">
                                             <div class="product-form-group">
                                                 <div class="input-group mr-2">
@@ -108,6 +113,7 @@
                                                         max="1000000">
                                                     <button class="quantity-plus d-icon-plus"></button>
                                                 </div>
+                                                <span class="text-success">En stock</span>
                                                 <button
                                                     class="btn-product btn-cart text-normal ls-normal font-weight-semi-bold"><i
                                                         class="d-icon-bag"></i>Añadir al carrito</button>
@@ -167,6 +173,8 @@
                                             <th>Modelo</th>
                                             <th>Características</th>
                                             <th>PVR</th>
+                                            <th>Cantidad</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -175,12 +183,16 @@
                                             <td class="variation-date"><time>MULTI-SPLIT INVERTER MOD. TERMAT R32</time></td>
                                             <td class="variation-status"><span>18 K</span></td>
                                             <td class="variation-total"><span>198,00 €</span></td>
+                                            <td class="variation-quantity"><input type="number" min="1" value="1" class="form-control" /></td>
+                                            <td class="variation-action"><span class="btn btn-cart btn-primary"><i class="d-icon-bag"></></span></td>
                                         </tr>
                                         <tr>
                                             <td class="variation-number font-weight-bold"><a href="#"># TM2MS18912CAN3R32</a></td>
                                             <td class="variation-date"><time>MULTI-SPLIT INVERTER MOD. TERMAT R32</time></td>
                                             <td class="variation-status"><span>18 K</span></td>
                                             <td class="variation-total"><span>398,00 €</span></td>
+                                            <td class="variation-quantity"><input type="number" value="1" min="1" class="form-control" /></td>
+                                            <td class="variation-action"><span class="btn btn-cart btn-primary"><i class="d-icon-bag"></></span></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -190,9 +202,9 @@
                                     <li class="nav-item">
                                         <a class="nav-link nav-link-product active" href="#product-tab-description">Descripción</a>
                                     </li>
-                                    <li class="nav-item">
+                                    {{-- <li class="nav-item">
                                         <a class="nav-link nav-link-product" href="#product-tab-shipping-returns">Envío y devoluciones</a>
-                                    </li>
+                                    </li> --}}
                                     <li class="nav-item">
                                         <a class="nav-link nav-link-product" href="#product-tab-reviews">Valoraciones (1)</a>
                                     </li>

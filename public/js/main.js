@@ -3110,6 +3110,7 @@ window.Riode = {};
 
         setActiveNavLink();
         setScrollEvent();
+        setMenuCategoryNavigatorEvent();
     }
 
     function setScrollEvent()
@@ -3127,6 +3128,37 @@ window.Riode = {};
         options.speed //speed
       );
       })
+    }
+
+    function setMenuCategoryNavigatorEvent()
+    {
+      var categories = $('.menu-category');
+
+      //Show subcategories
+      categories.hover(function(){
+          $('.menu-subcategory').css({'display': 'none'});
+          $($(this).data('subcategory')).css({'display': 'block'});
+      });
+
+      // categories.mouseleave(function(){
+      //   $($(this).data('subcategory')).css({'display': 'none'});
+      // });
+
+      $('.menu-subcategory').mouseleave(function(){
+          $(this).css({
+            'display': 'none',
+            "visibility": "hidden",
+            "opacity": "0"
+          });
+      });
+
+      $('.megamenu').mouseleave(function(){
+          $('.menu-subcategory').css({
+            'display': 'none',
+            "visibility": "visible",
+            "opacity": "1"
+          });
+      });
     }
 
     //Set active navigation link
