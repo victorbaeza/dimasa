@@ -1,5 +1,5 @@
 <header class="header">
-  <div class="header-top">
+  <div class="header-top d-lg-show">
     <div class="container">
       <div class="header-left">
 
@@ -57,18 +57,16 @@
             </div>
           </a>
         </div>
-        <div class="icon-box icon-box-side align-items-center">
+        <div class="icon-box icon-box-side align-items-center d-lg-show">
           <a href="#">
             <div class="icon-box-icon mr-0 mr-lg-2">
               <i class="d-icon-user"></i>
             </div>
             <div class="icon-box-content d-lg-show d-flex">
-              <a class="login-link mr-1" href="/ajax/login.html" data-toggle="login-modal">Iniciar sesión</a>
+              <a class="login-link mr-1" href="#" data-toggle="login-modal">Iniciar sesión</a>
               <span class="delimiter">/</span>
-              <a class="register-link ml-1 mr-0" href="/ajax/login.html" data-toggle="login-modal">Registrarse</a>
+              <a class="register-link ml-1 mr-0" href="#" data-toggle="login-modal">Registrarse</a>
             </div>
-
-
           </a>
         </div>
 
