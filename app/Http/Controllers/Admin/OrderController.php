@@ -192,32 +192,6 @@ class OrderController extends Controller
         return redirect()->route('admin.shipment.list')->with('success', 'El método de envío ha sido borrada correctamente');
     }
 
-    public function getShipmentData(Request $request) : array{
-        $this->validateShipment($request);
-
-        $shipmentData = [
-            'cost' => floatval($request->input('cost')),
-            'minimum_free' => $request->input('minimum_free') ,
-            'default' => boolval($request->input('default')),
-            'active' => boolval($request->input('active'))
-        ];
-
-        foreach(Helper::getLanguages() as $language){
-            $description = $request->input($language.'_description');
-            if($description){
-                $this->validateShipmentTranslation($request, $language);
-                $shipmentData[$language] = [
-                    'description' => $description
-                ];
-            }
-        }
-
-        return $shipmentData;
-    }
-
-    public function validateShipmentTranslation(Request $request,string $language){
-        $request->validate(ShippingMethod::rulesByLanguage($language), ShippingMethod::rulesByLanguagesMessages($language));
-    }
 
     public function validateShipment(Request $request){
         $request->validate(ShippingMethod::$rules, ShippingMethod::$rulesMessages);

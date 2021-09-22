@@ -44,6 +44,13 @@ class Purchase extends BaseModel{
 			$this->save();
 	}
 
+	public function getFile()
+	{
+			$path = Purchase::FILE_URL . $this->id . '/' . $this->invoice_file;
+
+			return $path;
+	}
+
 }
 
 

@@ -11,6 +11,9 @@ use Helper;
 use ProductCategory;
 use Product;
 use ProductPhoto;
+use Vendor;
+use PaymentForm;
+use PurchasePaymentForm;
 
 class AjaxController extends Controller
 {
@@ -159,7 +162,7 @@ class AjaxController extends Controller
         $output['results']=$results;
 
         $pagination=array();
-        $pagination['more']=$proveedores->hasMorePages();
+        $pagination['more']=$vendors->hasMorePages();
 
         $output['pagination']=$pagination;
 
@@ -174,12 +177,13 @@ class AjaxController extends Controller
         $products = Product::query();
 
         if($q!=""){
-          $products->where(function($query) use($q){
-            $query->where('name', 'LIKE','%'.$q.'%')->orwhere('sku', 'LIKE','%'.$q.'%')->orwhere('reference', 'LIKE','%'.$q.'%');
-          });
+          $products = $products->whereTranslationLike('name','%'.$q.'%');
+          // $products->where(function($query) use($q){
+          //   $query->whereTranslationLike('name', '%'.$q.'%')->orWhere('sku', 'LIKE','%'.$q.'%')->orWhere('reference', 'LIKE','%'.$q.'%');
+          // });
         }
 
-        $products = $products->orderBy('name', 'ASC');
+        // $products = $products->orderBy('name', 'ASC');
 
         $total = $products->count();
         $products = $products->paginate(Helper::NUM_PAGED_RESULTS);
@@ -217,7 +221,44 @@ class AjaxController extends Controller
           });
         }
 
-        $payment_forms = $payment_forms->orderBy('name', 'ASC');
+        // $payment_forms = $payment_forms->orderBy('name', 'ASC');
+
+        $total = $payment_forms->count();
+        $payment_forms = $payment_forms->paginate(Helper::NUM_PAGED_RESULTS);
+
+        $results=array();
+
+        foreach($payment_forms as $payment_form)
+        {
+          $temp=array();
+          $temp['id']=$payment_form->id;
+          $temp['text']=$payment_form->name;
+          $results[]=$temp;
+        }
+        $output['results']=$results;
+
+        $pagination=array();
+        $pagination['more']=$payment_forms->hasMorePages();
+
+        $output['pagination']=$pagination;
+
+        return json_encode($output);
+    }
+
+    public function selectPurchasePaymentForms(Request $request)
+    {
+        $output=array();
+
+        $q = $request->input('search');
+        $payment_forms = PurchasePaymentForm::query();
+
+        if($q!=""){
+          $payment_forms->where(function($query) use($q){
+            $query->where('short_name', 'LIKE','%'.$q.'%')->orWhere('name', 'LIKE', '%' .$q . '%');
+          });
+        }
+
+        // $payment_forms = $payment_forms->orderBy('name', 'ASC');
 
         $total = $payment_forms->count();
         $payment_forms = $payment_forms->paginate(Helper::NUM_PAGED_RESULTS);
