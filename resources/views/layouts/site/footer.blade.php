@@ -35,7 +35,7 @@
           </a>
           <!-- End FooterLogo -->
         </div>
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-3 col-md-4">
           <div class="widget widget-info">
             <h4 class="widget-title">Contacto</h4>
             <ul class="widget-body">
@@ -43,7 +43,10 @@
                 <a href="tel:+34640093821"><i class="d-icon-phone"></i> +34 952 336 808</a>
               </li>
               <li>
-                <a href="#" rel="noindex nofollow"><i class="d-icon-map"></i>Calle de Alfredo Corrochano, 101, 29006 Málaga.</a>
+                <a href="https://www.google.es/maps/place/Saneamientos+Dimasa/@36.7133841,-4.4857638,17z/data=!3m1!5s0xd72f0b38c4953f7:0xdbcc02d838e83701!4m13!1m7!3m6!1s0xd72f0b38d30d5d9:0x9828b85a6153521a!2sC.+de+Alfredo+Corrochano,+101,+29006+M%C3%A1laga!3b1!8m2!3d36.7133798!4d-4.4835751!3m4!1s0xd72f7572a4e75cb:0x7e188c311dfca577!8m2!3d36.7135055!4d-4.4836179" rel="noindex nofollow"><i class="d-icon-map"></i>Calle de Alfredo Corrochano, 101, 29006 Málaga</a>
+              </li>
+              <li>
+                <a href="https://www.google.es/maps/place/C.+Eslovaquia,+43,+29670+Marbella,+M%C3%A1laga/@36.4977843,-4.9952112,17z/data=!3m1!4b1!4m5!3m4!1s0xd732a0c3a84bb35:0xada8b0ed0a9089fa!8m2!3d36.49778!4d-4.9930225" rel="noindex nofollow"><i class="d-icon-map"></i>Calle Eslovaquia 43, San Pedro de Alcántara, Marbella</a>
               </li>
               <li>
                 <i class="d-icon-clock"></i> Lun - Vie / 10:00 - 14:00
@@ -52,7 +55,7 @@
           </div>
           <!-- End Widget -->
         </div>
-        <div class="col-lg-2 col-md-6">
+        <div class="col-lg-2 col-md-4">
           <div class="widget widget-legal ml-lg-4">
             <h4 class="widget-title">Zona legal</h4>
             <ul class="widget-body">
@@ -72,7 +75,7 @@
           </div>
           <!-- End Widget -->
         </div>
-        <div class="col-lg-3 col-md-12">
+        <div class="col-lg-3 col-md-4">
           <div class="widget posts">
             <h4 class="widget-title">Últimas noticias</h4>
             <ul class="widget-body">

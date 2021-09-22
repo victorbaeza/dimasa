@@ -49,13 +49,13 @@ class SiteController extends Controller
         return view('site.blog.list');
     }
 
-    public function showBlog(Request $request, string $slug)
+    public function showBlog()
     {
-        $blog = Blog::where('slug', $slug)->firstOrFail();
+        // $blog = Blog::where('slug', $slug)->firstOrFail();
+        //
+        // $related_blogs = Blog::where('id', '!=', $blog->id)->limit(3)->get();
 
-        $related_blogs = Blog::where('id', '!=', $blog->id)->limit(3)->get();
-
-        return view('site.blog.post', compact('blog', 'related_blogs'));
+        return view('site.blog.post');
     }
 
 

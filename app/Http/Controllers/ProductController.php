@@ -17,29 +17,29 @@ class ProductController extends Controller
 
     public function showProductList(Request $request)
     {
-        // $products = Product::where('active', 1)->whereNull('parent_id')->get();
-        $products = Product::translatedIn(app()->getLocale())
-                           ->where('active', 1)->whereNull('parent_id')->orderByTranslation('name', 'DESC')->get();
+        // // $products = Product::where('active', 1)->whereNull('parent_id')->get();
+        // $products = Product::translatedIn(app()->getLocale())
+        //                    ->where('active', 1)->whereNull('parent_id')->orderByTranslation('name', 'DESC')->get();
 
-        return view('site.store.product_list', compact('products'));
+        return view('site.products.subcategory');
     }
 
-    public function show(Request $request, string $slug)
+    public function show(Request $request)
     {
-        $product = Product::whereNull('parent_id')->whereTranslation('slug', $slug)->firstOrFail();
-
-        $isInCart = false;
-        foreach (Cart::content() as $cartItem){
-            if($cartItem->id == $product->id){
-                $isInCart = $cartItem->rowId;
-                break;
-            }
-        }
-
-        $related_products = Product::translatedIn(app()->getLocale())
-                                   ->whereNull('parent_id')->where('id', '!=', $product->id)->limit(3)->get();
-
-        $productOfferPrice = $product->getFinalPriceWithVAT();
-        return view('site.store.product_view', compact('product','isInCart','productOfferPrice', 'related_products'));
+        // $product = Product::whereNull('parent_id')->whereTranslation('slug', $slug)->firstOrFail();
+        //
+        // $isInCart = false;
+        // foreach (Cart::content() as $cartItem){
+        //     if($cartItem->id == $product->id){
+        //         $isInCart = $cartItem->rowId;
+        //         break;
+        //     }
+        // }
+        //
+        // $related_products = Product::translatedIn(app()->getLocale())
+        //                            ->whereNull('parent_id')->where('id', '!=', $product->id)->limit(3)->get();
+        //
+        // $productOfferPrice = $product->getFinalPriceWithVAT();
+        return view('site.products.product');
     }
 }

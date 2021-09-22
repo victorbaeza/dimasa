@@ -1,5 +1,5 @@
 <header class="header">
-  <div class="header-top">
+  <div class="header-top d-lg-show">
     <div class="container">
       <div class="header-left">
 
@@ -44,6 +44,9 @@
         <!-- End Header Search -->
       </div>
       <div class="header-right">
+        <div class="mr-5 d-flex d-lg-none align-items-center">
+          <a class="login-link mr-0" href="#login-modal" data-toggle="login-modal"><i class="d-icon-user"></i></a>
+        </div>
         <div class="icon-box icon-box-side">
           <a href="#">
             <div class="icon-box-icon mr-0 mr-lg-2">
@@ -54,18 +57,16 @@
             </div>
           </a>
         </div>
-        <div class="icon-box icon-box-side align-items-center">
+        <div class="icon-box icon-box-side align-items-center d-lg-show">
           <a href="#">
             <div class="icon-box-icon mr-0 mr-lg-2">
               <i class="d-icon-user"></i>
             </div>
             <div class="icon-box-content d-lg-show d-flex">
-              <a class="login-link mr-1" href="/ajax/login.html" data-toggle="login-modal">Iniciar sesión</a>
+              <a class="login-link mr-1" href="#" data-toggle="login-modal">Iniciar sesión</a>
               <span class="delimiter">/</span>
-              <a class="register-link ml-1 mr-0" href="/ajax/login.html" data-toggle="login-modal">Registrarse</a>
+              <a class="register-link ml-1 mr-0" href="#" data-toggle="login-modal">Registrarse</a>
             </div>
-
-
           </a>
         </div>
 
@@ -89,24 +90,24 @@
           <!-- End Cart Toggle -->
           <div class="dropdown-box">
             <div class="cart-header">
-              <h4 class="cart-title">Carrito de la compra</h4>
-              <a href="#" class="btn btn-dark btn-link btn-icon-right btn-close">cerrar<i class="d-icon-arrow-right"></i><span class="sr-only">Carrito</span></a>
+              <h4 class="cart-title">Cesta de la compra</h4>
+              <a href="#" class="btn btn-dark btn-link btn-icon-right btn-close">cerrar<i class="d-icon-arrow-right"></i><span class="sr-only">Cesta</span></a>
             </div>
             <div class="products scrollable">
               <div class="product product-cart">
                 <figure class="product-media">
-                  <a href="product.html">
-                    <img src="images/product1.jpg" alt="product" width="80" height="88" />
+                  <a href="{{ route('products.product') }}">
+                    <img src="/images/product1.jpg" alt="product" width="80" height="88" />
                   </a>
                   <button class="btn btn-link btn-close">
                     <i class="fas fa-times"></i><span class="sr-only">Close</span>
                   </button>
                 </figure>
                 <div class="product-detail">
-                  <a href="producto.html" class="product-name">MULTI-SPLIT INVERTER MOD. TERMAT R32</a>
+                  <a href="{{ route('products.product') }}" class="product-name">MULTI-SPLIT INVERTER MOD. TERMAT R32</a>
                   <div class="price-box">
                     <span class="product-quantity">1</span>
-                    <span class="product-price">$1.038,33€</span>
+                    <span class="product-price">1.038,33 €</span>
                   </div>
                 </div>
               </div>
@@ -151,33 +152,30 @@
                   <img width="22" src="/images/icons/azules/1.png" class="mr-1" />Fontanería
                 </a>
                 <ul class="megamenu">
-                  <!-- <li class="pt-5 pb-5">
-                                          <ul>
-                                              <li><a href="#">Pvc</a></li>
-                                              <li><a href="#">Polibutileno</a></li>
-                                              <li><a href="#">Polipropileno</a></li>
-                                              <li><a href="#">Reticulado</a></li>
-                                              <li><a href="#">Multicapa</a></li>
-                                              <li><a href="#">Polietileno</a></li>
-                                              <li><a href="#">Cobre</a></li>
-                                              <li><a href="#">Valvulería y Racorería</a></li>
-                                              <li><a href="#">Aislamientos</a></li>
-                                              <li><a href="#">Baterías de controladores</a></li>
-                                              <li><a href="#">Contadores</a></li>
-                                              <li><a href="#">Fijaciones</a></li>
-                                              <li><a href="#">Soldaduras y adhesivos</a></li>
-                                              <li><a href="#">Canalones</a></li>
-                                              <li><a href="#">Depósitos de Agua</a></li>
-                                          </ul>
-                                      </li>
-                                      <li class="pt-5 pb-5">
-                                          <ul>
+                  <li id="fontaneria">
+                    <h4 class="menu-title">Fontanería</h4>
+                    <ul>
+                      <li><a href="#" class="menu-category" data-subcategory="#fontaneria1">Subcategoría 1</a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#fontaneria2">Subcategoría 2</a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#fontaneria3">Subcategoría 3</a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#fontaneria4">Subcategoría 4</a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#fontaneria5">Subcategoría 5</a></li>
+                    </ul>
+                  </li>
 
-                                          </ul>
-                                      </li> -->
-                  <li>
-                    <h4 class="menu-title">Lorem ipsum</h4>
-                    <hr class="divider">
+                  <li class="menu-subcategory" id="fontaneria1">
+                    <h4 class="menu-title"><span><i class="fa fa-chevron-right font-size-1"></i></span>Subcategoría 1</h4>
+                    <ul>
+                      <li><a href="#" data-category="#fontaneria">Subcategoría 6</a></li>
+                      <li><a href="#" data-category="#fontaneria">Subcategoría 7</a></li>
+                      <li><a href="#" data-category="#fontaneria">Subcategoría 8</a></li>
+                      <li><a href="#" data-category="#fontaneria">Subcategoría 9</a></li>
+                      <li><a href="#" data-category="#fontaneria">Subcategoría 10</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="menu-subcategory" id="fontaneria2">
+                    <h4 class="menu-title"><span><i class="fa fa-chevron-right font-size-1"></i></span>Subcategoría 2</h4>
                     <ul>
                       <li><a href="#">Et dolore</a></li>
                       <li><a href="#">Sit amet</a></li>
@@ -186,27 +184,39 @@
                       <li><a href="#">Nullam</a></li>
                       <li><a href="#">Vestibulum vel</a></li>
                       <li><a href="#">Donec purus</a></li>
-                      <li><a href="#">Vitae</a></li>
-                      <li><a href="#">Aliquet </a></li>
                     </ul>
                   </li>
-                  <li>
-                    <h4 class="menu-title">Vitae lorem</h4>
-                    <hr class="divider">
+
+                  <li class="menu-subcategory" id="fontaneria3">
+                    <h4 class="menu-title"><span><i class="fa fa-chevron-right font-size-1"></i></span>Subcategoría 3</h4>
                     <ul>
-                      <li><a href="#">Et dolore</a></li>
-                      <li><a href="#">Sit amet</a></li>
-                      <li><a href="#">Consectetur</a></li>
                       <li><a href="#">Dipiscing elit</a></li>
                       <li><a href="#">Nullam</a></li>
                       <li><a href="#">Vestibulum vel</a></li>
                       <li><a href="#">Donec purus</a></li>
-                      <li><a href="#">Vitae</a></li>
-                      <li><a href="#">Aliquet </a></li>
                     </ul>
                   </li>
-                  <li>
+
+                  <li class="menu-subcategory" id="fontaneria4">
+                    <h4 class="menu-title"><span><i class="fa fa-chevron-right font-size-1"></i></span>Subcategoría 4</h4>
+                    <ul>
+                      <li><a href="#">Dipiscing elit</a></li>
+                      <li><a href="#">Nullam</a></li>
+                      <li><a href="#">Vestibulum vel</a></li>
+                      <li><a href="#">Donec purus</a></li>
+                    </ul>
                   </li>
+
+                  <li class="menu-subcategory" id="fontaneria5">
+                    <h4 class="menu-title"><span><i class="fa fa-chevron-right font-size-1"></i></span>Subcategoría 5</h4>
+                    <ul>
+                      <li><a href="#">Vestibulum vel</a></li>
+                      <li><a href="#">Donec purus</a></li>
+                      <li><a href="#">Dipiscing elit</a></li>
+                      <li><a href="#">Nullam</a></li>
+                    </ul>
+                  </li>
+
                 </ul>
               </li>
               <li>
@@ -214,9 +224,27 @@
                   <img width="22" src="/images/icons/azules/2.png" class="mr-1" />ACS / Calefacción
                 </a>
                 <ul class="megamenu">
-                  <li>
-                    <h4 class="menu-title">Lorem ipsum</h4>
-                    <hr class="divider">
+                  <li id="acs">
+                    <h4 class="menu-title">ACS / Calefacción</h4>
+                    <ul>
+                      <li><a href="#" class="menu-category" data-subcategory="#acs1">Subcategoría 1</a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#acs2">Subcategoría 2</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="menu-subcategory" id="acs1">
+                    <h4 class="menu-title"><span><i class="fa fa-chevron-right font-size-1"></i></span>Subcategoría 1</h4>
+                    <ul>
+                      <li><a href="#" data-category="#acs">Subcategoría 6</a></li>
+                      <li><a href="#" data-category="#acs">Subcategoría 7</a></li>
+                      <li><a href="#" data-category="#acs">Subcategoría 8</a></li>
+                      <li><a href="#" data-category="#acs">Subcategoría 9</a></li>
+                      <li><a href="#" data-category="#acs">Subcategoría 10</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="menu-subcategory" id="acs2">
+                    <h4 class="menu-title"><span><i class="fa fa-chevron-right font-size-1"></i></span>Subcategoría 2</h4>
                     <ul>
                       <li><a href="#">Et dolore</a></li>
                       <li><a href="#">Sit amet</a></li>
@@ -225,27 +253,9 @@
                       <li><a href="#">Nullam</a></li>
                       <li><a href="#">Vestibulum vel</a></li>
                       <li><a href="#">Donec purus</a></li>
-                      <li><a href="#">Vitae</a></li>
-                      <li><a href="#">Aliquet </a></li>
                     </ul>
                   </li>
-                  <li>
-                    <h4 class="menu-title">Vitae lorem</h4>
-                    <hr class="divider">
-                    <ul>
-                      <li><a href="#">Et dolore</a></li>
-                      <li><a href="#">Sit amet</a></li>
-                      <li><a href="#">Consectetur</a></li>
-                      <li><a href="#">Dipiscing elit</a></li>
-                      <li><a href="#">Nullam</a></li>
-                      <li><a href="#">Vestibulum vel</a></li>
-                      <li><a href="#">Donec purus</a></li>
-                      <li><a href="#">Vitae</a></li>
-                      <li><a href="#">Aliquet </a></li>
-                    </ul>
-                  </li>
-                  <li>
-                  </li>
+
                 </ul>
               </li>
               <li>
@@ -253,38 +263,61 @@
                   <img width="22" src="/images/icons/azules/3.png" class="mr-1" />Aire acondicionado
                 </a>
                 <ul class="megamenu">
-                  <li>
-                    <h4 class="menu-title">Lorem ipsum</h4>
-                    <hr class="divider">
+                  <li id="aire">
+                    <h4 class="menu-title">Aire acondicionado</h4>
+                    <ul>
+                      <li><a href="#" class="menu-category" data-subcategory="#aire1">Subcategoría 1</a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#aire2">Subcategoría 2</a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#aire3">Subcategoría 3</a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#aire4">Subcategoría 4</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="menu-subcategory" id="aire1">
+                    <h4 class="menu-title"><span><i class="fa fa-chevron-right font-size-1"></i></span>Subcategoría 1</h4>
+                    <ul>
+                      <li><a href="#" data-category="#aire">Subcategoría 6</a></li>
+                      <li><a href="#" data-category="#aire">Subcategoría 7</a></li>
+                      <li><a href="#" data-category="#aire">Subcategoría 8</a></li>
+                      <li><a href="#" data-category="#aire">Subcategoría 9</a></li>
+                      <li><a href="#" data-category="#aire">Subcategoría 10</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="menu-subcategory" id="aire2">
+                    <h4 class="menu-title"><span><i class="fa fa-chevron-right font-size-1"></i></span>Subcategoría 2</h4>
                     <ul>
                       <li><a href="#">Et dolore</a></li>
                       <li><a href="#">Sit amet</a></li>
                       <li><a href="#">Consectetur</a></li>
                       <li><a href="#">Dipiscing elit</a></li>
                       <li><a href="#">Nullam</a></li>
-                      <li><a href="#">Vestibulum vel</a></li>
-                      <li><a href="#">Donec purus</a></li>
-                      <li><a href="#">Vitae</a></li>
-                      <li><a href="#">Aliquet </a></li>
                     </ul>
                   </li>
-                  <li>
-                    <h4 class="menu-title">Vitae lorem</h4>
-                    <hr class="divider">
+
+                  <li class="menu-subcategory" id="aire3">
+                    <h4 class="menu-title"><span><i class="fa fa-chevron-right font-size-1"></i></span>Subcategoría 2</h4>
                     <ul>
                       <li><a href="#">Et dolore</a></li>
                       <li><a href="#">Sit amet</a></li>
+                      <li><a href="#">Consectetur</a></li>
+                      <li><a href="#">Nullam</a></li>
+                      <li><a href="#">Vestibulum vel</a></li>
+                      <li><a href="#">Donec purus</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="menu-subcategory" id="aire4">
+                    <h4 class="menu-title"><span><i class="fa fa-chevron-right font-size-1"></i></span>Subcategoría 2</h4>
+                    <ul>
                       <li><a href="#">Consectetur</a></li>
                       <li><a href="#">Dipiscing elit</a></li>
                       <li><a href="#">Nullam</a></li>
                       <li><a href="#">Vestibulum vel</a></li>
                       <li><a href="#">Donec purus</a></li>
-                      <li><a href="#">Vitae</a></li>
-                      <li><a href="#">Aliquet </a></li>
                     </ul>
                   </li>
-                  <li>
-                  </li>
+
                 </ul>
               </li>
               <li>
@@ -292,9 +325,30 @@
                   <img width="22" src="/images/icons/azules/4.png" class="mr-1" />Energía renovable
                 </a>
                 <ul class="megamenu">
-                  <li>
-                    <h4 class="menu-title">Lorem ipsum</h4>
-                    <hr class="divider">
+                  <li id="fontaneria">
+                    <h4 class="menu-title">Energía renovable</h4>
+                    <ul>
+                      <li><a href="#" class="menu-category" data-subcategory="#fontaneria1">Subcategoría 1</a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#fontaneria2">Subcategoría 2</a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#fontaneria3">Subcategoría 3</a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#fontaneria4">Subcategoría 4</a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#fontaneria5">Subcategoría 5</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="menu-subcategory" id="fontaneria1">
+                    {{-- <h4 class="menu-title">Vitae lorem</h4> --}}
+                    <ul>
+                      <li><a href="#" data-category="#fontaneria">Subcategoría 6</a></li>
+                      <li><a href="#" data-category="#fontaneria">Subcategoría 7</a></li>
+                      <li><a href="#" data-category="#fontaneria">Subcategoría 8</a></li>
+                      <li><a href="#" data-category="#fontaneria">Subcategoría 9</a></li>
+                      <li><a href="#" data-category="#fontaneria">Subcategoría 10</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="menu-subcategory" id="fontaneria2">
+                    {{-- <h4 class="menu-title">Vitae lorem</h4> --}}
                     <ul>
                       <li><a href="#">Et dolore</a></li>
                       <li><a href="#">Sit amet</a></li>
@@ -303,27 +357,9 @@
                       <li><a href="#">Nullam</a></li>
                       <li><a href="#">Vestibulum vel</a></li>
                       <li><a href="#">Donec purus</a></li>
-                      <li><a href="#">Vitae</a></li>
-                      <li><a href="#">Aliquet </a></li>
                     </ul>
                   </li>
-                  <li>
-                    <h4 class="menu-title">Vitae lorem</h4>
-                    <hr class="divider">
-                    <ul>
-                      <li><a href="#">Et dolore</a></li>
-                      <li><a href="#">Sit amet</a></li>
-                      <li><a href="#">Consectetur</a></li>
-                      <li><a href="#">Dipiscing elit</a></li>
-                      <li><a href="#">Nullam</a></li>
-                      <li><a href="#">Vestibulum vel</a></li>
-                      <li><a href="#">Donec purus</a></li>
-                      <li><a href="#">Vitae</a></li>
-                      <li><a href="#">Aliquet </a></li>
-                    </ul>
-                  </li>
-                  <li>
-                  </li>
+
                 </ul>
               </li>
               <li>
@@ -331,39 +367,41 @@
                   <img width="22" src="/images/icons/azules/5.png" class="mr-1" />Tubería y valvulería
                 </a>
                 <ul class="megamenu">
-                  <li>
-                    <h4 class="menu-title">Lorem ipsum</h4>
-                    <hr class="divider">
+                  <li id="fontaneria">
+                    <h4 class="menu-title">Tubería y valvulería</h4>
                     <ul>
-                      <li><a href="#">Et dolore</a></li>
-                      <li><a href="#">Sit amet</a></li>
-                      <li><a href="#">Consectetur</a></li>
-                      <li><a href="#">Dipiscing elit</a></li>
-                      <li><a href="#">Nullam</a></li>
-                      <li><a href="#">Vestibulum vel</a></li>
-                      <li><a href="#">Donec purus</a></li>
-                      <li><a href="#">Vitae</a></li>
-                      <li><a href="#">Aliquet </a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#fontaneria1">Subcategoría 1</a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#fontaneria2">Subcategoría 2</a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#fontaneria3">Subcategoría 3</a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#fontaneria4">Subcategoría 4</a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#fontaneria5">Subcategoría 5</a></li>
                     </ul>
                   </li>
-                  <li>
-                    <h4 class="menu-title">Vitae lorem</h4>
-                    <hr class="divider">
-                    <ul>
-                      <li><a href="#">Et dolore</a></li>
-                      <li><a href="#">Sit amet</a></li>
-                      <li><a href="#">Consectetur</a></li>
-                      <li><a href="#">Dipiscing elit</a></li>
-                      <li><a href="#">Nullam</a></li>
-                      <li><a href="#">Vestibulum vel</a></li>
-                      <li><a href="#">Donec purus</a></li>
-                      <li><a href="#">Vitae</a></li>
-                      <li><a href="#">Aliquet </a></li>
-                    </ul>
-                  </li>
-                  <li>
 
+                  <li class="menu-subcategory" id="fontaneria1">
+                    {{-- <h4 class="menu-title">Vitae lorem</h4> --}}
+                    <ul>
+                      <li><a href="#" data-category="#fontaneria">Subcategoría 6</a></li>
+                      <li><a href="#" data-category="#fontaneria">Subcategoría 7</a></li>
+                      <li><a href="#" data-category="#fontaneria">Subcategoría 8</a></li>
+                      <li><a href="#" data-category="#fontaneria">Subcategoría 9</a></li>
+                      <li><a href="#" data-category="#fontaneria">Subcategoría 10</a></li>
+                    </ul>
                   </li>
+
+                  <li class="menu-subcategory" id="fontaneria2">
+                    {{-- <h4 class="menu-title">Vitae lorem</h4> --}}
+                    <ul>
+                      <li><a href="#">Et dolore</a></li>
+                      <li><a href="#">Sit amet</a></li>
+                      <li><a href="#">Consectetur</a></li>
+                      <li><a href="#">Dipiscing elit</a></li>
+                      <li><a href="#">Nullam</a></li>
+                      <li><a href="#">Vestibulum vel</a></li>
+                      <li><a href="#">Donec purus</a></li>
+                    </ul>
+                  </li>
+
                 </ul>
               </li>
               <li>
@@ -371,39 +409,41 @@
                   <img width="22" src="/images/icons/azules/6.png" class="mr-1" />Contraincendios
                 </a>
                 <ul class="megamenu">
-                  <li>
-                    <h4 class="menu-title">Lorem ipsum</h4>
-                    <hr class="divider">
+                  <li id="fontaneria">
+                    <h4 class="menu-title">Contraincendios</h4>
                     <ul>
-                      <li><a href="#">Et dolore</a></li>
-                      <li><a href="#">Sit amet</a></li>
-                      <li><a href="#">Consectetur</a></li>
-                      <li><a href="#">Dipiscing elit</a></li>
-                      <li><a href="#">Nullam</a></li>
-                      <li><a href="#">Vestibulum vel</a></li>
-                      <li><a href="#">Donec purus</a></li>
-                      <li><a href="#">Vitae</a></li>
-                      <li><a href="#">Aliquet </a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#fontaneria1">Subcategoría 1</a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#fontaneria2">Subcategoría 2</a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#fontaneria3">Subcategoría 3</a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#fontaneria4">Subcategoría 4</a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#fontaneria5">Subcategoría 5</a></li>
                     </ul>
                   </li>
-                  <li>
-                    <h4 class="menu-title">Vitae lorem</h4>
-                    <hr class="divider">
-                    <ul>
-                      <li><a href="#">Et dolore</a></li>
-                      <li><a href="#">Sit amet</a></li>
-                      <li><a href="#">Consectetur</a></li>
-                      <li><a href="#">Dipiscing elit</a></li>
-                      <li><a href="#">Nullam</a></li>
-                      <li><a href="#">Vestibulum vel</a></li>
-                      <li><a href="#">Donec purus</a></li>
-                      <li><a href="#">Vitae</a></li>
-                      <li><a href="#">Aliquet </a></li>
-                    </ul>
-                  </li>
-                  <li>
 
+                  <li class="menu-subcategory" id="fontaneria1">
+                    {{-- <h4 class="menu-title">Vitae lorem</h4> --}}
+                    <ul>
+                      <li><a href="#" data-category="#fontaneria">Subcategoría 6</a></li>
+                      <li><a href="#" data-category="#fontaneria">Subcategoría 7</a></li>
+                      <li><a href="#" data-category="#fontaneria">Subcategoría 8</a></li>
+                      <li><a href="#" data-category="#fontaneria">Subcategoría 9</a></li>
+                      <li><a href="#" data-category="#fontaneria">Subcategoría 10</a></li>
+                    </ul>
                   </li>
+
+                  <li class="menu-subcategory" id="fontaneria2">
+                    {{-- <h4 class="menu-title">Vitae lorem</h4> --}}
+                    <ul>
+                      <li><a href="#">Et dolore</a></li>
+                      <li><a href="#">Sit amet</a></li>
+                      <li><a href="#">Consectetur</a></li>
+                      <li><a href="#">Dipiscing elit</a></li>
+                      <li><a href="#">Nullam</a></li>
+                      <li><a href="#">Vestibulum vel</a></li>
+                      <li><a href="#">Donec purus</a></li>
+                    </ul>
+                  </li>
+
                 </ul>
               </li>
               <li>
@@ -411,39 +451,41 @@
                   <img width="22" src="/images/icons/azules/7.png" class="mr-1" />Bombeo
                 </a>
                 <ul class="megamenu">
-                  <li>
-                    <h4 class="menu-title">Lorem ipsum</h4>
-                    <hr class="divider">
+                  <li id="bombeo">
+                    <h4 class="menu-title">Bombeo</h4>
                     <ul>
-                      <li><a href="#">Et dolore</a></li>
-                      <li><a href="#">Sit amet</a></li>
-                      <li><a href="#">Consectetur</a></li>
-                      <li><a href="#">Dipiscing elit</a></li>
-                      <li><a href="#">Nullam</a></li>
-                      <li><a href="#">Vestibulum vel</a></li>
-                      <li><a href="#">Donec purus</a></li>
-                      <li><a href="#">Vitae</a></li>
-                      <li><a href="#">Aliquet </a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#bombeo1">Subcategoría 1</a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#bombeo2">Subcategoría 2</a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#bombeo3">Subcategoría 3</a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#bombeo4">Subcategoría 4</a></li>
+                      <li><a href="#" class="menu-category" data-subcategory="#bombeo5">Subcategoría 5</a></li>
                     </ul>
                   </li>
-                  <li>
-                    <h4 class="menu-title">Vitae lorem</h4>
-                    <hr class="divider">
-                    <ul>
-                      <li><a href="#">Et dolore</a></li>
-                      <li><a href="#">Sit amet</a></li>
-                      <li><a href="#">Consectetur</a></li>
-                      <li><a href="#">Dipiscing elit</a></li>
-                      <li><a href="#">Nullam</a></li>
-                      <li><a href="#">Vestibulum vel</a></li>
-                      <li><a href="#">Donec purus</a></li>
-                      <li><a href="#">Vitae</a></li>
-                      <li><a href="#">Aliquet </a></li>
-                    </ul>
-                  </li>
-                  <li>
 
+                  <li class="menu-subcategory" id="bombeo1">
+                    {{-- <h4 class="menu-title">Vitae lorem</h4> --}}
+                    <ul>
+                      <li><a href="#" data-category="#bombeo">Subcategoría 6</a></li>
+                      <li><a href="#" data-category="#bombeo">Subcategoría 7</a></li>
+                      <li><a href="#" data-category="#bombeo">Subcategoría 8</a></li>
+                      <li><a href="#" data-category="#bombeo">Subcategoría 9</a></li>
+                      <li><a href="#" data-category="#bombeo">Subcategoría 10</a></li>
+                    </ul>
                   </li>
+
+                  <li class="menu-subcategory" id="bombeo2">
+                    {{-- <h4 class="menu-title">Vitae lorem</h4> --}}
+                    <ul>
+                      <li><a href="#">Et dolore</a></li>
+                      <li><a href="#">Sit amet</a></li>
+                      <li><a href="#">Consectetur</a></li>
+                      <li><a href="#">Dipiscing elit</a></li>
+                      <li><a href="#">Nullam</a></li>
+                      <li><a href="#">Vestibulum vel</a></li>
+                      <li><a href="#">Donec purus</a></li>
+                    </ul>
+                  </li>
+
                 </ul>
               </li>
               <li>
@@ -453,7 +495,6 @@
                 <ul class="megamenu">
                   <li>
                     <h4 class="menu-title">Lorem ipsum</h4>
-                    <hr class="divider">
                     <ul>
                       <li><a href="#">Et dolore</a></li>
                       <li><a href="#">Sit amet</a></li>
@@ -468,7 +509,6 @@
                   </li>
                   <li>
                     <h4 class="menu-title">Vitae lorem</h4>
-                    <hr class="divider">
                     <ul>
                       <li><a href="#">Et dolore</a></li>
                       <li><a href="#">Sit amet</a></li>
@@ -493,7 +533,6 @@
                 <ul class="megamenu">
                   <li>
                     <h4 class="menu-title">Lorem ipsum</h4>
-                    <hr class="divider">
                     <ul>
                       <li><a href="#">Et dolore</a></li>
                       <li><a href="#">Sit amet</a></li>
@@ -508,7 +547,6 @@
                   </li>
                   <li>
                     <h4 class="menu-title">Vitae lorem</h4>
-                    <hr class="divider">
                     <ul>
                       <li><a href="#">Et dolore</a></li>
                       <li><a href="#">Sit amet</a></li>
@@ -533,7 +571,6 @@
                 <ul class="megamenu">
                   <li>
                     <h4 class="menu-title">Lorem ipsum</h4>
-                    <hr class="divider">
                     <ul>
                       <li><a href="#">Et dolore</a></li>
                       <li><a href="#">Sit amet</a></li>
@@ -548,7 +585,6 @@
                   </li>
                   <li>
                     <h4 class="menu-title">Vitae lorem</h4>
-                    <hr class="divider">
                     <ul>
                       <li><a href="#">Et dolore</a></li>
                       <li><a href="#">Sit amet</a></li>
@@ -573,7 +609,6 @@
                 <ul class="megamenu">
                   <li>
                     <h4 class="menu-title">Lorem ipsum</h4>
-                    <hr class="divider">
                     <ul>
                       <li><a href="#">Et dolore</a></li>
                       <li><a href="#">Sit amet</a></li>
@@ -588,7 +623,6 @@
                   </li>
                   <li>
                     <h4 class="menu-title">Vitae lorem</h4>
-                    <hr class="divider">
                     <ul>
                       <li><a href="#">Et dolore</a></li>
                       <li><a href="#">Sit amet</a></li>
@@ -613,7 +647,6 @@
                 <ul class="megamenu">
                   <li>
                     <h4 class="menu-title">Lorem ipsum</h4>
-                    <hr class="divider">
                     <ul>
                       <li><a href="#">Et dolore</a></li>
                       <li><a href="#">Sit amet</a></li>
@@ -628,7 +661,6 @@
                   </li>
                   <li>
                     <h4 class="menu-title">Vitae lorem</h4>
-                    <hr class="divider">
                     <ul>
                       <li><a href="#">Et dolore</a></li>
                       <li><a href="#">Sit amet</a></li>
@@ -653,7 +685,6 @@
                 <ul class="megamenu">
                   <li>
                     <h4 class="menu-title">Lorem ipsum</h4>
-                    <hr class="divider">
                     <ul>
                       <li><a href="#">Et dolore</a></li>
                       <li><a href="#">Sit amet</a></li>
@@ -668,7 +699,6 @@
                   </li>
                   <li>
                     <h4 class="menu-title">Vitae lorem</h4>
-                    <hr class="divider">
                     <ul>
                       <li><a href="#">Et dolore</a></li>
                       <li><a href="#">Sit amet</a></li>
@@ -708,13 +738,13 @@
               <a href="{{ route('site.brands') }}">Marcas</a>
             </li>
             <li>
-              <a href="#">Empresas instaladoras</a>
+              <a href="{{ route('site.partners') }}">Empresas instaladoras</a>
             </li>
           </ul>
         </nav>
       </div>
       <div class="header-right">
-        <a href="#"><i class="d-icon-card"></i>Promociones</a>
+        <a href="/catalogo/fontaneria/productos"><i class="d-icon-card"></i>Promociones</a>
         <a href="{{ route('site.downloads') }}" class="ml-4 ml-xl-8"><i class="far fa-arrow-alt-circle-down"></i>Descargas</a>
       </div>
     </div>

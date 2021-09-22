@@ -10,7 +10,7 @@ Route::get('/', [SiteController::class, 'getIndex'])->name('site.index');
 
 // Main pages
 Route::get('/noticias', [SiteController::class, 'listBlogs'])->name('site.blog');
-Route::get('/noticias/{slug}', [SiteController::class, 'showBlog'])->name('site.blog.post');
+Route::get('/noticias/post', [SiteController::class, 'showBlog'])->name('site.blog.post');
 Route::get('/contacto', [SiteController::class, 'getContact'])->name('site.contact');
 Route::post('contact/submit', [SiteController::class, 'do_submitContact'])->name('site.do_contact');
 
@@ -36,13 +36,16 @@ Route::get('/marcas', function(){ return view('site.brands'); })->name('site.bra
 //Downloads
 Route::get('/descargas', function(){ return view('site.downloads'); })->name('site.downloads');
 
+//Partners
+Route::get('/empresas-instaladoras', function(){ return view('site.partners'); })->name('site.partners');
+
 // Store / Products
 Route::get('/catalogo/fontaneria', 'ProductController@getProductsCategory')->name('products.category');
-Route::get('/catalogo/fontaneria/productos', 'ProductController@showCategoryProducts')->name('products.category_products');
-Route::get('/productos/producto', 'ProductController@showProduct')->name('products.product');
-Route::prefix('products')->group(function(){
-    Route::get('/{slug}/', [ProductController::class, 'show'])->name('product.show');
-});
+Route::get('/catalogo/fontaneria/productos', 'ProductController@showProductList')->name('products.category_products');
+Route::get('/productos/producto', 'ProductController@show')->name('products.product');
+// Route::prefix('products')->group(function(){
+//     Route::get('/{slug}/', [ProductController::class, 'show'])->name('product.show');
+// });
 
 //Cart
 Route::prefix('cart')->group(function(){

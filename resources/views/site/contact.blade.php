@@ -6,13 +6,11 @@
 
 {{-- Content --}}
 @section('content')
-  {{-- <div class="shop-boxed-banner banner pb-7 pt-7" style="background-image: url('/images/contacto.jpg');height: 300px;background-position: 100% 60%;">
-  </div> --}}
-  <div class="page-header pl-4 pr-4 mb-5" id="contact-header" style="background-image: url(images/contacto.jpg)">
-    <div class="container">
-      <h1 class="page-title lh-1 text-left">Contacte con nosotros</h1>
+  <div class="shop-boxed-banner banner mb-8 mb-lg-7 pb-7 pt-7" id="contact-header" style="background-image: url('/images/contacto.jpg'); background-color: #ECEDEF;background-position: 100% 38%;">
+    <div class="banner-content container">
+        <h1 class="banner-title font-weight-bold text-primary ls-m mb-0">CONTACTE CON NOSOTROS</h1>
     </div>
-    </div>
+  </div>
   <section class="contact-section mt-5">
       <div class="container">
           <div class="row">

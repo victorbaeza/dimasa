@@ -45,6 +45,7 @@
 <body class="home market">
   <div class="page-wrapper">
     @include('layouts.site.header')
+
     <main class="main">
       <div class="page-content">
         @yield('content')
@@ -87,8 +88,9 @@
   </div> -->
   <!-- Scroll Top -->
   <a id="scroll-top" href="#top" title="Top" role="button" class="scroll-top"><i class="d-icon-arrow-up"></i></a>
+  @include("layouts.site.mobile-menu")
+  @include('layouts.site.login')
 
-    @include("layouts.site.mobile-menu")
     </div>
   </div>
 
@@ -101,7 +103,7 @@
   <script src="/vendor/isotope/isotope.pkgd.min.js"></script>
   <script src="/vendor/photoswipe/photoswipe.min.js"></script>
   <script src="/vendor/photoswipe/photoswipe-ui-default.min.js"></script>
-  <script src="/vendor/elevatezoom/jquery.elevatezoom.min.js"></script>
+  {{-- <script src="/vendor/elevatezoom/jquery.elevatezoom.min.js"></script> --}}
   <script src="/vendor/jquery.countdown/jquery.countdown.min.js"></script>
   <!-- Main JS File -->
   <script src="/js/main.js"></script>

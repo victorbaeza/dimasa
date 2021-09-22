@@ -110,98 +110,11 @@
           </div>
       </div>
   </section>
-  {{-- <section class="pt-4 pb-4">
+  <section class="pt-4 pb-4">
     <div class="container">
-      <div class="intro-wrapper row">
-        <div class="col-xl-12 mb-4">
-          <div class="owl-carousel owl-theme owl-dot-inner row cols-1 gutter-no animation-slider" data-owl-options="{
-                              'nav': false,
-                              'dots': true,
-                              'margin': 0
-                          }">
-            <div class="banner banner-fixed intro-slide intro-slide1 content-middle">
-              <figure>
-                <img src="images/slider1.png" alt="Banner" width="1030" height="498" style="background-color: #e7e9e9;" />
-              </figure>
-              <!-- <div class="banner-content">
-                                      <div class="slide-animate" data-animation-options="{
-                                          'name': 'fadeInLeftShorter', 'duration': '1s'
-                                      }">
-                                          <h4 class="banner-subtitle font-weight-semi-bold text-body text-uppercase">
-                                              Sale up to <span class="text-secondary ls-l">20% OFF</span> Everything
-                                          </h4>
-                                          <h3 class="banner-title font-weight-bold mb-1">The Excellent
-                                              Collection</h3>
-                                          <p class="font-weight-normal text-body mb-5">Only until the end of the week
-                                          </p>
-                                          <a href="categoria.html" class="btn btn-dark btn-rounded">Shop Now<i
-                                                  class="d-icon-arrow-right"></i></a>
-                                      </div>
-                                  </div> -->
-            </div>
-            <div class="banner banner-fixed intro-slide intro-slide1 content-middle">
-              <figure>
-                <img src="images/slider2.jpg" alt="Banner" width="1030" height="498" style="background-color: #e7e9e9;" />
-              </figure>
-              <!-- <div class="banner-content">
-                                      <div class="slide-animate" data-animation-options="{
-                                          'name': 'fadeInLeftShorter', 'duration': '1s'
-                                      }">
-                                          <h4 class="banner-subtitle font-weight-semi-bold text-body text-uppercase">
-                                              Sale up to <span class="text-secondary ls-l">20% OFF</span> Everything
-                                          </h4>
-                                          <h3 class="banner-title font-weight-bold mb-1">The Excellent
-                                              Collection</h3>
-                                          <p class="font-weight-normal text-body mb-5">Only until the end of the week
-                                          </p>
-                                          <a href="categoria.html" class="btn btn-dark btn-rounded">Shop Now<i
-                                                  class="d-icon-arrow-right"></i></a>
-                                      </div>
-                                  </div> -->
-            </div>
-          </div>
-        </div>
-        <!-- <div class="col-xl-12">
-                          <div class="row cols-xl-2 cols-lg-2 cols-sm-2 cols-1">
-                              <div class="banner-wrap">
-                                  <div class="banner banner-fixed intro-banner mb-4">
-                                      <figure>
-                                          <img src="images/banner1.png" alt="Banner"
-                                              width="330" height="239" style="background-color: #e4e4e4;" />
-                                      </figure>
-                                      <div class="banner-content">
-                                          <h4
-                                              class="banner-subtitle text-uppercase font-weight-normal text-body ls-m">
-                                              Distribuidor referente</h4>
-                                          <h3
-                                              class="banner-title text-uppercase font-weight-semi-bold ls-m">
-                                            Saneamientos y<br> accesorios</h3>
-
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="banner-wrap">
-                                  <div class="banner banner-fixed intro-banner mb-4">
-                                      <figure>
-                                          <img src="images/banner2.png" alt="Banner"
-                                              width="330" height="239" style="background-color: #f0eae4;" />
-                                      </figure>
-                                      <div class="banner-content">
-                                          <h4
-                                              class="banner-subtitle text-uppercase font-weight-normal text-body ls-m">
-                                              Descargas</h4>
-                                          <h3
-                                              class="banner-title text-uppercase font-weight-semi-bold ls-m">
-                                              documentación</h3>
-
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div> -->
-      </div>
+      <h2 class="title title-center-sm">NUESTROS PRODUCTOS</h2>
       <div class="row col-xl-12 col-12 mb-4">
-        <div class="owl-carousel owl-theme owl-nav-inner h-100 owl-loaded owl-drag" data-owl-options="{
+        <div class="owl-carousel owl-theme owl-nav-inner h-100 owl-loaded owl-drag theme-border pt-5" data-owl-options="{
                               'nav': true,
                               'dots': false,
                               'margin': 20,
@@ -212,7 +125,7 @@
                               'autoplayHoverPause': true,
                               'responsive': {
                                   '0': {
-                                      'items': 2
+                                      'items': 1
                                   },
                                   '576': {
                                       'items': 3
@@ -221,267 +134,62 @@
                                       'items': 4
                                   },
                                   '1200': {
-                                      'items': 6
+                                      'items': 4
                                   }
                               }
                           }">
 
+                          <div class="category category-absolute category-classic mb-5">
+                            <a href="{{ route('products.category') }}">
+                                <figure class="category-media">
+                                    <img src="/images/fontaneria.jpg" alt="Cateogry" />
+                                </figure>
+                                <div class="category-content ml-0 mr-0">
+                                    <h4 class="category-name">FONTANERÍA</h4>
+                                    <span class="category-count">20 categorías</span>
+                                </div>
+                              </a>
+                            </div>
+                            <div class="category category-absolute category-classic mb-5">
+                              <a href="{{ route('products.category') }}">
+                                  <figure class="category-media">
+                                      <img src="/images/calefaccion.jpg" alt="Cateogry" />
+                                  </figure>
+                                  <div class="category-content ml-0 mr-0">
+                                      <h4 class="category-name">ACS / Calefacción</h4>
+                                      <span class="category-count">20 categorías</span>
+                                  </div>
+                                </a>
+                              </div>
+                              <div class="category category-absolute category-classic mb-5">
+                                <a href="{{ route('products.category') }}">
+                                    <figure class="category-media">
+                                        <img src="/images/aire.jpg" alt="Cateogry" />
+                                    </figure>
+                                    <div class="category-content ml-0 mr-0">
+                                        <h4 class="category-name">Aire acondicionado</h4>
+                                        <span class="category-count">46 categorías</span>
+                                    </div>
+                                  </a>
+                                </div>
+                                <div class="category category-absolute category-classic mb-5">
+                                  <a href="{{ route('products.category') }}">
+                                      <figure class="category-media">
+                                          <img src="/images/renovable.jpg" alt="Cateogry" />
+                                      </figure>
+                                      <div class="category-content ml-0 mr-0">
+                                          <h4 class="category-name">Energía Renovable</h4>
+                                          <span class="category-count">33 categorías</span>
+                                      </div>
+                                    </a>
+                                  </div>
 
 
-
-
-          <div class="owl-stage-outer">
-            <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0.5s ease 0s; width: 1307px;">
-              <div class="owl-item active" style="width: 241.397px; margin-right: 20px;">
-                <div class="product-wrap h-100 mb-0">
-                  <div class="product product-border text-center h-100">
-                    <figure class="product-media">
-                      <a href="producto.html">
-                        <img src="images/product1.jpg" alt="product" width="260" height="293">
-                      </a>
-                      <div class="product-action-vertical">
-                        <a href="#" class="btn-product-icon btn-cart" data-toggle="modal" data-target="#addCartModal" title="Add to cart"><i class="d-icon-bag"></i></a </div>
-                    </figure>
-                    <div class="product-details">
-                      <h3 class="product-name">
-                        <a href="producto.html">CODO H-H EVAC. SERIE B TERRAIN</a>
-                      </h3>
-                      <div class="product-price">
-                        <ins class="new-price">198.00 €</ins><del class="old-price">270.00 €</del>
-                      </div>
-                      <div class="ratings-container">
-                        <div class="ratings-full">
-                          <span class="ratings" style="width:100%"></span>
-                          <span class="tooltiptext tooltip-top"></span>
-                        </div>
-                        <a href="producto.html" class="rating-reviews">( 6 valoraciones
-                          )</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item active" style="width: 241.397px; margin-right: 20px;">
-                <div class="product-wrap h-100 mb-0">
-                  <div class="product product-border text-center h-100">
-                    <figure class="product-media">
-                      <a href="producto.html">
-                        <img src="images/product2.jpg" alt="product" width="260" height="293">
-                      </a>
-                      <div class="product-action-vertical">
-                        <a href="#" class="btn-product-icon btn-cart" data-toggle="modal" data-target="#addCartModal" title="Add to cart"><i class="d-icon-bag"></i></a </div>
-                    </figure>
-                    <div class="product-details">
-                      <h3 class="product-name">
-                        <a href="producto.html">CODO EVAC. SERIE B TERRAIN BLANCO</a>
-                      </h3>
-                      <div class="product-price">
-                        <span class="price">50.00 €</span>
-                      </div>
-                      <div class="ratings-container">
-                        <div class="ratings-full">
-                          <span class="ratings" style="width:80%"></span>
-                          <span class="tooltiptext tooltip-top"></span>
-                        </div>
-                        <a href="producto.html" class="rating-reviews">( 4 valoraciones
-                          )</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item active" style="width: 241.397px; margin-right: 20px;">
-                <div class="product-wrap h-100 mb-0">
-                  <div class="product product-border text-center h-100">
-                    <figure class="product-media">
-                      <a href="producto.html">
-                        <img src="images/product3.jpg" alt="product" width="260" height="293">
-                      </a>
-                      <div class="product-action-vertical">
-                        <a href="#" class="btn-product-icon btn-cart" data-toggle="modal" data-target="#addCartModal" title="Add to cart"><i class="d-icon-bag"></i></a </div>
-                    </figure>
-                    <div class="product-details">
-                      <h3 class="product-name">
-                        <a href="producto.html">LG UD. INTERIORES MULTI INVERTER - CONFORT CONNECT</a>
-                      </h3>
-                      <div class="product-price">
-                        <ins class="new-price">1.154,21 €</ins><del class="old-price">1.184,63 €</del>
-                      </div>
-                      <div class="ratings-container">
-                        <div class="ratings-full">
-                          <span class="ratings" style="width:100%"></span>
-                          <span class="tooltiptext tooltip-top"></span>
-                        </div>
-                        <a href="producto.html" class="rating-reviews">( 2 valoraciones
-                          )</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item active" style="width: 241.397px; margin-right: 20px;">
-                <div class="product-wrap h-100 mb-0">
-                  <div class="product product-border text-center h-100">
-                    <figure class="product-media">
-                      <a href="producto.html">
-                        <img src="images/product4.jpg" alt="product" width="260" height="293">
-                      </a>
-                      <div class="product-action-vertical">
-                        <a href="#" class="btn-product-icon btn-cart" data-toggle="modal" data-target="#addCartModal" title="Add to cart"><i class="d-icon-bag"></i></a </div>
-                    </figure>
-                    <div class="product-details">
-                      <h3 class="product-name">
-                        <a href="producto.html">SIME CALENTADOR ATMOSFERICO MINI OF Erp</a>
-                      </h3>
-                      <div class="product-price">
-                        <span class="price">230.00 €</span>
-                      </div>
-                      <div class="ratings-container">
-                        <div class="ratings-full">
-                          <span class="ratings" style="width:60%"></span>
-                          <span class="tooltiptext tooltip-top"></span>
-                        </div>
-                        <a href="producto.html" class="rating-reviews">( 8 valoraciones
-                          )</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item active" style="width: 241.397px; margin-right: 20px;">
-                <div class="product-wrap h-100 mb-0">
-                  <div class="product product-border text-center h-100">
-                    <figure class="product-media">
-                      <a href="producto.html">
-                        <img src="images/product6.jpg" alt="product" width="260" height="293">
-                      </a>
-                      <div class="product-action-vertical">
-                        <a href="#" class="btn-product-icon btn-cart" data-toggle="modal" data-target="#addCartModal" title="Add to cart"><i class="d-icon-bag"></i></a </div>
-                    </figure>
-                    <div class="product-details">
-                      <h3 class="product-name">
-                        <a href="producto.html">MANGUITO TIPO SAMBRA</a>
-                      </h3>
-                      <div class="product-price">
-                        <ins class="new-price">15.21 €</ins><del class="old-price">18.63 €</del>
-                      </div>
-                      <div class="ratings-container">
-                        <div class="ratings-full">
-                          <span class="ratings" style="width:100%"></span>
-                          <span class="tooltiptext tooltip-top"></span>
-                        </div>
-                        <a href="producto.html" class="rating-reviews">( 2 valoraciones
-                          )</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item active" style="width: 241.397px; margin-right: 20px;">
-                <div class="product-wrap h-100 mb-0">
-                  <div class="product product-border text-center h-100">
-                    <figure class="product-media">
-                      <a href="producto.html">
-                        <img src="images/product7.jpg" alt="product" width="260" height="293">
-                      </a>
-                      <div class="product-action-vertical">
-                        <a href="#" class="btn-product-icon btn-cart" data-toggle="modal" data-target="#addCartModal" title="Add to cart"><i class="d-icon-bag"></i></a </div>
-                    </figure>
-                    <div class="product-details">
-                      <h3 class="product-name">
-                        <a href="producto.html">B.I.E. 25mm-20m VERSAL RAL3000</a>
-                      </h3>
-                      <div class="product-price">
-                        <ins class="new-price">198.00 €</ins><del class="old-price">270.00 €</del>
-                      </div>
-                      <div class="ratings-container">
-                        <div class="ratings-full">
-                          <span class="ratings" style="width:100%"></span>
-                          <span class="tooltiptext tooltip-top"></span>
-                        </div>
-                        <a href="producto.html" class="rating-reviews">( 6 valoraciones
-                          )</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-item active" style="width: 241.397px; margin-right: 20px;">
-                <div class="product-wrap h-100 mb-0">
-                  <div class="product product-border text-center h-100">
-                    <figure class="product-media">
-                      <a href="producto.html">
-                        <img src="images/product1.jpg" alt="product" width="260" height="293">
-                      </a>
-                      <div class="product-action-vertical">
-                        <a href="#" class="btn-product-icon btn-cart" data-toggle="modal" data-target="#addCartModal" title="Add to cart"><i class="d-icon-bag"></i></a </div>
-                    </figure>
-                    <div class="product-details">
-                      <h3 class="product-name">
-                        <a href="producto.html">CODO H-H EVAC. SERIE B TERRAIN</a>
-                      </h3>
-                      <div class="product-price">
-                        <ins class="new-price">198.00 €</ins><del class="old-price">270.00 €</del>
-                      </div>
-                      <div class="ratings-container">
-                        <div class="ratings-full">
-                          <span class="ratings" style="width:100%"></span>
-                          <span class="tooltiptext tooltip-top"></span>
-                        </div>
-                        <a href="producto.html" class="rating-reviews">( 6 valoraciones
-                          )</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="owl-nav"><button type="button" role="presentation" class="owl-prev disabled"><i class="d-icon-angle-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="d-icon-angle-right"></i></button>
-          </div>
-          <div class="owl-dots disabled"></div>
-        </div>
       </div>
     </div>
-  </section> --}}
+  </section>
 
-
-  {{-- <section class="container mt-5">
-    <div class="banner-grid-3cols row cols-lg-3 cols-md-2 cols-1 justify-content-center">
-      <div class="banner banner-fixed content-middle mb-4 appear-animate fadeInLeftShorter appear-animation-visible" data-animation-options="{
-                      'name': 'fadeInLeftShorter', 'duration': '1s'
-                  }" style="animation-duration: 1s;">
-        <figure>
-          <img src="images/banner1.png" alt="Banner" width="447" height="180" style="background-color: #f1f1f1;">
-        </figure>
-        <div class="banner-content">
-        </div>
-      </div>
-
-      <div class="banner banner-fixed content-middle mb-4 appear-animate fadeInLeftShorter appear-animation-visible" data-animation-options="{
-                      'name': 'fadeInLeftShorter', 'duration': '1s'
-                  }" style="animation-duration: 1s;">
-        <figure>
-          <img src="images/banner2.png" alt="Banner" width="447" height="180" style="background-color: #f1f1f1;">
-        </figure>
-        <div class="banner-content">
-
-        </div>
-      </div>
-
-      <div class="banner banner-fixed content-middle mb-4 appear-animate fadeInRightShorter appear-animation-visible" data-animation-options="{
-                      'name': 'fadeInRightShorter', 'duration': '1s'
-                  }" style="animation-duration: 1s;">
-        <figure>
-          <img src="images/banner3.png" alt="Banner" width="447" height="180" style="background-color: #edecec;">
-        </figure>
-        <div class="banner-content">
-        </div>
-      </div>
-    </div>
-  </section> --}}
-
-  <section class="container mt-10">
+  <section class="container mt-5">
     <div class="brand-wrapper">
       <h2 class="title title-center-sm">NUESTRAS MARCAS</h2>
       <div class="owl-carousel owl-theme owl-loaded owl-drag theme-border" data-owl-options="{
@@ -521,131 +229,43 @@
           <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1381px;">
             <div class="owl-item active" style="width: 197.143px;">
               <figure class="pl-5 pr-5 pb-5 pt-5">
-                <img src="images/brand1.png" alt="Brand" width="197" height="93">
+                <img src="images/brands/brand1.png" alt="Brand" width="197" height="93">
               </figure>
             </div>
             <div class="owl-item active" style="width: 197.143px;">
               <figure class="pl-5 pr-5 pt-5 pb-5">
-                <img src="images/brand2.png" alt="Brand" width="213" height="100">
+                <img src="images/brands/brand2.png" alt="Brand" width="213" height="100">
               </figure>
             </div>
             <div class="owl-item active" style="width: 197.143px;">
               <figure class="pl-5 pr-5 pt-5 pb-5">
-                <img src="images/brand3.png" alt="Brand" width="213" height="100">
+                <img src="images/brands/brand3.png" alt="Brand" width="213" height="100">
               </figure>
             </div>
             <div class="owl-item active" style="width: 197.143px;">
               <figure class="pl-5 pr-5 pt-5 pb-5">
-                <img src="images/brand4.png" alt="Brand" width="213" height="100">
+                <img src="images/brands/brand4.png" alt="Brand" width="213" height="100">
               </figure>
             </div>
             <div class="owl-item active" style="width: 197.143px;">
               <figure class="pl-5 pr-5 pt-5 pb-5">
-                <img src="images/brand5.png" alt="Brand" width="213" height="100">
+                <img src="images/brands/brand5.png" alt="Brand" width="213" height="100">
               </figure>
             </div>
             <div class="owl-item active" style="width: 197.143px;">
               <figure class="pl-5 pr-5 pt-5 pb-5">
-                <img src="images/brand6.png" alt="Brand" width="213" height="100">
+                <img src="images/brands/brand6.png" alt="Brand" width="213" height="100">
               </figure>
             </div>
             <div class="owl-item active" style="width: 197.143px;">
               <figure class="pl-5 pr-5 pt-5 pb-5">
-                <img src="images/brand7.png" alt="Brand" width="213" height="100">
+                <img src="images/brands/brand7.png" alt="Brand" width="213" height="100">
               </figure>
             </div>
             <div class="owl-item active" style="width: 197.143px;">
               <figure class="pl-5 pr-5 pt-5 pb-5">
-                <img src="images/brand8.png" alt="Brand" width="213" height="100">
+                <img src="images/brands/brand8.png" alt="Brand" width="213" height="100">
               </figure>
-            </div>
-          </div>
-        </div>
-        <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><i class="d-icon-angle-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="d-icon-angle-right"></i></button>
-        </div>
-        <div class="owl-dots disabled"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="mt-5">
-    <div class="container mt-4">
-      <h2 class="title title-center-sm">BLOG Y NOTICIAS</h2>
-      <div class="owl-carousel owl-theme owl-loaded owl-drag theme-border pt-5 pr-5 pl-5" data-owl-options="{
-                      'items': 2,
-                      'nav': false,
-                      'dots': true,
-                      'loop': false,
-                      'margin': 20,
-                      'responsive': {
-                          '0': {
-                              'items': 1
-                          },
-                          '992': {
-                              'items': 3,
-                              'dots': false
-                          }
-                      }
-                  }">
-
-
-        <div class="owl-stage-outer">
-          <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 1200px;">
-            <div class="owl-item active" style="width: 580px; margin-right: 20px;">
-              <div class="post post-list overlay-dark">
-                <figure class="post-media">
-                  <a href="post-single.html">
-                    <img src="images/noticia1.png" width="280" height="200" alt="post">
-                  </a>
-                  <!-- <div class="post-calendar">
-                    <span class="post-day">19</span>
-                    <span class="post-month">JAN</span>
-                  </div> -->
-                </figure>
-                <div class="post-details">
-                  <h4 class="post-title"><a href="post-single.html">Nueva delegación en San Pedro de Alcántara, Marbella</a>
-                  </h4>
-                  <p class="post-content">Con nuestro 25 aniversario y siguiendo con la misma ilusión que el primer día, queremos comunicaros que a partir del Lunes 5</p>
-                  <a href="post-single.html" class="btn btn-outline btn-md btn-primary">Leer más<i class="d-icon-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="owl-item active" style="width: 580px; margin-right: 20px;">
-              <div class="post post-list overlay-dark">
-                <figure class="post-media">
-                  <a href="post-single.html">
-                    <img src="images/noticia2.png" width="280" height="200" alt="post">
-                  </a>
-                  <!-- <div class="post-calendar">
-                    <span class="post-day">19</span>
-                    <span class="post-month">JAN</span>
-                  </div> -->
-                </figure>
-                <div class="post-details">
-                  <h4 class="post-title"><a href="post-single.html">PP-R RED FIRE NUEVO SISTEMA CONTRAINCENDIOS</a>
-                  </h4>
-                  <p class="post-content">En Dimasa tenemos disponible en stock la nueva gama HELIROMA RED FIRE, un sistema en PP-R de tubería y accesorios desarrolladas para redes contraincendios.</p>
-                  <a href="post-single.html" class="btn btn-outline btn-md btn-primary">Leer más<i class="d-icon-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="owl-item active" style="width: 580px; margin-right: 20px;">
-              <div class="post post-list overlay-dark">
-                <figure class="post-media">
-                  <a href="post-single.html">
-                    <img src="images/noticia3.png" width="280" height="200" alt="post">
-                  </a>
-                  <!-- <div class="post-calendar">
-                    <span class="post-day">19</span>
-                    <span class="post-month">JAN</span>
-                  </div> -->
-                </figure>
-                <div class="post-details">
-                  <h4 class="post-title"><a href="post-single.html">NUEVA TARIFA TERRAIN 2021</a></h4>
-                  <p class="post-content">Como distribuidores oficiales de la firma Terrain, queremos informarles que desde el 1 de julio de 2021 estará vigente la nueva tarifa Terrain 2021.</p>
-                  <a href="post-single.html" class="btn btn-outline btn-md btn-primary">Leer más<i class="d-icon-arrow-right"></i></a>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -804,8 +424,10 @@
     </div>
   </section>
 
-  <section class="mt-10 pt-2 container mb-10">
+  <section class="mt-10 pt-2 container-fluid mb-10">
     <div class="banner banner-newsletter" style="background-image: url(images/demos/demo11/newsletter.jpg); background-color: #211D1A;">
+
+      <div class="container">
       <div class="banner-content row gutter-no align-items-center pt-10 pb-10 pr-10 pl-10">
         <div class="col-xl-5 col-lg-6">
           <div class="icon-box icon-box-side mb-4 mb-lg-0">
@@ -822,6 +444,89 @@
             <button class="btn btn-primary" type="submit">Suscribirse <i class="d-icon-arrow-right"></i></button>
           </form>
         </div>
+      </div>
+    </div>
+
+    </div>
+  </section>
+
+  <section class="mt-5 mb-5">
+    <div class="container mt-4">
+      <h2 class="title title-center-sm">BLOG Y NOTICIAS</h2>
+      <div class="owl-carousel owl-theme owl-loaded owl-drag theme-border pt-5 pr-5 pl-5" data-owl-options="{
+                      'items': 2,
+                      'nav': false,
+                      'dots': true,
+                      'loop': false,
+                      'margin': 20,
+                      'responsive': {
+                          '0': {
+                              'items': 1
+                          },
+                          '992': {
+                              'items': 3,
+                              'dots': false
+                          }
+                      }
+                  }">
+
+
+              <div class="post post-list">
+                <figure class="post-media">
+                  <a href="post-single.html">
+                    <img src="images/noticia1.png" width="280" height="200" alt="post">
+                  </a>
+                  <!-- <div class="post-calendar">
+                    <span class="post-day">19</span>
+                    <span class="post-month">JAN</span>
+                  </div> -->
+                </figure>
+                <div class="post-details">
+                  <h4 class="post-title"><a href="post-single.html">Nueva delegación en San Pedro de Alcántara, Marbella</a>
+                  </h4>
+                  <p class="post-content">Con nuestro 25 aniversario y siguiendo con la misma ilusión que el primer día, queremos comunicaros que a partir del Lunes 5</p>
+                  <a href="post-single.html" class="btn btn-outline btn-md btn-primary">Leer más<i class="d-icon-arrow-right"></i></a>
+                </div>
+              </div>
+
+              <div class="post post-list">
+                <figure class="post-media">
+                  <a href="post-single.html">
+                    <img src="images/noticia2.png" width="280" height="200" alt="post">
+                  </a>
+                  <!-- <div class="post-calendar">
+                    <span class="post-day">19</span>
+                    <span class="post-month">JAN</span>
+                  </div> -->
+                </figure>
+                <div class="post-details">
+                  <h4 class="post-title"><a href="post-single.html">PP-R RED FIRE NUEVO SISTEMA CONTRAINCENDIOS</a>
+                  </h4>
+                  <p class="post-content">En Dimasa tenemos disponible en stock la nueva gama HELIROMA RED FIRE, un sistema en PP-R de tubería y accesorios desarrolladas para redes contraincendios.</p>
+                  <a href="post-single.html" class="btn btn-outline btn-md btn-primary">Leer más<i class="d-icon-arrow-right"></i></a>
+                </div>
+              </div>
+
+              <div class="post post-list">
+                <figure class="post-media">
+                  <a href="post-single.html">
+                    <img src="images/noticia3.png" width="280" height="200" alt="post">
+                  </a>
+                  <!-- <div class="post-calendar">
+                    <span class="post-day">19</span>
+                    <span class="post-month">JAN</span>
+                  </div> -->
+                </figure>
+                <div class="post-details">
+                  <h4 class="post-title"><a href="post-single.html">NUEVA TARIFA TERRAIN 2021</a></h4>
+                  <p class="post-content">Como distribuidores oficiales de la firma Terrain, queremos informarles que desde el 1 de julio de 2021 estará vigente la nueva tarifa Terrain 2021.</p>
+                  <a href="post-single.html" class="btn btn-outline btn-md btn-primary">Leer más<i class="d-icon-arrow-right"></i></a>
+                </div>
+              </div>
+
+
+        </div>
+
       </div>
     </div>
   </section>

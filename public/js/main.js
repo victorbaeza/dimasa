@@ -1147,30 +1147,40 @@ window.Riode = {};
     Riode.initPopups = function () {
 
         Riode.$body
-            // Register Login Popup
-            .on( 'click', 'a.login, .login-link', function ( e ) {
-                e.preventDefault();
-                Riode.popup( {
-                    items: {
-                        src: $( e.currentTarget ).attr( 'href' )
-                    }
-                }, 'login' );
+        // Register Login Popup
+      .on( 'click', '.login-link', function ( e ) {
+
+              e.preventDefault();
+              Riode.popup( {
+                  items: {
+                      src: '#login-modal'
+                  },
+                  type: 'inline',
+                  tLoading: '',
+                  mainClass: 'mfp-login mfp-flip-popup',
+                  // callbacks: {
+                  //     beforeClose: function () {
+                  //         // if "do not show" is checked
+                  //         $( '#hide-newsletter-popup' )[ 0 ].checked && Riode.setCookie( 'hideNewsletterPopup', true, 7 );
+                  //     }
+                  // },
+              } );
+              $('#login-modal').find( '[href="#signin"]' ).click();
 
             } )
 
             // Register "Register" Popup
             .on( 'click', '.register-link', function ( e ) {
-                e.preventDefault();
-                Riode.popup( {
-                    items: {
-                        src: $( e.currentTarget ).attr( 'href' )
-                    },
-                    callbacks: {
-                        ajaxContentAdded: function () {
-                            this.wrap.find( '[href="#register"]' ).click();
-                        }
-                    }
-                }, 'login' );
+              e.preventDefault();
+              Riode.popup( {
+                  items: {
+                      src: '#login-modal'
+                  },
+                  type: 'inline',
+                  tLoading: '',
+                  mainClass: 'mfp-login mfp-flip-popup',
+              } );
+              $('#login-modal').find( '[href="#register"]' ).click();
             } )
 
             // Register "Play Video" Popup
@@ -1662,7 +1672,7 @@ window.Riode = {};
                     document.body.classList.contains( 'home' )
                 ) {
                     Riode.Minipopup.open( {
-                        message: 'Successfully Added',
+                        message: 'Producto añadido',
                         productClass: ' product-cart',
                         name: name,
                         nameLink: $product.find( '.product-name > a' ).attr( 'href' ),
@@ -1670,7 +1680,7 @@ window.Riode = {};
                         imageLink: $product.find( '.product-name > a' ).attr( 'href' ),
                         price: $product.find( '.product-variation-price' ).length > 0 ? $product.find( '.product-variation-price' ).children( 'span' ).html() : $product.find('.product-price .price').html(),
                         count: $product.find( '.quantity' ).val(),
-                        actionTemplate: '<div class="action-group d-flex mt-3"><a href="cart.html" class="btn btn-sm btn-outline btn-primary btn-rounded mr-2">View Cart</a><a href="checkout.html" class="btn btn-sm btn-primary btn-rounded">Check Out</a></div>'
+                        actionTemplate: '<div class="action-group d-flex mt-3"><a href="cart.html" class="btn btn-sm btn-outline btn-primary btn-rounded mr-2">VER CARRITO</a><a href="checkout.html" class="btn btn-sm btn-primary btn-rounded">PEDIR</a></div>'
                     } );
                 }
             } );
@@ -1706,7 +1716,7 @@ window.Riode = {};
             $slider.on( 'initialized.owl.carousel', function ( e ) {
 
                 // if not quickview, make full image toggle
-                self.isQuickview || $slider.append( '<a href="#" class="product-image-full"><i class="d-icon-zoom"></i></a>' );
+                // self.isQuickview || $slider.append( '<a href="#" class="product-image-full"><i class="d-icon-zoom"></i></a>' );
 
                 // init thumbnails
                 thumbsInit( self );
@@ -3067,7 +3077,7 @@ window.Riode = {};
         Riode.countTo( '.count-to' );                                           // Initialize countTo
         Riode.countdown( '.product-countdown, .countdown' );                    // Initialize countdown
         Riode.Menu.init();                                                      // Initialize menus
-        Riode.initZoom();                                                       // Initialize zoom
+        // Riode.initZoom();                                                       // Initialize zoom
         Riode.initNavFilter( '.nav-filters .nav-filter' );                      // Initialize navigation filters for blog, products
         Riode.initPopups();                                                     // Initialize popups: login, register, play video, newsletter popup
         // Riode.initPurchasedMinipopup();                                         // Initialize minipopup for purchased event
@@ -3099,6 +3109,56 @@ window.Riode = {};
         $('.sticky-header .header-left').append('<div style="display: none;" class="header-search hs-expanded ml-0 mr-0"><form action="#" class="input-wrapper"><input type="text" class="form-control" name="search" autocomplete="off" placeholder="Buscar..." value="" required /><button class="btn btn-search" type="submit"><i class="d-icon-search"></i></button></form></div><div style="display: none;" class="header-phone ml-auto mr-auto">&nbsp;&nbsp;¿Tienes alguna duda? Llámanos:&nbsp;<a href="tel:+34952336808" class="contact d-lg-show"><i class="d-icon-phone"></i>+34 952 33 68 08</a></div>');
 
         setActiveNavLink();
+        setScrollEvent();
+        setMenuCategoryNavigatorEvent();
+    }
+
+    function setScrollEvent()
+    {
+      $(document).on('click', '.animated-scroll', function(e){
+        e.preventDefault();
+
+        var target_id = $(this).attr('href');
+        var options = Riode.parseOptions( $(this).attr('data-scroll-options') );
+
+        $("body,html").delay( options.delay ).animate(
+        {
+          scrollTop: $(target_id).offset().top - options.offset
+        },
+        options.speed //speed
+      );
+      })
+    }
+
+    function setMenuCategoryNavigatorEvent()
+    {
+      var categories = $('.menu-category');
+
+      //Show subcategories
+      categories.hover(function(){
+          $('.menu-subcategory').css({'display': 'none'});
+          $($(this).data('subcategory')).css({'display': 'block'});
+      });
+
+      // categories.mouseleave(function(){
+      //   $($(this).data('subcategory')).css({'display': 'none'});
+      // });
+
+      $('.menu-subcategory').mouseleave(function(){
+          $(this).css({
+            'display': 'none',
+            "visibility": "hidden",
+            "opacity": "0"
+          });
+      });
+
+      $('.megamenu').mouseleave(function(){
+          $('.menu-subcategory').css({
+            'display': 'none',
+            "visibility": "visible",
+            "opacity": "1"
+          });
+      });
     }
 
     //Set active navigation link
