@@ -174,3 +174,221 @@ function toggleKeywordsInput(){
         initKeywordsSelect2('.js-select2-keywords'+selector)
     }
 }
+
+
+
+
+
+$(document).ready(function () {
+    iniBotonesAlertas();
+
+});
+
+function iniBotonesAlertas(){
+	$(".btn_alert").click(function (e){
+		e.preventDefault();
+		var linkAddress = $(this).attr('href');
+		$('#confirmationLink').attr('href',linkAddress);
+		swal({
+			  title: "¿Estás seguro?",
+			  html: "Ya no podrás volver atrás",
+			  type: "warning",
+			  showCancelButton: true,
+			  confirmButtonColor: "#DD6B55",
+			  confirmButtonText: "Si, estoy seguro!",
+			  cancelButtonText: "No",
+			  closeOnConfirm: false
+			},
+			function(){
+				location.href = linkAddress;
+			});
+	});
+}
+
+
+function orderColumn(){
+  $('.order').click(function(){
+    var order_col = $(this).data('order_col');
+    var order = $(this).data('order');
+    $('#order_col').val(order_col);
+    $('#order').val(order);
+    $('#mainForm').submit();
+  });
+}
+
+
+/*
+  Selects 2.4
+*/
+function select4client(){
+  var currentQuery;
+
+  $('.select4client').select2({
+  	ajax: {
+  	url: '/ajax/select/clients',
+  	dataType: 'json',
+  	delay: 250,
+  		data: function (params) {
+  			var query = {
+  				search: params.term,
+  				page: params.page || 1,
+  			}
+  			return query;
+  		},
+  	},
+  	placeholder: 'Seleccione un cliente',
+  });
+
+  $('.select4client').on('select2:open', function () {
+    // var cliente = $(this).find(':selected').text();
+    // $('.select2-search__field').val(cliente).change();
+    if(currentQuery) $('.select2-search__field').val(currentQuery).change().trigger();
+  });
+
+  $('.select4client').on('select2:closing', function(){
+    currentQuery = $('.select2-search input').prop('value');
+  });
+}
+
+function select4vendor(){
+  var currentQuery;
+
+  $('.select4vendor').select2({
+    ajax: {
+    url: '/ajax/select/vendors',
+    dataType: 'json',
+    delay: 250,
+      data: function (params) {
+        var query = {
+          search: params.term,
+          page: params.page || 1,
+        }
+        return query;
+      },
+    },
+    placeholder: 'Selecciona un proveedor',
+  });
+
+  $('.select4vendor').on('select2:open', function () {
+    if(currentQuery) $('.select2-search__field').val(currentQuery).change().trigger();
+  });
+
+  $('.select4vendor').on('select2:closing', function(){
+    currentQuery = $('.select2-search input').prop('value');
+  });
+}
+
+function select4user(){
+  var currentQuery;
+
+  $('.select4user').select2({
+  	ajax: {
+  	url: '/ajax/select/users',
+  	dataType: 'json',
+  	delay: 250,
+  		data: function (params) {
+  			var query = {
+  				search: params.term,
+  				page: params.page || 1,
+  			}
+  			return query;
+  		},
+  	},
+  	placeholder: 'Seleccione un usuario',
+  });
+
+  $('.select4user').on('select2:open', function () {
+    if(currentQuery) $('.select2-search__field').val(currentQuery).change().trigger();
+  });
+
+  $('.select4user').on('select2:closing', function(){
+    currentQuery = $('.select2-search input').prop('value');
+  });
+}
+
+
+function select4product(){
+  var currentQuery;
+
+	$('.select4product').select2({
+		ajax: {
+		url: '/ajax/select/products',
+		dataType: 'json',
+		delay: 250,
+			data: function (params) {
+				var query = {
+					search: params.term,
+					page: params.page || 1,
+				}
+				return query;
+			},
+		},
+		placeholder: 'Selecciona un producto',
+	});
+
+  $('.select4product').on('select2:open', function () {
+    if(currentQuery) $('.select2-search__field').val(currentQuery).change().trigger();
+  });
+
+  $('.select4product').on('select2:closing', function(){
+    currentQuery = $('.select2-search input').prop('value');
+  });
+}
+
+
+function select4paymentform(){
+  var currentQuery;
+
+	$('.select4paymentform').select2({
+		ajax: {
+		url: '/ajax/select/payment_forms',
+		dataType: 'json',
+		delay: 250,
+			data: function (params) {
+				var query = {
+					search: params.term,
+					page: params.page || 1,
+				}
+				return query;
+			},
+		},
+		placeholder: 'Selecciona una forma de pago',
+	});
+
+  $('.select4paymentform').on('select2:open', function () {
+    if(currentQuery) $('.select2-search__field').val(currentQuery).change().trigger();
+  });
+
+  $('.select4paymentform').on('select2:closing', function(){
+    currentQuery = $('.select2-search input').prop('value');
+  });
+}
+
+
+function select4purchasepaymentform(){
+  var currentQuery;
+
+	$('.select4purchasepaymentform').select2({
+		ajax: {
+		url: '/ajax/select/purchase_payment_forms',
+		dataType: 'json',
+		delay: 250,
+			data: function (params) {
+				var query = {
+					search: params.term,
+					page: params.page || 1,
+				}
+				return query;
+			},
+		},
+		placeholder: 'Selecciona una forma de pago',
+	});
+
+  $('.select4paymentform').on('select2:open', function () {
+    if(currentQuery) $('.select2-search__field').val(currentQuery).change().trigger();
+  });
+
+  $('.select4paymentform').on('select2:closing', function(){
+    currentQuery = $('.select2-search input').prop('value');
+  });
+}

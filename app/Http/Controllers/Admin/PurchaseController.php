@@ -54,12 +54,11 @@ class PurchaseController extends Controller
 
     public function do_create(Request $request)
     {
-        dd($request->all());
 
         $purchase = new Purchase;
         $this->saveData($purchase, $request, true);
 
-        return redirect()->action('PurchasesController@list')->with('success', 'La compra ha sido creado correctamente');
+        return redirect()->action('Admin\PurchaseController@list')->with('success', 'La compra ha sido creado correctamente');
     }
 
     private function saveData(Purchase $purchase, Request $request, $new=false)
@@ -69,11 +68,11 @@ class PurchaseController extends Controller
             $purchase->date = date('Y-m-d H:i:s');
         }
 
-        $vendor = Vendor::find($request->input('vendor_id'));
+        $vendor = Vendor::find($request->input('vendor'));
 
-        $purchase->vendor_id = $vendor->id;
-        $purchase->status_id = $request->input('status_id');
-        $purchase->payment_form_id = $request->input('payment_form_id');
+        if ($vendor) $purchase->vendor_id = $vendor->id;
+        $purchase->status_id = $request->input('status');
+        $purchase->payment_form_id = $request->input('payment_form');
         $purchase->observations = $request->input('observations');
         $purchase->save();
 
@@ -88,7 +87,10 @@ class PurchaseController extends Controller
             // Editar las líneas de la compra
             foreach ($purchase->Lines as $line)
             {
-
+                $line->product_id = $request->input('product_'.$line->id);
+                $line->quantity = intval($request->input('quantity_'.$line->id));
+                $line->price = Helper::convertAmount($request->input('price_'.$line->id));
+                $line->save();
             }
         }
 
@@ -101,7 +103,7 @@ class PurchaseController extends Controller
             $purchase_line->purchase_id = $purchase->id;
             $purchase_line->product_id = $request->input('add_product_'.$i);
             $purchase_line->quantity = intval($request->input('add_quantity_'.$i));
-            $purchase_line->price = $request->input('add_price_'.$i);
+            $purchase_line->price = Helper::convertAmount($request->input('add_price_'.$i));
             $purchase_line->save();
         }
 
@@ -118,11 +120,18 @@ class PurchaseController extends Controller
     {
         $purchase = Purchase::findOrFail($request->id);
 
-        dd($purchase);
-
         $this->saveData($purchase, $request);
 
         return redirect()->back()->with('success', 'La compra ha sido modificado correctamente');
+    }
+
+    public function do_removeLine ($id, $line_id)
+    {
+        $purchase_line = PurchaseLine::where('id', $line_id)->where('purchase_id', $id)->firstOrFail();
+
+        $purchase_line->delete();
+
+        return redirect()->back()->with('success', 'La línea de la compra ha sido eliminada correctamente!');
     }
 
 
