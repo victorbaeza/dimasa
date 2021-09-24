@@ -37,7 +37,7 @@
   <link rel="stylesheet" type="text/css" href="/vendor/owl-carousel/owl.carousel.min.css">
 
   <!-- Main CSS File -->
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css?ver=1">
 
   @yield('extracss')
 </head>

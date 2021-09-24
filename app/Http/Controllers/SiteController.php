@@ -58,6 +58,13 @@ class SiteController extends Controller
         return view('site.blog.post');
     }
 
+    public function getCategoryBrands($category)
+    {
+        $title = "Marcas de Fontanería";
+
+        return view('site.brands', compact('title'));
+    }
+
 
     public function do_subscribeNewsletter(Request $request)
     {

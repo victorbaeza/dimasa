@@ -6,14 +6,72 @@
 {{-- Content --}}
 @section('content')
   <section id="clients" class="section-bg pt-0">
-      <div class="shop-boxed-banner banner mb-8 mb-lg-7 pb-7 pt-7" id="brands-header" title="Marcas de Dimasa - Foto de Negocios creado por pressfoto - www.freepik.es" style="background-image: url('/images/marcas.jpg'); background-color: #ECEDEF;">
+      <div class="shop-boxed-banner banner mb-5 mb-lg-7 pb-7 pt-7" id="brands-header" title="Marcas de Dimasa - Foto de Negocios creado por pressfoto - www.freepik.es" style="background-image: url('/images/marcas.jpg'); background-color: #ECEDEF;">
         <div class="banner-content container">
           <!-- <h2 class="banner-subtitle font-weight-semi-bold ls-m text-uppercase text-secondary mb-3">
             NUESTRAS ÚLTIMAS</h2> -->
-          <h1 class="banner-title font-weight-bold text-primary ls-m mb-0">MARCAS CON LAS QUE TRABAJAMOS</h1>
+          @if(isset($title))<h1 class="banner-title font-weight-bold text-primary ls-m mb-0">{{$title}}</h1>@else<h1 class="banner-title font-weight-bold text-primary ls-m mb-0">MARCAS CON LAS QUE TRABAJAMOS</h1>@endif
         </div>
       </div>
       <div class="container">
+        <div class="row">
+            @if(isset($title))
+          <div class="col-12">
+            <div class="brands-type">
+      			<h2><a href="/marcas">
+      				<i class="fa fa-arrow-left"></i> Volver a todas las marcas			</a></h2>
+      		</div>
+          </div>
+        @endif
+          <div class="col-12">
+            <div class="brands-types-wrapper">
+			<div class="brands-type">
+			<h2><a href="/marcas/fontaneria">
+				Marcas de Fontanería			</a></h2>
+		</div>
+			<div class="brands-type">
+			<h2><a href="/marcas/fontaneria">
+				Marcas de ACS / Calefacción			</a></h2>
+		</div>
+			<div class="brands-type">
+			<h2><a href="/marcas/fontaneria">
+				Marcas de Aire Acondicionado			</a></h2>
+		</div>
+			<div class="brands-type">
+			<h2><a href="/marcas/fontaneria">
+				Marcas de Energía Renovable			</a></h2>
+		</div>
+			<div class="brands-type">
+			<h2><a href="/marcas/fontaneria">
+				Marcas de Tubería y Valvulería			</a></h2>
+		</div>
+			<div class="brands-type">
+			<h2><a href="/marcas/fontaneria">
+				Marcas de Contraincendios			</a></h2>
+		</div>
+			<div class="brands-type">
+			<h2><a href="/marcas/fontaneria">
+				Marcas de Bombeo			</a></h2>
+		</div>
+			<div class="brands-type">
+			<h2><a href="/marcas/fontaneria">
+				Marcas de Saneamientos			</a></h2>
+		</div>
+			<div class="brands-type">
+			<h2><a href="/marcas/fontaneria">
+				Marcas de Sanitarios y Griferías			</a></h2>
+		</div>
+			<div class="brands-type">
+			<h2><a href="/marcas/fontaneria">
+				Marcas de Ventilación			</a></h2>
+		</div>
+			<div class="brands-type">
+			<h2><a href="/marcas/fontaneria">
+				Marcas de Piscinas			</a></h2>
+		</div>
+	</div>
+          </div>
+        </div>
         <div class="row">
           <div class="col-12">
             <div class="char-navigation mb-5 pt-4 pb-4 d-flex justify-content-center flex-wrap">

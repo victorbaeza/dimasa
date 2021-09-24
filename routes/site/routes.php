@@ -32,6 +32,7 @@ Route::get('/formacion', function(){ return view('site.courses'); })->name('site
 
 //Brands
 Route::get('/marcas', function(){ return view('site.brands'); })->name('site.brands');
+Route::get('/marcas/{category}', [SiteController::class, 'getCategoryBrands'])->name('site.brands.category');
 
 //Downloads
 Route::get('/descargas', function(){ return view('site.downloads'); })->name('site.downloads');
