@@ -17266,6 +17266,12 @@ border-bottom: 1px solid grey;
 color: #00377A;
 }
 
+.brands-type a.active{
+  color: #C43032;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 @media screen and (max-width: 512px){
   .char-navigation .char-navigation-element{
     font-size: 1.6rem;

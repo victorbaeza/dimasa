@@ -26,7 +26,7 @@
           <div class="col-12">
             <div class="brands-types-wrapper">
 			<div class="brands-type">
-			<h2><a href="/marcas/fontaneria">
+			<h2><a href="/marcas/fontaneria" @if($title) class="active" @endif>
 				Marcas de Fontanería			</a></h2>
 		</div>
 			<div class="brands-type">
@@ -246,25 +246,25 @@
             <span class="char-navigation-index" id="char_1">A</span>
             <hr>
             <div class="row no-gutters clients-wrap clearfix wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                <div class="col-lg-2 col-md-4 col-xs-6">
+                <div class="col-lg-2 col-md-4 col-6">
                     <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="https://www.genebre.es/templates/public/default/img/logo.jpg" class="img-fluid" alt=""> </div></a>
                 </div>
-                <div class="col-lg-2 col-md-4 col-xs-6">
+                <div class="col-lg-2 col-md-4 col-6">
                     <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="https://www.mediclinics.es/img/mdccom-logo-1539083892.jpg" class="img-fluid" alt=""> </div></a>
                 </div>
-                <div class="col-lg-2 col-md-4 col-xs-6">
+                <div class="col-lg-2 col-md-4 col-6">
                     <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="https://www.cvtechvac.com/wp-content/uploads/2020/07/logo-cvtech.png" class="img-fluid" alt=""> </div></a>
                 </div>
-                <div class="col-lg-2 col-md-4 col-xs-6">
+                <div class="col-lg-2 col-md-4 col-6">
                     <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="http://www.domingorepresentative.com/wp-content/uploads/2019/04/DR-Logo-3rd-Apr.png" class="img-fluid" alt=""> </div></a>
                 </div>
-                <div class="col-lg-2 col-md-4 col-xs-6">
+                <div class="col-lg-2 col-md-4 col-6">
                     <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="https://www.productosqp.com/pub/media/theme_options/default/logo_productos_qp.png" class="img-fluid" alt=""> </div></a>
                 </div>
-                <div class="col-lg-2 col-md-4 col-xs-6">
+                <div class="col-lg-2 col-md-4 col-6">
                     <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="https://termat.es/assets/img/logo/termat.png" class="img-fluid" alt=""> </div></a>
                 </div>
-                <div class="col-lg-2 col-md-4 col-xs-6">
+                <div class="col-lg-2 col-md-4 col-6">
                     <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="https://korman.com.es/assets/img/logo/korman.png" class="img-fluid" alt=""> </div></a>
                 </div>
             </div>
@@ -273,25 +273,25 @@
             <span class="char-navigation-index" id="char_2">B</span>
             <hr>
             <div class="row no-gutters clients-wrap clearfix wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                <div class="col-lg-2 col-md-4 col-xs-6">
+                <div class="col-lg-2 col-md-4 col-6">
                     <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="images/brands/brand1.png" class="img-fluid" alt=""> </div></a>
                 </div>
-                <div class="col-lg-2 col-md-4 col-xs-6">
+                <div class="col-lg-2 col-md-4 col-6">
                     <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="images/brands/brand2.png" class="img-fluid" alt=""> </div></a>
                 </div>
-                <div class="col-lg-2 col-md-4 col-xs-6">
+                <div class="col-lg-2 col-md-4 col-6">
                     <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="images/brands/brand3.png" class="img-fluid" alt=""> </div></a>
                 </div>
-                <div class="col-lg-2 col-md-4 col-xs-6">
+                <div class="col-lg-2 col-md-4 col-6">
                     <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="images/brands/brand4.png" class="img-fluid" alt=""> </div></a>
                 </div>
-                <div class="col-lg-2 col-md-4 col-xs-6">
+                <div class="col-lg-2 col-md-4 col-6">
                     <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="images/brands/brand5.png" class="img-fluid" alt=""> </div></a>
                 </div>
-                <div class="col-lg-2 col-md-4 col-xs-6">
+                <div class="col-lg-2 col-md-4 col-6">
                     <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="images/brands/brand6.png" class="img-fluid" alt=""> </div></a>
                 </div>
-                <div class="col-lg-2 col-md-4 col-xs-6">
+                <div class="col-lg-2 col-md-4 col-6">
                     <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="images/brands/brand7.png" class="img-fluid" alt=""> </div></a>
                 </div>
             </div>
@@ -300,25 +300,25 @@
             <span class="char-navigation-index" id="char_3">C</span>
             <hr>
             <div class="row no-gutters clients-wrap clearfix wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                <div class="col-lg-2 col-md-4 col-xs-6">
+                <div class="col-lg-2 col-md-4 col-6">
                     <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="https://www.genebre.es/templates/public/default/img/logo.jpg" class="img-fluid" alt=""> </div></a>
                 </div>
-                <div class="col-lg-2 col-md-4 col-xs-6">
+                <div class="col-lg-2 col-md-4 col-6">
                     <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="https://www.mediclinics.es/img/mdccom-logo-1539083892.jpg" class="img-fluid" alt=""> </div></a>
                 </div>
-                <div class="col-lg-2 col-md-4 col-xs-6">
+                <div class="col-lg-2 col-md-4 col-6">
                     <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="https://www.cvtechvac.com/wp-content/uploads/2020/07/logo-cvtech.png" class="img-fluid" alt=""> </div></a>
                 </div>
-                <div class="col-lg-2 col-md-4 col-xs-6">
+                <div class="col-lg-2 col-md-4 col-6">
                     <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="http://www.domingorepresentative.com/wp-content/uploads/2019/04/DR-Logo-3rd-Apr.png" class="img-fluid" alt=""> </div></a>
                 </div>
-                <div class="col-lg-2 col-md-4 col-xs-6">
+                <div class="col-lg-2 col-md-4 col-6">
                     <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="https://www.productosqp.com/pub/media/theme_options/default/logo_productos_qp.png" class="img-fluid" alt=""> </div></a>
                 </div>
-                <div class="col-lg-2 col-md-4 col-xs-6">
+                <div class="col-lg-2 col-md-4 col-6">
                     <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="https://termat.es/assets/img/logo/termat.png" class="img-fluid" alt=""> </div></a>
                 </div>
-                <div class="col-lg-2 col-md-4 col-xs-6">
+                <div class="col-lg-2 col-md-4 col-6">
                     <a href="/catalogo/fontaneria"><div class="client-logo"> <img src="https://korman.com.es/assets/img/logo/korman.png" class="img-fluid" alt=""> </div></a>
                 </div>
             </div>
