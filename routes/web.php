@@ -28,23 +28,18 @@ Route::get('test', [SiteController::class, 'test']);
 
 //Rutas con localizacion
 require base_path('routes/site/routes.php');
-// Route::group(['prefix' => '{language}', 'where' => ['language' => '[a-zA-Z]{2}'], 'middleware' => ['setLocale','forgetLanguageParameter']], function(){
-//
-//     Route::get('/', [SiteController::class, 'index'])->name('home');
-//     Route::get('/login', [ClientLoginController::class, 'getLoginForm'])->name('client.login');
-//     Route::post('/login', [ClientLoginController::class, 'do_login'])->name('client.do_login');
-//
-//     Route::get('/password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
-//     Route::post('/password/email',[ForgotPasswordController::class,'sendResetLinkEmail'])->name('password.email');
-//     Route::get('/password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
-//     Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
-//
-//     Route::get('/register', [RegisterController::class, 'register'])->name('client.register');
-//     Route::post('/register', [RegisterController::class, 'do_register'])->name('client.do_register');
-//
-//     //Rutas publicas
-//     require base_path('routes/site/routes.php');
-// });
+
+Route::get('/login', [ClientLoginController::class, 'getLoginForm'])->name('client.login');
+Route::post('/login', [ClientLoginController::class, 'do_login'])->name('client.do_login');
+
+Route::get('/password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('/password/email',[ForgotPasswordController::class,'sendResetLinkEmail'])->name('password.email');
+Route::get('/password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
+
+Route::get('/register', [RegisterController::class, 'register'])->name('client.register');
+Route::post('/register', [RegisterController::class, 'do_register'])->name('client.do_register');
+
 
 
 // Rutas de cliente - AUTENTICADO

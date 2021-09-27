@@ -17,13 +17,13 @@
                 </div>
                 @if($message = Session::get("login_error"))<div class="mb-2 alert alert-danger text-white" style="font-size: 1.2rem;">{{$message}}</div>@endif
                   @if($message = Session::get("register_success"))<div class="mb-2 alert alert-success text-white" style="font-size: 1.2rem;">{{$message}}</div>@endif
-                    <form action="#" method="POST">
+                    <form action="{{ route('client.do_login') }}" method="POST">
                       @csrf
                         <div class="form-group mb-3">
-                            <input type="text" class="form-control" id="singin-email" name="signin-email" placeholder="Email *" required />
+                            <input type="text" class="form-control" id="singin-email" name="email" placeholder="Email *" required />
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" id="singin-password" name="signin-password" placeholder="Contraseña *"
+                            <input type="password" class="form-control" id="singin-password" name="password" placeholder="Contraseña *"
                                 required />
                         </div>
                         <div class="form-footer">
@@ -53,7 +53,7 @@
                     <div class="tab-content pt-2">
                         <div class="tab-pane active in" id="tab3-1">
                           @if($message = Session::get("register_error"))<span class="text-danger mb-2" style="font-size: 1.2rem;">{{$message}}</span>@endif
-                            <form action="" method="POST">
+                            <form action="{{ route('client.do_register') }}" method="POST">
                               @csrf
                                 <div class="form-group mb-3">
                                   @error('register-name')<span class="text-danger mb-2">El nombre es obligatorio</span>@enderror
