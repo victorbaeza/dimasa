@@ -7,6 +7,15 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SiteController;
 
 Route::get('/', [SiteController::class, 'getIndex'])->name('site.index');
+Route::get('/area_personal', function () {
+    return view('site.client_area/personal_area');
+  });
+  Route::get('/pedidos', function () {
+    return view('site.client_area/pedidos');
+  });
+  Route::get('/productos', function () {
+    return view('site.client_area/presupuestos');
+  });
 
 // Main pages
 Route::get('/noticias', [SiteController::class, 'listBlogs'])->name('site.blog');

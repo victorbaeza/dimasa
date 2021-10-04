@@ -38,6 +38,10 @@
 
   <!-- Main CSS File -->
   <link rel="stylesheet" type="text/css" href="/css/style.css?ver=1">
+  <link rel="stylesheet" type="text/css" href="/css/intranet.css">
+
+
+
 
   @yield('extracss')
 </head>
@@ -105,6 +109,8 @@
   <script src="/vendor/photoswipe/photoswipe-ui-default.min.js"></script>
   {{-- <script src="/vendor/elevatezoom/jquery.elevatezoom.min.js"></script> --}}
   <script src="/vendor/jquery.countdown/jquery.countdown.min.js"></script>
+
+
   <!-- Main JS File -->
   <script src="/js/main.js"></script>
 

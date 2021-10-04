@@ -1,0 +1,236 @@
+.account {
+    line-height: 2.15
+}
+
+.account .title {
+    font-size: 3rem;
+    letter-spacing: -.035em
+}
+
+.account p {
+    font-family: Poppins, sans-serif;
+    line-height: 2.15;
+    letter-spacing: -.017em
+}
+
+.account p span {
+    color: #333
+}
+
+.account p:first-child {
+    letter-spacing: -.005em
+}
+
+.account p .link-to-tab {
+    text-decoration: underline
+}
+
+.account #dashboard p {
+    color: #777
+}
+
+.account .btn.btn-dark {
+    padding: 0.93em 1.97em
+}
+
+.account label {
+    display: block;
+    padding-left: .2rem;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    line-height: 1
+}
+
+.account .form-control {
+    font-size: 1.3rem;
+    font-family: Poppins, sans-serif;
+    transition: background-color .3s, border-color .3s;
+    color: #999;
+    border-radius: .3rem
+}
+
+.account .form-control:focus {
+    border-color: #222
+}
+
+.account .nav-tabs {
+    width: auto;
+    border-right: none
+}
+
+.account .nav-item {
+    border-bottom: 1px solid #eee;
+    color: #222
+}
+
+.account .nav-item a {
+    display: block;
+    padding: 1.7rem .8rem 1.6rem;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: -.015em;
+    line-height: 1;
+    text-transform: none
+}
+
+.account .nav-item:hover .nav-link {
+    color: #26c
+}
+
+.account .nav-item.show .nav-link,
+.account .nav-item .nav-link.active {
+    color: #26c
+}
+
+.account .tab-pane {
+    padding: .8rem 0 0
+}
+
+.account thead {
+    text-align: left
+}
+
+.account thead th {
+    padding: 1.5rem 0;
+    background-color: #f4f4f4
+}
+
+.account tbody td {
+    padding: 1.5rem 1rem 1.5rem 0
+}
+
+.account tbody tr:nth-child(2n) td {
+    background-color: #f4f4f4
+}
+
+.account td:first-child {
+    padding-left: 1rem
+}
+
+.account .order-total {
+    width: 25.9rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #666
+}
+
+.account legend {
+    color: #222
+}
+
+.account .btn {
+    /*    padding: 1em 1.87em */
+}
+
+.account .order-table {
+    border: 1px solid #eee
+}
+
+.account .order-action .btn {
+    padding: 0
+}
+
+#downloads .btn,
+.card-address .btn {
+    padding: 0
+}
+
+.card-address .btn i {
+    font-size: 1.4rem
+}
+
+.order-number {
+    width: 11.4rem;
+    color: #000
+}
+
+.order-date {
+    width: 24.8rem;
+    color: #666
+}
+
+.order-status {
+    width: 14.7rem;
+    font-size: 1.2rem;
+    color: #222
+}
+
+.order-origin {
+    width: 14.7rem;
+    font-size: 1.2rem;
+    color: rgb(255, 255, 255)
+}
+
+.order-status span {
+    display: inline-block;
+    padding: .1rem .5rem;
+    background-color: #ccc;
+    border-radius: .3rem;
+    line-height: 1.9
+}
+
+.origin-spanWeb {
+    display: inline-block;
+    padding: .1rem .5rem;
+    background-color: rgb(123, 147, 255);
+    border-radius: .3rem;
+    line-height: 1.9
+}
+
+.origin-spanDimasa {
+    display: inline-block;
+    padding: .1rem .5rem;
+    background-color: rgb(56, 179, 97);
+    border-radius: .3rem;
+    line-height: 1.9
+}
+
+.card-address p {
+    margin-bottom: 1rem
+}
+
+@media (max-width: 767px) {
+    .account .nav-tabs {
+        width: 100%
+    }
+    .account .tab-content {
+        padding-left: 1.5rem
+    }
+}
+
+@media (max-width: 479px) {
+    .order-action,
+    thead th:last-child {
+        display: none
+    }
+}
+
+.trDevoluciones {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+}
+
+.menu-area-personal:hover {
+    color: white !important;
+}
+
+.menu-active-underline>li>.menu-area-personal::before {
+    background-color: white;
+    height: 3px;
+    border: none;
+    bottom: .8rem;
+}
+
+.js-example-basic-single {
+    color: #999;
+    font-size: 1.3rem;
+    font-family: Poppins, sans-serif;
+    border: none;
+    width: 100%;
+}
+
+.card-header {
+    background-color: #f1f1f1;
+}

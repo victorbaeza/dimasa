@@ -62,14 +62,16 @@
             text-transform: none;
         }
         &:hover {
-            .nav-link { color: $primary-color; }
+            .nav-link {
+                color: $primary-color;
+            }
         }
         &.show .nav-link,
         .nav-link.active {
             color: $primary-color;
         }
     }
-    .tab-pane { 
+    .tab-pane {
         padding: .8rem 0 0;
     }
     thead {
@@ -96,10 +98,7 @@
         font-weight: 400;
         color: $body-color;
     }
-
     fieldset {
-        margin: 7rem 0 2rem;
-        padding: 2rem 2rem 1rem;
         border: 1px solid #e1e1e1;
     }
     legend {
@@ -108,40 +107,39 @@
     .btn {
         padding: 1em 1.87em;
     }
-    
     .order-table {
         border: 1px solid $border-color-light;
     }
-
     .order-action .btn {
         padding: 0;
     }
 }
 
-#downloads, .card-address {
+#downloads,
+.card-address {
     .btn {
         padding: 0;
     }
-} 
+}
 
 .card-address .btn i {
     font-size: 1.4rem;
 }
 
-
 .order-number {
     width: 11.4rem;
     color: #000;
 }
+
 .order-date {
     width: 24.8rem;
     color: #666;
 }
+
 .order-status {
     width: 14.7rem;
     font-size: 1.2rem;
     color: #222;
-    
     span {
         display: inline-block;
         padding: .1rem .5rem;
@@ -152,16 +150,25 @@
 }
 
 .card-address {
-    p { margin-bottom: 1rem; }
-}
-@include mq(md, max) {
-    .account {
-        .nav-tabs { width: 100%; }
-        .tab-content { padding-left: 1.5rem; }
+    p {
+        margin-bottom: 1rem;
     }
 }
+
+@include mq(md, max) {
+    .account {
+        .nav-tabs {
+            width: 100%;
+        }
+        .tab-content {
+            padding-left: 1.5rem;
+        }
+    }
+}
+
 @include mq(xs, max) {
-    .order-action, thead th:last-child {
+    .order-action,
+    thead th:last-child {
         display: none;
     }
 }
