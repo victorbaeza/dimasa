@@ -172,7 +172,7 @@
 .origin-spanWeb {
     display: inline-block;
     padding: .1rem .5rem;
-    background-color: rgb(123, 147, 255);
+    background-color: rgb(53 95 148);
     border-radius: .3rem;
     line-height: 1.9
 }
@@ -180,7 +180,7 @@
 .origin-spanDimasa {
     display: inline-block;
     padding: .1rem .5rem;
-    background-color: rgb(56, 179, 97);
+    background-color: rgb(13 139 55);
     border-radius: .3rem;
     line-height: 1.9
 }

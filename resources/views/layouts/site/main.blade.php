@@ -39,6 +39,7 @@
   <!-- Main CSS File -->
   <link rel="stylesheet" type="text/css" href="/css/style.css?ver=1">
   <link rel="stylesheet" type="text/css" href="/css/intranet.css">
+  <link rel="stylesheet" type="text/css" href="/css/calculadora.css">
 
 
 

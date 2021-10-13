@@ -13,7 +13,7 @@ Route::get('/area_personal', function () {
   Route::get('/pedidos', function () {
     return view('site.client_area/pedidos');
   });
-  Route::get('/productos', function () {
+  Route::get('/presupuestos', function () {
     return view('site.client_area/presupuestos');
   });
 

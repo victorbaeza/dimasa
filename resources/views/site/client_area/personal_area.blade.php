@@ -63,7 +63,7 @@
                             <input type="email" class="form-control" name="email" required="">
 
 
-                            <button type="submit" class="btn btn-primary">GUARDAR CAMBIOS</button>
+                            <button type="submit" class="btn btn-primary personal_area_btn">GUARDAR CAMBIOS</button>
                         </form>
                     </fieldset>
                 </div>
@@ -126,8 +126,10 @@
                                         <input type="text" class="form-control" name="first_name" required="">
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary">GUARDAR CAMBIOS</button>
-                                <button type="button" class="btn btn-danger btn-close-direccion" data-direccion="form-facturacion" >CERRAR</button>
+                                <button type="button" class="btn btn-danger btn-close-direccion personal_area_btn" data-direccion="form-facturacion" >CERRAR</button>
+                                <button type="submit" class="btn btn-primary personal_area_btn">GUARDAR CAMBIOS</button>
+                          
+                              
                             </form>
                         </fieldset>
                         <fieldset id="form-envio" style="display:none">
@@ -159,8 +161,9 @@
                                         <input type="text" class="form-control" name="first_name" required="">
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary">GUARDAR CAMBIOS</button>
-                                <button type="button" class="btn btn-danger btn-close-direccion" data-direccion="form-envio">CERRAR</button>
+                                <button type="button" class="btn btn-danger btn-close-direccion personal_area_btn" data-direccion="form-envio">CERRAR</button>
+                                <button type="submit" class="btn btn-primary personal_area_btn">GUARDAR CAMBIOS</button>
+                     
                             </form>
                         </fieldset>
 
@@ -180,7 +183,7 @@
                             <label>Confirme nueva contraseña</label>
                             <input type="password" class="form-control" name="confirm_password">
 
-                            <button type="submit" class="btn btn-primary">GUARDAR CAMBIOS</button>
+                            <button type="submit" class="btn btn-primary personal_area_btn" style=>GUARDAR CAMBIOS</button>
                         
                         </fieldset>
 

@@ -2,371 +2,7 @@
 
 {{-- css --}}
 @section('extracss')
-<style>
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-	}
 
-	.clearfix::after {
-		content: "";
-		display: table;
-		clear: both;
-	}
-
-
-	body {
-
-		position: relative;
-		height: 100vh;
-
-	}
-
-	.right {
-		float: right;
-	}
-
-	.red {
-		color: #FF5049 !important;
-	}
-
-	.red-focus:focus {
-		border: 1px solid #FF5049 !important;
-	}
-
-	.top {
-		height: 30vh;
-		background-color: #f7f7f7;
-		background-size: cover;
-		background-position: center;
-		position: relative;
-	}
-
-	.budget {
-		position: absolute;
-		width: 350px;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		color: #000;
-	}
-
-	.budget__title {
-		font-size: 18px;
-		text-align: center;
-		margin-bottom: 10px;
-		font-weight: 300;
-	}
-
-	.bottom {
-		margin-top: 2rem;
-	}
-
-	.budget__value {
-		font-weight: 300;
-		font-size: 60px;
-		text-align: center;
-		margin-bottom: 1rem;
-		letter-spacing: 2px;
-	}
-
-	.budget__benefit {
-		font-weight: 150;
-		font-size: 30px;
-		text-align: center;
-		margin-bottom: 1rem;
-		letter-spacing: 2px;
-	}
-
-	.budget__income,
-	.budget__expenses {
-		padding: 12px;
-		text-transform: uppercase;
-	}
-
-	.budget__income {
-		margin-bottom: 10px;
-		background-color: #28B9B5;
-	}
-
-	.budget__expenses {
-		background-color: #FF5049;
-	}
-
-	.budget__income--text,
-	.budget__expenses--text {
-		float: left;
-		font-size: 13px;
-		color: white;
-		margin-top: 2px;
-	}
-
-	.budget__income--value,
-	.budget__expenses--value {
-		letter-spacing: 1px;
-		float: left;
-		color: white;
-	}
-
-	.budget__income--percentage,
-	.budget__expenses--percentage {
-		float: left;
-		color: white;
-		width: 34px;
-		font-size: 11px;
-		padding: 3px 0;
-		margin-left: 10px;
-	}
-
-	.budget__expenses--percentage {
-		background-color: #ffffff;
-		background-color: rgba(255, 255, 255, 0.2);
-		text-align: center;
-		border-radius: 3px;
-	}
-
-	.add {
-		padding: 14px;
-		border-bottom: 1px solid #e7e7e7;
-		background-color: #f7f7f7;
-	}
-
-	.add_Product {
-		padding: 14px;
-		border-bottom: 1px solid #e7e7e7;
-		background-color: #f7f7f7;
-	}
-
-	.add__container {
-		margin: 0 auto;
-		text-align: center;
-	}
-
-	.add__type {
-		width: 55px;
-		border: 1px solid #e7e7e7;
-		height: 44px;
-		font-size: 18px;
-		color: inherit;
-		background-color: #fff;
-		margin-right: 10px;
-		font-weight: 300;
-		transition: border 0.3s;
-	}
-
-	.add__description,
-	.add__value,
-	.add__quantity,
-	.add__price,
-	.add__finalPrice,
-	.add__productName {
-		border: 1px solid #e7e7e7;
-		background-color: #fff;
-		color: inherit;
-		font-family: inherit;
-		font-size: 14px;
-		padding: 12px 15px;
-		margin-right: 10px;
-		border-radius: 5px;
-		transition: border 0.3s;
-	}
-
-	.add__price,
-	.add__quantity {
-		width: 100px;
-	}
-
-	.add__finalPrice {
-		width: 150px;
-	}
-
-	.add__description {
-		width: 400px;
-	}
-
-	.add__value {
-		width: 100px;
-	}
-
-	.add__btn,
-	.add__btnProduct {
-		font-size: 35px;
-		background: none;
-		border: none;
-		color: #28B9B5;
-		cursor: pointer;
-		display: inline-block;
-		vertical-align: middle;
-		line-height: 1.1;
-		margin-left: 10px;
-	}
-
-	.add__btn:active {
-		transform: translateY(2px);
-	}
-
-	.add__type:focus,
-	.add__description:focus,
-	.add__value:focus,
-		{
-		outline: none;
-		border: 1px solid #28B9B5;
-	}
-
-	.add__btn:focus {
-		outline: none;
-	}
-
-
-	/***** LISTS *****/
-
-
-
-	.income {
-		float: left;
-		width: 475px;
-		margin-right: 50px;
-	}
-
-	.expenses {
-		float: left;
-		width: 475px;
-	}
-
-	h2 {
-		text-transform: uppercase;
-		font-size: 18px;
-		font-weight: 400;
-		margin-bottom: 15px;
-	}
-
-	.income__title {
-		color: #28B9B5;
-		text-align: center;
-	}
-
-	.expenses__title {
-		color: #FF5049;
-		text-align: center;
-	}
-
-	.item {
-		padding: 13px;
-		border-bottom: 1px solid #e7e7e7;
-	}
-
-	.item:first-child {
-		border-top: 1px solid #e7e7e7;
-	}
-
-	.item:nth-child(even) {
-		background-color: #f7f7f7;
-	}
-
-	.item__description {
-		float: left;
-	}
-
-	.item__value,
-	.item__quantity {
-		float: left;
-		transition: transform 0.3s;
-	}
-
-	.item__percentage {
-		float: left;
-		margin-left: 20px;
-		transition: transform 0.3s;
-		font-size: 11px;
-		background-color: #FFDAD9;
-		padding: 3px;
-		border-radius: 3px;
-		width: 32px;
-		text-align: center;
-	}
-
-	.income .item__value,
-	.income .item__delete--btn {
-		color: #28B9B5;
-	}
-
-	.expenses .item__value,
-	.expenses .item__percentage,
-	.expenses .item__delete--btn {
-		color: #FF5049;
-	}
-
-	.item__delete {
-		float: left;
-	}
-
-	.item__delete--btn {
-		font-size: 22px;
-		background: none;
-		border: none;
-		cursor: pointer;
-		display: inline-block;
-		vertical-align: middle;
-		line-height: 1;
-		display: none;
-	}
-
-	.item__delete--btn:focus {
-		outline: none;
-	}
-
-	.item__delete--btn:active {
-		transform: translateY(2px);
-	}
-
-	.item:hover .item__delete--btn {
-		display: block;
-	}
-
-	.item:hover .item__value {
-		transform: translateX(-20px);
-	}
-
-	.item:hover .item__percentage {
-		transform: translateX(-20px);
-	}
-
-	.unpaid {
-		background-color: #FFDAD9 !important;
-		cursor: pointer;
-		color: #FF5049;
-	}
-
-	.unpaid .item__percentage {
-		box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
-	}
-
-	.unpaid:hover .item__description {
-		font-weight: 900;
-	}
-
-	.benefit {
-		background-color: #21DC98;
-		color: white;
-		font-weight: 400;
-		padding: 1rem;
-		border-radius: 2rem 2rem 2rem 2rem;
-	}
-
-	.product_image {
-		max-width: 20rem;
-	}
-
-
-
-	.product_price {
-		font-weight: bold;
-	}
-	.product_info{
-		cursor: pointer;
-	}
-</style>
 @stop
 {{-- Content --}}
 @section('content')
@@ -374,7 +10,7 @@
 
 <div class="page-content mt-4 mb-10 pb-6 account">
 	<div class="container">
-		<h2 class="title title-left mb-10">Mis Pedidos</h2>
+		<h2 class="title title-left mb-10">Mis Presupuestos</h2>
 		<div class="tab tab-vertical gutter-lg">
 			<ul class="nav nav-tabs mb-4 col-lg-3 col-md-4" role="tablist">
 
@@ -382,7 +18,7 @@
 					<a class="nav-link active" href="#calculadora">Calculadora</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " href="#curso">Consultar Detalles</a>
+					<a class="nav-link " href="#detalles">Consultar Detalles</a>
 				</li>
 
 			</ul>
@@ -427,45 +63,59 @@
 						<div class="bottom mr-3 ml-3">
 							<div class="add_Product">
 								<div class="add__container">
-									<input name="" id="" class="add__productName"placeholder="Buscar Producto">
+									<div class="row">
+										<div class="col-lg-4 col-sm-12">
+											<input name="" id="" class="add__productName" placeholder="Buscar Producto">
+										</div>
+										<div class="table-responsive"id="product_table_movil" style="display:none">
+											@include('site.client_area.product-table')
+										</div>
+										<div class="col-lg-2 col-sm-12">
+											<input type="number" class="add__price" placeholder="Precio" readonly>
+										</div>
+										<div class="col-lg-2 col-sm-12">
+											<input type="number" class="add__quantity" placeholder="Cantidad">
+										</div>
+										<div class="col-lg-3 col-sm-12">
+											<input type="number" class="add__finalPrice" placeholder="Precio Final">
+										</div>
+										<div class="col-lg-1 col-sm-12">
+											<button class="add__btnProduct botonesCalculadora_btn"><i class="fas fa-plus-square"></i></button>
+										</div>
 
-									<!-- <input type="text" class="add__description" placeholder="Añada descripción"> -->
-									<input type="number" class="add__price" placeholder="Precio" readonly>
-									<input type="number" class="add__quantity" placeholder="Cantidad">
-									<input type="number" class="add__finalPrice" placeholder="Precio Final">
-									<button class="add__btnProduct"><i class="fas fa-plus-square"></i></button>
+									</div>
 								</div>
 							</div>
-							<table class="table-striped table-hover product-table" style="display:none">
-								<tbody>
-									<tr class="product_info" data-product="NombreProducto"data-price="140.00">
-										<td style="width:30%">
-											<img class="product_image" src="/images/renovable.jpg" alt="">
-										</td>
-										<td class="product_name"style="width:30%">
-											Producto #1
-										</td>
-										<td class="product_price" style="width:30%">
-											140.00€
-										</td>
-									</tr>
-								</tbody>
-							</table>
+							<div class="table-responsive" id="product_table"style="display:none">
+								@include('site.client_area.product-table')
+							</div>
 
-							<div class="add">
+
+							<div class="add2">
 								<div class="add__container">
-									<select class="add__type">
-										<option value="inc" selected>+</option>
-										<option value="exp">-</option>
-									</select>
-									<input type="text" class="add__description" placeholder="Añada descripción">
-									<input type="number" class="add__value" placeholder="Valor">
-									<button class="add__btn"><i class="fas fa-plus-square"></i></button>
+
+
+
+									<div class="row">
+										<div class="col-lg-6 col-sm-12 ">
+											<input type="text" class="add__description" placeholder="Añada descripción">
+										</div>
+										<div class="col-lg-2 col-sm-12  ">
+											<input type="number" class="add__value" placeholder="Precio">
+										</div>
+										<div class="col-lg-3 col-sm-12 ">
+											<input type="number" class="add__finalConceptPrice" placeholder="Precio Final">
+										</div>
+										<div class="col-lg-1 col-sm-12 ">
+											<button class="add__btn botonesCalculadora_btn"><i class="fas fa-plus-square"></i></button>
+										</div>
+									</div>
+
 								</div>
 							</div>
 
-							<div class="container clearfix mt-3" style="display:flex">
-								<div class="income">
+							<div class="row clearfix mt-3" style="display:flex;    justify-content: space-around;">
+								<div class="col col-md-6 col-lg-6  income">
 									<h2 class="income__title">Costes</h2>
 
 									<div class="income__list">
@@ -473,7 +123,7 @@
 								</div>
 
 
-								<div class="expenses">
+								<div class="col col-md-6 col-lg-6 expenses">
 									<h2 class="expenses__title">Descuentos</h2>
 
 									<div class="expenses__list">
@@ -483,8 +133,164 @@
 						</div>
 
 					</fieldset>
+					<div class="botonesCalculadora">
+
+						<button type="button" class="btn btn-success botonesCalculadora_btn"><i class="far fa-file-pdf"></i> GUARDAR PDF</button>
+						<button type="button" class="btn btn-primary botonesCalculadora_btn"><i class="far fa-save"></i> GUARDAR CAMBIOS</button>
+					</div>
 				</div>
-				<div class="tab-pane pedidos-pane" id="curso">
+				<div class="tab-pane pedidos-pane" id="detalles">
+					<table class="mt-2 mb-2 budget__table">
+						<thead>
+							<tr class="product__header" onclick="verProductos('idProducto1')" style="border-bottom: 0.5pt solid #d1d1d1;">
+								<th class="pl-2" width="10%">#1234</th>
+								<th>Presupuesto Nombre </th>
+								<th class="pr-2" style="text-align:center" width="20%">2300.50€ for 5 items</th>
+								<th style="width: 0%;"></th>
+
+							</tr>
+						</thead>
+
+						<tbody style="display:none" id="idProducto1">
+							<input type="hidden" id="open_close" value="0">
+							<tr>
+								<td class="order-number"><a href="#">#3596</a></td>
+								<td class="order-date"><time>Producto Nombre</time></td>
+
+								<td class="order-total"><span>2300.50€ for 5 items</span></td>
+
+
+							</tr>
+							<tr>
+								<td class="order-number"><a href="#">#3597</a></td>
+								<td class="order-date"><time>Producto Nombre</time></td>
+								<td class="order-total"><span>2300.50€ for 5 items</span></td>
+
+
+							</tr>
+							<tr>
+								<td class="order-number"><a href="#">#3598</a></td>
+								<td class="order-date"><time>Producto Nombre</time></td>
+								<td class="order-total"><span>2300.50€ for 5 items</span></td>
+
+
+							</tr>
+							<tr>
+								<td class="order-number"><a href="#">#3599</a></td>
+								<td class="order-date"><time>Producto Nombre</time></td>
+								<td class="order-total"><span>2300.50€ for 5 items</span></td>
+							</tr>
+							<tr class="conceptos">
+								<td class="order-number budget_subTotal"></td>
+								<td class="order-date budget_subTotal"><strong>Subtotal</strong> </td>
+
+								<td class="order-total budget_subTotal"><span><strong>2300.50€ for 5 items</strong></span></td>
+							</tr>
+							<tr class="conceptos">
+								<td class="order-number budget_IVA"></td>
+								<td class="order-date budget_IVA"><strong>IVA</strong> </td>
+
+								<td class="order-total budget_IVA"><span><strong>2300.50€ for 5 items</strong></span></td>
+							</tr>
+							<tr class="conceptosFin">
+								<td class="order-number budget_total"></td>
+								<td class="order-date budget_total"><strong>Total</strong> </td>
+
+								<td class="order-total budget_total"><span><strong>2300.50€ for 5 items</strong></span></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2">
+									<button class="btn btn-primary budget_btn" href=""><i class="far fa-file-pdf"></i> GUARDAR PDF</button>
+									<button class="btn btn-success budget_btn" href=""><i class="fas fa-file-export"></i> PASAR A PEDIDO</button>
+								</td>
+							</tr>
+						</tbody>
+
+					</table>
+					<table class="mt-2 mb-2 budget__table">
+						<thead>
+							<tr class="product__header" onclick="verProductos('idProducto2')">
+
+								<th class="pl-2" width="10%">#1234</th>
+								<th>Presupuesto Nombre </th>
+								<th class="pr-2" style="text-align:center" width="20%">2300.50€ for 5 items</th>
+								<th style="width: 0%;"></th>
+
+							</tr>
+						</thead>
+
+						<tbody style="display:none" id="idProducto2">
+							<input type="hidden" id="open_close" value="0">
+							<tr>
+								<td class="order-number"><a href="#">#3596</a></td>
+								<td class="order-date"><time>Producto Nombre</time></td>
+
+								<td class="order-total"><span>2300.50€ for 5 items</span></td>
+
+
+							</tr>
+							<tr>
+								<td class="order-number"><a href="#">#3597</a></td>
+								<td class="order-date"><time>Producto Nombre</time></td>
+								<td class="order-total"><span>2300.50€ for 5 items</span></td>
+
+
+							</tr>
+							<tr>
+								<td class="order-number"><a href="#">#3598</a></td>
+								<td class="order-date"><time>Producto Nombre</time></td>
+								<td class="order-total"><span>2300.50€ for 5 items</span></td>
+
+
+							</tr>
+							<tr>
+								<td class="order-number"><a href="#">#3598</a></td>
+								<td class="order-date"><time>Producto Nombre</time></td>
+								<td class="order-total"><span>2300.50€ for 5 items</span></td>
+
+
+							</tr>
+							<tr>
+								<td class="order-number"><a href="#">#3598</a></td>
+								<td class="order-date"><time>Producto Nombre</time></td>
+								<td class="order-total"><span>2300.50€ for 5 items</span></td>
+
+
+							</tr>
+							<tr>
+								<td class="order-number"><a href="#">#3599</a></td>
+								<td class="order-date"><time>Producto Nombre</time></td>
+								<td class="order-total"><span>2300.50€ for 5 items</span></td>
+							</tr>
+							<tr class="conceptos">
+								<td class="order-number budget_subTotal"></td>
+								<td class="order-date budget_subTotal"><strong>Subtotal</strong> </td>
+
+								<td class="order-total budget_subTotal"><span><strong>2300.50€ for 5 items</strong></span></td>
+							</tr>
+							<tr class="conceptos">
+								<td class="order-number budget_IVA"></td>
+								<td class="order-date budget_IVA"><strong>IVA</strong> </td>
+
+								<td class="order-total budget_IVA"><span><strong>2300.50€ for 5 items</strong></span></td>
+							</tr>
+							<tr class="conceptosFin">
+								<td class="order-number budget_total"></td>
+								<td class="order-date budget_total"><strong>Total</strong> </td>
+
+								<td class="order-total budget_total"><span><strong>2300.50€ for 5 items</strong></span></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td colspan="2">
+									<button class="btn btn-primary budget_btn" href=""><i class="far fa-file-pdf"></i> GUARDAR PDF</button>
+									<button class="btn btn-success budget_btn" href=""><i class="fas fa-file-export"></i> PASAR A PEDIDO</button>
+								</td>
+							</tr>
+						</tbody>
+
+					</table>
 
 				</div>
 			</div>
@@ -497,70 +303,95 @@
 {{-- Scripts --}}
 @section('scripts')
 <script>
+	//VER DETALLES PRESUPUESTO
+	function verProductos(x) {
+		var flag = $("#open_close").val();
+		if (flag == 0) {
+			$("#" + x).css("display", "contents");
+			$("#open_close").val("1");
+		} else {
+			$("#" + x).css("display", "none");
+			$("#open_close").val("0");
+		}
+
+
+	}
+
+
+
+
+
+	//AÑADIR CONCEPTO
+
 	$(document).on("click", ".add__btn", function() {
-		var funcion = ($('.add__type').find(":selected").val());
 		var valor = parseFloat($('.add__value').val());
 		var descripcion = ($('.add__description').val());
-		console.log(descripcion);
+		var cantidad = 1;
 		var total = parseFloat($("#totalPresupuesto").val());
+		var precioFinal = parseFloat($(".add__finalConceptPrice").val());
 		var newHtml;
 		var id = parseInt($('#id').val());
-
-		//RESTA
-		if (funcion == "exp") {
-			valor = 0 - valor;
+		//resta
+		if ((0 + valor) < 0) {
 			total = total + valor;
 			var valorPrevio = parseFloat($(".budget__expenses--value").text());
 			var valorFinal = valor + valorPrevio;
+			calculoBeneficio(cantidad, precioFinal, valor);
 			$(".budget__expenses--value").text(valorFinal.toFixed(2));
 			element = $(".expenses__list");
-			html = '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">%percentage%</div><div class="item__delete" data-id="exp-%idBoton%"><button class="item__delete--btn"><i class="fas fa-times"></i></button></div></div></div>';
+			html = '<div class="item clearfix expensesLine" id="exp-%id%"> <div class="item__quantity" style="margin-right:2rem">%quantity% *</div><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">%percentage%</div><div class="item__delete" ><button class="item__delete--btn" data-id="exp-%idBoton%"><i class="fas fa-times"></i></button></div></div></div>';
 			newhtml = html.replace('%id%', id);
 			newHtml = newhtml.replace('%idBoton%', id);
 		}
-		//SUMA
+		//suma
 		else {
-			total = total + valor;
+			total = total + precioFinal;
 			var valorPrevio = parseFloat($(".budget__income--value").text());
 			var valorFinal = valor + valorPrevio;
+			calculoBeneficio(cantidad, precioFinal, valor);
 			$(".budget__income--value").text(valorFinal.toFixed(2));
 			element = $(".income__list");
-			html = '<div class="item clearfix" id="inc-%id%"> <div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__delete"><button class="item__delete--btn"data-id="inc-%idBoton%"><i class="fas fa-times " )></i></button></div></div></div>';
+			html = '<div class="item clearfix incomeLine" id="inc-%id%">  <div class="item__quantity" style="margin-right:2rem">%quantity% *</div><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__delete"><button class="item__delete--btn"data-id="inc-%idBoton%"><i class="fas fa-times " )></i></button></div></div></div>';
 			newhtml = html.replace('%id%', id);
 			newHtml = newhtml.replace('%idBoton%', id);
 		}
-		//ACTUALIZA TOTAL
+
 		actualizaTotal(total);
 
-		//AÑADE A LA LISTA
+		//porcentaje
+		var porcentaje = (valor * (-1) * 100) / parseFloat($(".budget__income--value").text());
+		var porcentajeTotal = calcularPorcentajes();
 
-		var valorPrevioNegativo = parseFloat($(".budget__expenses--value").text());
-		var valorPrevioPositivo = parseFloat($(".budget__income--value").text());
-
-		//CÁLCULO PORCENTAJE CONCEPTO
-		var porcentaje = ((valor * (-1)) * 100) / valorPrevioPositivo;
-
-		//CÁLCULO PORCENTAJE TOTAL
-		var porcentajeTotal = ((valorPrevioNegativo * (-1)) * 100) / valorPrevioPositivo;
-
-		//ADJUNTAR A LA CORRESPONDIENTE LISTA
+		//adjuntar a la lista
 		newHtml = newHtml.replace('%description%', descripcion);
-		newHtml = newHtml.replace('%value%', valor.toFixed(2));
-		if (total > 0 && valorPrevioNegativo != 0) {
-			if (valorPrevioPositivo != 0) {
-				newHtml = newHtml.replace('%percentage%', porcentaje.toFixed(2) + "%");
-			}
+		newHtml = newHtml.replace('%quantity%', cantidad);
+		newHtml = newHtml.replace('%value%', precioFinal.toFixed(2));
+		if (total > 0 && parseFloat($(".budget__expenses--value").text()) != 0) {
+
+			newHtml = newHtml.replace('%percentage%', porcentaje.toFixed(2) + "%");
+
 
 			$(".budget__expenses--percentage").text(porcentajeTotal.toFixed(2) + "%");
 		}
 		element.append(newHtml);
 
-
-		//RESET INPUTS
 		resetInputs();
 		id = id + 1;
 		$('#id').val(id);
+		checkPorcentajes()
 	});
+
+	//CALCULAR BENEFICIO
+
+	function calculoBeneficio(cantidad, precioFinal, precio) {
+
+		var beneficioProducto = (cantidad * precioFinal) - (precio * cantidad);
+		var beneficioPrevio = parseFloat($(".benefit").text());
+		var beneficio = beneficioProducto + beneficioPrevio;
+		$(".benefit").text(beneficio.toFixed(2) + "€");
+	}
+
+	//AÑADIR PRODUCTO
 
 	$(document).on("click", ".add__btnProduct", function() {
 		var producto = ($('.add__productName').val());
@@ -570,54 +401,31 @@
 		var total = parseFloat($("#totalPresupuesto").val());
 		var newHtml;
 		var id = parseInt($('#id').val());
-
 		var precioxProducto = precioFinal * cantidad;
-		console.log(precioxProducto);
-		var beneficioProducto = (cantidad * precioFinal) - (precio * cantidad);
-		console.log(beneficioProducto);
-
-
+		calculoBeneficio(cantidad, precioFinal, precio);
 		total = total + precioxProducto;
 		var valorPrevio = parseFloat($(".budget__income--value").text());
 		var valorFinal = precioxProducto + valorPrevio;
 		$(".budget__income--value").text(valorFinal.toFixed(2));
 		element = $(".income__list");
-		html = '<div class="item clearfix" id="product-%id%"> <div class="item__quantity" style="margin-right:2rem">%quantity%</div><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__delete"><button class="item__delete--btn" data-id="product-%idBoton%"><i class="fas fa-times"></i></button></div></div></div>';
+		html = '<div class="item clearfix" id="product-%id%"> <div class="item__quantity" style="margin-right:2rem">%quantity% *</div><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__delete"><button class="item__delete--btn" data-id="product-%idBoton%"><i class="fas fa-times"></i></button></div></div></div>';
 		newhtml = html.replace('%id%', id);
 		newHtml = newhtml.replace('%idBoton%', id);
 		newHtml = newHtml.replace('%description%', producto);
 		newHtml = newHtml.replace('%quantity%', cantidad);
 		newHtml = newHtml.replace('%value%', precioFinal.toFixed(2));
-		//ACTUALIZA TOTAL
-		$(".benefit").text(beneficioProducto.toFixed(2) + "€");
+
+
 		actualizaTotal(total);
 
-		//AÑADE A LA LISTA
 
-		/* 	var valorPrevioNegativo = parseFloat($(".budget__expenses--value").text());
-			var valorPrevioPositivo = parseFloat($(".budget__income--value").text()); */
-
-		//CÁLCULO PORCENTAJE CONCEPTO
-		/* 		var porcentaje = ((valor * (-1)) * 100) / valorPrevioPositivo; */
-
-		//CÁLCULO PORCENTAJE TOTAL
-		/* var porcentajeTotal = ((valorPrevioNegativo * (-1)) * 100) / valorPrevioPositivo; */
-
-		//ADJUNTAR A LA CORRESPONDIENTE LISTA
-
-		/* 	if (total > 0 && valorPrevioNegativo != 0) {
-				if (valorPrevioPositivo != 0) {
-					newHtml = newHtml.replace('%percentage%', porcentaje.toFixed(2) + "%");
-				}
-
-				$(".budget__expenses--percentage").text(porcentajeTotal.toFixed(2) + "%");
-			} */
 		element.append(newHtml);
-
+		var porcentajeTotal = calcularPorcentajes();
+		$(".budget__expenses--percentage").text(porcentajeTotal.toFixed(2) + "%");
 
 		//RESET INPUTS
 		resetInputs();
-
+		checkPorcentajes()
 	});
 
 	//ELIMINAR FILA DESGLOSE
@@ -625,14 +433,29 @@
 	$(document).on("click", ".item__delete--btn", function() {
 
 		var target = $(this).data("id");
-		console.log(target);
 		var precio = parseFloat($("#" + target + ">.right>.item__value").text());
 		var cantidad = parseFloat($("#" + target + ">.item__quantity").text());
 		precio = precio * cantidad;
 		var total = parseFloat($("#totalPresupuesto").val());
 		total = total - precio;
-		actualizaTotal(total);
+
+
 		$("#" + $(this).data("id")).remove();
+		if (0 + precio < 0) {
+			var valorPrevioNegativo = parseFloat($(".budget__expenses--value").text());
+			valorPrevioNegativo = valorPrevioNegativo - precio;
+			$(".budget__expenses--value").text(parseFloat(valorPrevioNegativo).toFixed(2));
+
+		} else {
+			var valorPrevioPositivo = parseFloat($(".budget__income--value").text());
+			valorPrevioPositivo = valorPrevioPositivo - precio;
+			$(".budget__income--value").text(parseFloat(valorPrevioPositivo).toFixed(2));
+		}
+
+		var porcentajeTotal = calcularPorcentajes();
+		$(".budget__expenses--percentage").text(porcentajeTotal.toFixed(2));
+		actualizaTotal(total);
+		checkPorcentajes();
 	});
 
 	//ACTUALIZAR TOTAL PRESUPUESTO
@@ -641,10 +464,12 @@
 		$(".budget__value").text(total.toFixed(2) + "€");
 	}
 
+	//RESET INPUTS
 	function resetInputs() {
 		$('.add__description').val("");
 		$('.add__value').val("");
 		$('.add__price').val("");
+		$('.add__finalConceptPrice').val("");
 		$('.add__productName').val("");
 		$('.add__quantity').val("");
 		$('.add__finalPrice').val("");
@@ -652,16 +477,55 @@
 
 
 	//SELECTOR DE PRODUCTOS
-	$(document).on("click",".product_info",function(){
-		var producto=$(this).data("product");
-		var precio=$(this).data("price");
+	$(document).on("click", ".product_info", function() {
+		var producto = $(this).data("product");
+		var precio = $(this).data("price");
 		$(".add__productName").val(producto);
 		$(".add__price").val(precio);
-		$(".product-table").css("display","none");
+		$(".product-table").css("display", "none");
 	});
 
-	$(".add__productName").on("keypress",function(){
-		$(".product-table").css("display","block");
-	});	
+	$(".add__productName").on("keypress", function() {
+		if(screen.width<=991){
+			console.log("hola");
+			$("#product_table_movil").css("display", "inline-table");
+		}else{
+			console.log("hola 2");
+			$("#product_table").css("display", "inline-table");
+		}
+			
+		
+		
+	});
+
+	function checkPorcentajes() {
+		var porcentajes = [];
+		$(".expensesLine>.right>.item__value").map(function() {
+			var positivo = parseFloat($(".budget__income--value").text());
+			var valor = $(this).text();
+			porcentajes.push(((valor * (-1)) * 100) / positivo);
+
+
+		});
+		$(".expensesLine>.right>.item__percentage").map(function(i) {
+
+			$(this).text(parseFloat(porcentajes[i]).toFixed(2) + "%");
+			i++;
+
+
+
+
+		});
+
+
+	}
+
+	function calcularPorcentajes() {
+		var valorPrevioNegativo = parseFloat($(".budget__expenses--value").text());
+		var valorPrevioPositivo = parseFloat($(".budget__income--value").text());
+		var porcentajeTotal = ((valorPrevioNegativo * (-1)) * 100) / valorPrevioPositivo;
+		console.log(porcentajeTotal);
+		return porcentajeTotal;
+	}
 </script>
 @stop

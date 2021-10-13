@@ -60,7 +60,7 @@
 								<td class="order-status"><span>On hold</span></td>
 								<td class="order-origin"><span class="origin-spanWeb">Web</span></td>
 								<td class="order-total"><span>$900.00 for 5 items</span></td>
-								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline">Ver</a></td>
+								<td class="order-action"><a href="#" class="btn btn-primary btn-link"><i class="far fa-eye"></i></a></td>
 							</tr>
 							<tr>
 								<td class="order-number"><a href="#">#3593</a></td>
@@ -68,7 +68,7 @@
 								<td class="order-status"><span>On hold</span></td>
 								<td class="order-origin"><span class="origin-spanWeb">Web</span></td>
 								<td class="order-total"><span>$290.00 for 2 items</span></td>
-								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline">Ver</a></td>
+								<td class="order-action"><a href="#" class="btn btn-primary btn-link"><i class="far fa-eye"></i></a></td>
 							</tr>
 							<tr>
 								<td class="order-number"><a href="#">#2547</a></td>
@@ -76,7 +76,7 @@
 								<td class="order-status"><span>On hold</span></td>
 								<td class="order-origin"><span class="origin-spanDimasa">Dimasa</span></td>
 								<td class="order-total"><span>$480.00 for 8 items</span></td>
-								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline">Ver</a></td>
+								<td class="order-action"><a href="#" class="btn btn-primary btn-link"><i class="far fa-eye"></i></a></td>
 							</tr>
 							<tr>
 								<td class="order-number"><a href="#">#2549</a></td>
@@ -84,7 +84,7 @@
 								<td class="order-status"><span>On hold</span></td>
 								<td class="order-origin"><span class="origin-spanWeb">Web</span></td>
 								<td class="order-total"><span>$680.00 for 5 items</span></td>
-								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline">Ver</a></td>
+								<td class="order-action"><a href="#" class="btn btn-primary btn-link"><i class="far fa-eye"></i></a></td>
 							</tr>
 							<tr>
 								<td class="order-number"><a href="#">#4523</a></td>
@@ -92,7 +92,7 @@
 								<td class="order-status"><span>On hold</span></td>
 								<td class="order-origin"><span class="origin-spanDimasa">Dimasa</span></td>
 								<td class="order-total"><span>$564.00 for 3 items</span></td>
-								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline">Ver</a></td>
+								<td class="order-action"><a href="#" class="btn btn-primary btn-link"><i class="far fa-eye"></i></a></td>
 							</tr>
 							<tr>
 								<td class="order-number"><a href="#">#4526</a></td>
@@ -100,7 +100,7 @@
 								<td class="order-status"><span>On hold</span></td>
 								<td class="order-origin"><span class="origin-spanDimasa">Dimasa</span></td>
 								<td class="order-total"><span>$123.00 for 8 items</span></td>
-								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline">Ver</a></td>
+								<td class="order-action"><a href="#" class="btn btn-primary btn-link"><i class="far fa-eye"></i></a></td>
 							</tr>
 						</tbody>
 					</table>
@@ -122,28 +122,28 @@
 								<td class="order-date"><time>February 24, 2021</time></td>
 								<td class="order-status"><span>On hold</span></td>
 								<td class="order-total"><span>$900.00 for 5 items</span></td>
-								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline">Descargar PDF</a></td>
+								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline"><i class="fa fa-file-pdf"></i></a></td>
 							</tr>
 							<tr>
 								<td class="order-number"><a href="#">#3593</a></td>
 								<td class="order-date"><time>February 21, 2021</time></td>
 								<td class="order-status"><span>On hold</span></td>
 								<td class="order-total"><span>$290.00 for 2 items</span></td>
-								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline">Descargar PDF</a></td>
+								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline"><i class="fa fa-file-pdf"></i></a></td>
 							</tr>
 							<tr>
 								<td class="order-number"><a href="#">#2547</a></td>
 								<td class="order-date"><time>January 4, 2021</time></td>
 								<td class="order-status"><span>On hold</span></td>
 								<td class="order-total"><span>$480.00 for 8 items</span></td>
-								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline">Descargar PDF</a></td>
+								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline"><i class="fa fa-file-pdf"></i></a></td>
 							</tr>
 							<tr>
 								<td class="order-number"><a href="#">#2549</a></td>
 								<td class="order-date"><time>January 19, 2021</time></td>
 								<td class="order-status"><span>On hold</span></td>
 								<td class="order-total"><span>$680.00 for 5 items</span></td>
-								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline">Descargar PDF</a></td>
+								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline"><i class="fa fa-file-pdf"></i></a></td>
 							</tr>
 
 						</tbody>
@@ -166,7 +166,7 @@
 								<td class="order-date"><time>February 24, 2021</time></td>
 								<td class="order-status"><span>On hold</span></td>
 								<td class="order-total"><span>$900.00 for 5 items</span></td>
-								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline">Descargar PDF</a> | <a href="#" class="btn btn-primary btn-link btn-underline">Repetir Pedido</a></td>
+								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline"><i class="fa fa-file-pdf"></i></a>  <a href="#" class="btn btn-primary btn-link btn-underline"><i class="fas fa-redo-alt"></i></a></td>
 
 							</tr>
 							<tr>
@@ -174,14 +174,14 @@
 								<td class="order-date"><time>February 21, 2021</time></td>
 								<td class="order-status"><span>On hold</span></td>
 								<td class="order-total"><span>$290.00 for 2 items</span></td>
-								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline">Descargar PDF</a> | <a href="#" class="btn btn-primary btn-link btn-underline">Repetir Pedido</a></td>
+								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline"><i class="fa fa-file-pdf"></i></a>  <a href="#" class="btn btn-primary btn-link btn-underline"><i class="fas fa-redo-alt"></i></a></td>
 							</tr>
 							<tr>
 								<td class="order-number"><a href="#">#2547</a></td>
 								<td class="order-date"><time>January 4, 2021</time></td>
 								<td class="order-status"><span>On hold</span></td>
 								<td class="order-total"><span>$480.00 for 8 items</span></td>
-								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline">Descargar PDF</a> | <a href="#" class="btn btn-primary btn-link btn-underline">Repetir Pedido</a></td>
+								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline"><i class="fa fa-file-pdf"></i></a>  <a href="#" class="btn btn-primary btn-link btn-underline"><i class="fas fa-redo-alt"></i></a></td>
 							</tr>
 
 						</tbody>
@@ -243,28 +243,28 @@
 								<td class="order-date"><time>February 24, 2021</time></td>
 								<td class="order-status"><span>On hold</span></td>
 								<td class="order-total"><span>$900.00 for 5 items</span></td>
-								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline">Descargar PDF</a></td>
+								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline"><i class="fa fa-file-pdf"></i></a></td>
 							</tr>
 							<tr>
 								<td class="order-number"><a href="#">#3593</a></td>
 								<td class="order-date"><time>February 21, 2021</time></td>
 								<td class="order-status"><span>On hold</span></td>
 								<td class="order-total"><span>$290.00 for 2 items</span></td>
-								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline">Descargar PDF</a></td>
+								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline"><i class="fa fa-file-pdf"></i></a></td>
 							</tr>
 							<tr>
 								<td class="order-number"><a href="#">#2547</a></td>
 								<td class="order-date"><time>January 4, 2021</time></td>
 								<td class="order-status"><span>On hold</span></td>
 								<td class="order-total"><span>$480.00 for 8 items</span></td>
-								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline">Descargar PDF</a></td>
+								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline"><i class="fa fa-file-pdf"></i></a></td>
 							</tr>
 							<tr>
 								<td class="order-number"><a href="#">#2549</a></td>
 								<td class="order-date"><time>January 19, 2021</time></td>
 								<td class="order-status"><span>On hold</span></td>
 								<td class="order-total"><span>$680.00 for 5 items</span></td>
-								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline">Descargar PDF</a></td>
+								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline"><i class="fa fa-file-pdf"></i></a></td>
 							</tr>
 
 						</tbody>
@@ -528,28 +528,28 @@
 								<td class="order-date"><time>February 24, 2021</time></td>
 								<td class="order-status"><span>On hold</span></td>
 								<td class="order-total"><span>$900.00 for 5 items</span></td>
-								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline">Descargar PDF</a></td>
+								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline"><i class="fa fa-file-pdf"></i></a></td>
 							</tr>
 							<tr>
 								<td class="order-number"><a href="#">#3593</a></td>
 								<td class="order-date"><time>February 21, 2021</time></td>
 								<td class="order-status"><span>On hold</span></td>
 								<td class="order-total"><span>$290.00 for 2 items</span></td>
-								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline">Descargar PDF</a></td>
+								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline"><i class="fa fa-file-pdf"></i></a></td>
 							</tr>
 							<tr>
 								<td class="order-number"><a href="#">#2547</a></td>
 								<td class="order-date"><time>January 4, 2021</time></td>
 								<td class="order-status"><span>On hold</span></td>
 								<td class="order-total"><span>$480.00 for 8 items</span></td>
-								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline">Descargar PDF</a></td>
+								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline"><i class="fa fa-file-pdf"></i></a></td>
 							</tr>
 							<tr>
 								<td class="order-number"><a href="#">#2549</a></td>
 								<td class="order-date"><time>January 19, 2021</time></td>
 								<td class="order-status"><span>On hold</span></td>
 								<td class="order-total"><span>$680.00 for 5 items</span></td>
-								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline">Descargar PDF</a></td>
+								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline"><i class="fa fa-file-pdf"></i></a></td>
 							</tr>
 
 						</tbody>
@@ -611,28 +611,28 @@
 								<td class="order-date"><time>February 24, 2021</time></td>
 								<td class="order-status"><span>On hold</span></td>
 								<td class="order-total"><span>$900.00 for 5 items</span></td>
-								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline">Descargar PDF</a></td>
+								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline"><i class="fa fa-file-pdf"></i></a></td>
 							</tr>
 							<tr>
 								<td class="order-number"><a href="#">#3593</a></td>
 								<td class="order-date"><time>February 21, 2021</time></td>
 								<td class="order-status"><span>On hold</span></td>
 								<td class="order-total"><span>$290.00 for 2 items</span></td>
-								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline">Descargar PDF</a></td>
+								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline"><i class="fa fa-file-pdf"></i></a></td>
 							</tr>
 							<tr>
 								<td class="order-number"><a href="#">#2547</a></td>
 								<td class="order-date"><time>January 4, 2021</time></td>
 								<td class="order-status"><span>On hold</span></td>
 								<td class="order-total"><span>$480.00 for 8 items</span></td>
-								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline">Descargar PDF</a></td>
+								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline"><i class="fa fa-file-pdf"></i></a></td>
 							</tr>
 							<tr>
 								<td class="order-number"><a href="#">#2549</a></td>
 								<td class="order-date"><time>January 19, 2021</time></td>
 								<td class="order-status"><span>On hold</span></td>
 								<td class="order-total"><span>$680.00 for 5 items</span></td>
-								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline">Descargar PDF</a></td>
+								<td class="order-action"><a href="#" class="btn btn-primary btn-link btn-underline"><i class="fa fa-file-pdf"></i></a></td>
 							</tr>
 
 						</tbody>

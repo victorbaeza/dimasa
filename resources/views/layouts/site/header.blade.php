@@ -752,33 +752,23 @@
   <div class="header-bottom2 sticky-header fix-top sticky-content d-lg-show">
     <div class="container">
       <div class="header-right">
-        <!-- <div class="pt-2 pb-2 pr-2 sticky-header-logo">
-          <a href="/">
-          <img src="images/favicon.png" width=35 />
-        </a>
-        </div> -->
-        <div class="dropdown category-dropdown" data-visible="true">
 
-
-        
-        </div>
-
-        <nav class="main-nav">
+        <nav >
           <ul class="menu menu-active-underline">
             <li>
-              <a class="menu-area-personal"href="/area_personal">Área Personal</a>
+              <a class="menu-area-personal" href="/area_personal">Área Personal</a>
             </li>
             <li>
-              <a class="menu-area-personal"href="/productos">Presupuestos</a>
+              <a class="menu-area-personal" href="/presupuestos">Presupuestos</a>
             </li>
             <li>
-              <a class="menu-area-personal"href="/pedidos">Pedidos</a>
+              <a class="menu-area-personal" href="/pedidos">Pedidos</a>
             </li>
-     
+
           </ul>
         </nav>
       </div>
-   
+
     </div>
   </div>
 </header>
